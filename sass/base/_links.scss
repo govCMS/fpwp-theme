@@ -1,0 +1,55 @@
+// Links
+
+// Default link styling.
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    @include base-outline;
+  }
+}
+
+// Link with underline.
+%inline-link  {
+  color: $black;
+  font-family: $sans;
+  font-size: rem(13);
+  font-weight: $semibold;
+  padding: 1rem 1.3rem;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Link buttons + buttons.
+a.button,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include button-box-shadow;
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 3px;
+  font-family: $sans;
+  font-size: rem(14);
+  font-weight: $semibold;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem 1.9rem;
+}
+
+%button--feature {
+  -webkit-appearance: none; // To show border radius
+  background-color: $yellow;
+  border-color: $yellow;
+  color: $black;
+  border-radius: 45px;
+  &:hover {
+    background-color: lighten( $yellow, 10% );
+    text-decoration: none;
+  }
+}

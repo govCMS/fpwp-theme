@@ -1,0 +1,10 @@
+@mixin left-border-decoration() {
+  &::before {
+    content: "";
+    border-bottom: 1px solid $black;
+    display: inline-block;
+    margin-right: 2rem;
+    vertical-align: middle;
+    width: 15%;
+  }
+}

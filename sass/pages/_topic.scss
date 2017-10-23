@@ -1,0 +1,111 @@
+/**
+ * @file
+ * topic page layout.
+ */
+
+// .page-taxonomy-term {
+.page-taxonomy-term {
+  .view-header {
+    @include zen-grid-item(8, 2);
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: rem(50) 0;
+  }
+
+  #content-body .view-display-id-page {
+    float: none;
+  }
+}
+
+.page-taxonomy-term.section-foreign-policy-in-action {
+  #content-header {    
+    overflow: initial !important;
+    #content-header-fields {
+      animation-delay: .5s;
+      transition: transform 2s ease, opacity 2s ease;
+      transform: translateY(10%);
+      animation: shift-in-up 2s both;
+    }
+    .field-name-field-image {
+      background: #3f3f84;
+      img {
+        @include absolute(top right);
+        opacity: 0.5;
+        // Specific dimensions for the radial gradient
+        min-width: 75vw;
+        min-height: 75vh;
+        // Overrides
+        height: auto;
+        width: auto;
+        @include breakpoint(m) {
+          right: -20%;
+        }
+        @include breakpoint(xs) {
+          top: -20%;
+          right: -100%;
+          min-width: 100vw;
+          min-height: 100vh;
+          opacity: .2;          
+        }        
+      }
+      &:after {
+        @include absolute(top right);
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: " ";
+        background-image: url(/sites/all/themes/fpwp/images/learn-grad.png);
+        background-size: 100vw 100vh;
+      }
+    }
+    .taxonomy-term-description {
+      max-width: rem(600);
+    }
+  }
+  #content-body {
+    background: none !important;
+    max-width: none;
+    .view-taxonomy-term {
+      /* loop */
+      $i: 0.5s;
+      @for $level from 0 to 6 {
+        .views-row:nth-child(#{$level + 1}) {
+          animation: shift-in-up 1s ease $i both;
+        }
+        $i: $i + .2s;
+      }
+    }
+  }
+}
+
+// @TODO and disable button transitions while page transitions are happening
+//.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-body .view-id-topics .item-list li.views-row {
+.page-container[data-namespace="case-landing"] #content-body .view-id-topics .item-list li.views-row {
+  background: linear-gradient(to bottom, #6157e7, #e53872);
+  z-index: 1;
+  overflow: initial;
+  .taxonomy-term a .field-name-field-image {
+    border-radius: 8px 8px 2px 2px;
+    overflow: hidden;
+    @include relative;
+    width: 100%;
+    height: 100%;    
+      img {
+      transition: transform 0.5s ease-out,opacity 0.5s ease-out,-webkit-transform 0.5s ease-out;
+    }
+  }
+  .taxonomy-term {
+    overflow: initial;
+  }
+  .taxonomy-term a .field-name-title {
+    @include absolute(top left);
+  }
+}
+//.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-body .view-id-topics .item-list li.views-row .taxonomy-term a:hover img {
+.page-container[data-namespace="case-landing"] #content-body .view-id-topics .item-list li.views-row .taxonomy-term a:hover img,
+.page-container[data-namespace="case-landing"] #content-body .view-id-topics .item-list li.views-row .taxonomy-term a:active img,
+.page-container[data-namespace="case-landing"] #content-body .view-id-topics .item-list li.views-row .taxonomy-term a:focus img {
+  opacity: .3;
+  transform: translate(-50%, -50%) scale(1.5);
+}

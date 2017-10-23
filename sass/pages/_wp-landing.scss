@@ -1,0 +1,352 @@
+/**
+* @file
+* Read the white paper section.
+*/
+// .page-node-46,
+// .not-front.node-type-policy {
+.page-container[data-namespace="policy-landing"],
+.page-container[data-namespace="policy-content"] {
+  .view-fpwp-book-menu .view-content {
+    transform: translateX(100%);
+    transition: transform 1s ease-out;
+    animation: slide-in-left 1s both;
+    animation-delay: .5s;
+    background: linear-gradient(45deg, $teal 10%, $purple-light, $pink);
+    float: right;
+    width: 60vw;
+    height: inherit;
+    position: relative;
+    z-index: 20;
+    .item-list {
+      padding: 2rem 4rem;
+      margin-top: rem(180);
+      max-width: 800px;
+      width: auto;
+
+      a {
+        color: $white;
+        position: relative;
+        transition: 0.4s ease-out transform;
+        display: inline-block;
+        transform: translateX(0);
+        &:before {
+          content: "";
+          background: url(../images/icon-square-yellow.png) center left;
+          height: 14px;
+          width: 14px;
+          display: block;
+          @include absolute(top 8px left);
+          transform: translateX(-20px);
+          opacity: 0;
+          transition: 0.4s ease-out all;
+          @include breakpoint(xxs) {
+            width: 10px;
+            height: 10px;
+            transform: translateX(-15px);
+          }
+        }        
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          font-weight: bold;
+          transform: translateX(5px);
+          width: calc(100% - 5px);
+          &:before {
+            opacity: 1;
+            transform: translateX(-25px);
+            transition: 0.4s ease-out all;
+            @include breakpoint(xxs) {
+              transform: translateX(-20px);
+            } 
+          }
+        }
+      }
+      ul li ul.section-list li .field-content a:before {
+        top: 4px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          padding: rem(5) 0;
+        }
+      }
+
+      > ul > .views-row {
+        @include right-border-decoration;
+        font-size: rem(14);
+        margin: 1.5rem 0 1rem 100px;
+
+        &::after {
+          border-bottom: 1px solid rgba(255, 255, 255, .3);
+          margin-left: -1rem;
+          padding-top: 1.5rem;
+          width: rem(60);
+        }
+
+        &:last-child {
+          &::after {
+            border-bottom: 0;
+          }
+        }
+
+        > .views-field-title {
+          font-size: rem(20);
+        }
+      }
+
+      .views-row {
+        position: relative;
+        ul.section-list {
+          padding: .5rem 0 0 0;
+          img {
+            display: none;
+          }
+        }
+      }
+
+      .views-field-field-image {
+        position: absolute;
+        left: -100px;
+        top: rem(15);
+        transform: translateY(-50%);
+        height: rem(60);
+        width: rem(60);
+
+        .field-content {
+          height: 100%;
+          width: auto;
+          img {
+            box-shadow: 0px 10px 30px rgba($black,.4);
+            border: 1px solid rgba($white,.3);
+            border-radius: 100%;
+          }
+        }
+      }
+
+      .views-field-title {
+        list-style: none;
+      }
+    }
+  }
+}
+
+//.page-node-46 {
+.page-container[data-namespace="policy-landing"] {
+
+  // Making the layout full-width
+  // &.not-front #main #content-body {
+  #content-body {
+    max-width: none;
+    margin: 0 auto;
+    &:before,
+    &:after {
+      display: none;
+    }    
+  }
+
+  .view-fpwp-book-menu {
+    float: none;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  // &.not-front #main #content-body .view-fpwp-book-menu .view-header {
+  #content-body .view-fpwp-book-menu .view-header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    &:after {
+      display: none;   
+    }
+    &:before {
+      transition: 0s;
+      transform: scale(1.1) translateX(0) translateZ(0); // translateZ to force layer creation, prime for animation
+      background: url("../images/paper-map3.jpg") no-repeat;
+      background-color: white;
+      background-position: right -176px top -105px;
+      content: "";
+      width: 39%;
+      height: 100%;
+      display: block;
+      @include fixed(top left);    
+      max-height: 800px;
+      z-index: 20;
+      clip-path: inset(0 17% 0 0);
+      overflow: hidden;
+    }        
+    // Intro text
+    article {
+      opacity: 0;
+      z-index: 21;
+      @include fixed(right 60vw top 260px);
+      padding: 0 4rem;
+      margin: 0 auto;
+      max-width: 30rem;
+      box-sizing: border-box;
+      animation: slide-in-up 1s both;
+      animation-delay: 2s;
+
+      h1 {
+        @include gradient-border;
+        line-height: 1; // Closer for this heading
+        &::after {
+          display: block;
+          margin-left: -1rem;
+          margin-top: 2rem;
+        }
+        span {
+          display: block;
+          color: $grey;
+          font-family: $sans;
+          font-size:rem(36);
+          font-weight: $semibold;
+          margin-bottom: 0.75rem;
+          letter-spacing: 0;
+        }
+      }
+      .field {
+        p {
+          margin: 0; // Bring the list of links closer together
+        }
+        a {
+          // border-bottom: 0;
+          color: black;
+          font-family: "sofia-pro", Arial, sans-serif;
+          font-size: rem(14);
+          font-weight: 600;
+          padding: .75rem 0.5rem;
+          margin: 0 1rem 0 -0.5rem;
+          letter-spacing: 0.025em;
+          display: block;
+          border-bottom: 0;
+          border-top: 1px solid rgba(0,0,0,0.15);
+          text-transform: uppercase;
+          &:hover {
+            transition: all 0.5s ease;
+            background: rgba(0,0,0,0.05);
+          }
+        }
+        &.field-name-body {
+          padding: 1rem 0;
+        }
+      }
+      @include breakpoint(xl) {
+        left: 0;
+        max-width: 40vw;
+        padding: 2rem;
+        top: 200px;        
+      }
+    }
+  }
+
+  @include breakpoint(l) {
+
+    .view-fpwp-book-menu .view-content {
+      float: none;
+      position: relative;
+      width: 100%;
+
+      .item-list {
+        // Extra top padding to clear the logos.
+        padding: 9rem 4rem 2rem;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+    }
+  }
+  @include breakpoint(l) {
+    #content-body .view-fpwp-book-menu {
+      .view-header {
+        @include relative(top left);
+        height: auto;
+        width: auto;
+        overflow: initial;        
+        padding: 150px 15px 25px;
+        background: url(../images/paper-map3.png) no-repeat -300px -40px;
+        background-size: 1000px;         
+        article {
+          position: static;
+          height: auto;
+          width: 100%;
+          margin: auto;
+          max-width: 600px;
+          padding: 15px;
+          h1 {
+            max-width: 400px;
+          }
+        }
+        &:before {
+          display: none;
+        }      
+        &:after {
+          display: none;
+        }
+      }
+      .view-content {
+        position: relative;
+        .item-list {
+          padding-top: 3rem;
+        }
+      }
+    }
+  }
+  @include breakpoint(xxs) {
+    // &.not-front #main #content-body .view-fpwp-book-menu .view-header article {
+    .view-fpwp-book-menu .view-header article {
+      max-width: none;
+      padding: 2rem 1rem;
+
+      h1 {
+        font-size: rem(34);
+        &::after {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .view-fpwp-book-menu .view-content .item-list {
+      // Extra top padding to clear the logos.
+      padding: 7.5rem 1rem 2rem;
+      .views-field-field-image {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        height: inherit;
+        width: 3.75rem;
+      }
+
+      > ul > .views-row {
+        margin: 0;
+        &::after {
+          margin-left: 0;
+          padding: 0;
+        }
+
+        .views-field-field-image {
+          @include element-invisible;
+        }
+      }
+    }
+  }
+}
+
+@media (max-height: 750px) and (min-width: 999px) { 
+// workaround to stop footer floating over content on short browsers
+  .page-container[data-namespace="policy-landing"] {
+    #content-body .view-fpwp-book-menu .view-header article {
+      top: 160px;
+    }
+    .view-fpwp-book-menu .view-content .item-list {
+      margin-top: 125px;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+// .not-front.section-social #main #content-body {
+.not-front.section-social #main #content-body {
+  .field-name-field-bean-body {
+    padding: rem(20);
+    text-align: center;
+    h2 {
+      color: rgba(0, 0, 0, .8);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .01rem;
+      margin-top: 0;
+      border: 1px solid #d0d0d0;
+      padding: 2rem 1rem 1rem;
+      background: whitesmoke;
+      z-index: 10;
+      margin-top: -120px;
+      position: relative;
+      border-radius: 3px;
+      width: 120%;
+      margin-left: -10%;
+      box-sizing: border-box;
+      @include breakpoint(l) {
+          max-width: 100%;
+          margin-left: auto;
+          width: 100%;
+      }                
+
+      a {
+        position: relative;
+        display: block;
+        color: black;
+        margin: 1rem auto 2rem;
+        max-width: 330px;
+        font-size: 2.5rem;    
+        &:before {
+          content: "";
+          height: 2px;
+          background: linear-gradient(90deg, #6157e7, #e53872);
+          display: block;
+          width: 25%;
+          position: absolute;
+          bottom: -10px;
+          right: 0;
+          left: 0;
+          margin: auto;
+          transition: .3s all ease-out;      
+        }
+        &:hover {
+          text-decoration: none;
+          color: rgba($black,.8);
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+      @include breakpoint(m) {
+        max-width: 100%;
+        margin: auto;
+        width: 100%;        
+        a {
+          font-size: 1.75rem;
+        }               
+      }
+    }
+  }
+  @include breakpoint(l) {
+    box-sizing: border-box;
+    padding: 2rem 1rem;
+  }
+  @include breakpoint(xxs) {
+    h2 {
+      font-size: rem(25);
+    }
+  }
+}

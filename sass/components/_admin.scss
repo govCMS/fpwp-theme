@@ -1,0 +1,33 @@
+/**
+* @file
+* Styling for admin related ui.
+*/
+
+body.navbar-tray-open.navbar-fixed.navbar-vertical #navbar-administration.navbar-oriented {
+  z-index: 999999;
+}
+
+// adjustment to the menu to accomodate the admin menu when logged.
+.logged-in {
+  header {
+    top: rem(39);
+  }
+  #navbar-administration.navbar-oriented .navbar-bar {
+    z-index: 9999999;
+  }
+  &.navbar-horizontal.navbar-tray-open header {
+    top: rem(79);
+  }
+  .navbar-tray {
+    z-index: 999999 !important; 
+  }
+}
+.front .messages--error {
+  @include absolute(top 150px left right);
+  z-index: 9999999;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: auto;
+}

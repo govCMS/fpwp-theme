@@ -1,0 +1,163 @@
+/**
+* @file
+* White paper section slide-out manu.
+*/
+
+#slideout-menu {
+  display: none;
+}
+
+.not-front.node-type-policy.slideout-menu--show {
+  overflow-x: hidden;
+  .header-wrapper,
+  footer {
+    display: none;
+  }
+  #main #content-nav {
+    z-index: inherit;
+  }
+  #main #content-nav .page-menu.toggle-slideout-menu {
+    top: rem(64);
+    z-index: 150;
+    background: url(../images/icon-contents-close.png) no-repeat left top rgba($black, 0.7);
+    color: $white;
+    transition: .5s ease all;
+    &:hover {
+      background-color: $black;
+      transition: .3s ease all;
+    }
+    span {
+      &:before {
+        width: 0;
+        transition: .3s ease all;
+      }
+    }
+  }
+  #slideout-menu {
+    animation: fade-in .5s both;
+    background: rgba($black, .7);
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+    .slideout-menu__titles {
+      animation: fade-in 2s both;
+      color: rgba($white,.8);
+      max-width: calc(35vw - 5rem);
+      @include fixed(bottom 10vh);
+      padding: rem(80);
+    }
+    .slideout-menu__chapter {
+      @include gradient-border;
+      font-weight: $bold;
+      text-transform: uppercase;
+      &::after {
+        display: block;
+        width: rem(60);
+        margin: 2rem 0;
+        margin-left: rem(-20);
+      }
+    }
+    .view-fpwp-book-menu .view-content {
+      float: right;
+      width: 60vw;
+      transform: translateX(100%);
+      opacity: 0;
+      animation: slide-in-left-2 .7s both;
+      animation-delay: .3s; // Override slower delay
+      @include breakpoint(m) {
+        width: 80vw;
+      }
+    }
+    .view-content {
+      float: none;
+      width: 100%;
+      .item-list {
+        margin-top: 0;
+        padding-top: rem(130);
+        padding-left: rem(27);
+        li {
+          margin-left: rem(40);
+        }
+        .section-list .active,
+        .active {
+          font-weight: bold;
+        }
+        .active:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @include breakpoint(l) {
+    #main #content-nav {
+      margin: 0;
+      width: 100%;
+    }
+    #slideout-menu .view-fpwp-book-menu {
+      float: none;
+      width: 100vw;
+      .view-content .item-list {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 4rem 8rem;
+        width: auto;
+        @include breakpoint(l) {
+          padding: rem(120) rem(25) rem(80) rem(128);
+        }
+      }
+    }
+    .slideout-menu__titles {
+      display: none;
+    }
+  }
+  @include breakpoint(xxs) {
+    #main #content-nav .page-menu.toggle-slideout-menu.toggle-slideout-menu-processed {
+      width: 60px;
+      overflow: hidden;      
+    }
+    #slideout-menu {
+      .view-fpwp-book-menu {
+        float: none;
+        width: 100vw;
+        .view-content .item-list {
+          padding: 7.5rem 1rem 5rem;
+          max-width: none;
+          .views-field-field-image {
+            position: relative;
+            left: 0;
+            top: 0;
+            transform: none;
+            height: inherit;
+            width: 3.75rem;
+          }
+          > ul > .views-row {
+            margin: 0;
+            &::after {
+              margin-left: 0;
+              padding: 0;
+            }
+
+            .views-field-field-image {
+              @include element-invisible;
+            }
+          }
+        }
+      }
+      .view-content .item-list {
+        margin-top: 0;
+        li {
+          margin-left: 0;
+        }
+        // .section-list .active,
+        // .active {
+        //   &:before {
+        //     padding-right: 1.3125rem;
+        //     margin-left: 0;
+        //   }
+        // }
+      }
+    }
+  }
+}

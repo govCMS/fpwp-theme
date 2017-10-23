@@ -1,0 +1,144 @@
+// Variables
+// -----------
+// on a large project, consider making a new scss file for a
+/// grouping of variables. eg, _colors.scss, _typography.scss
+/// ===========
+
+// Fonts
+//
+
+
+// FONT FACES & STACKS
+// Serif font stacks
+$heading: 'droid-serif', Times, serif;
+$paragraph: 'Montserrat', sans-serif;
+
+//San-serif font stacks
+$sans: "sofia-pro", Arial, sans-serif;
+
+// font weights
+$bold:             700;
+$semibold:         600;
+$normal:           400;
+$light:            300;
+
+// Colors
+//
+$black:           #000;
+$white:           #fff;
+$grey-light:      #f0f0f0;
+$grey-mid-light:  #e4e4e4;
+$grey:            #717d89;
+$blue:            #003e67;
+$blue-dark:       #182537;
+$teal:            #157287;
+$teal-light:      #8fd7d3;
+$red:             #d13265;
+$yellow:          #fdb500;
+$purple:          #18133c;
+$purple-lightest: #4f4c62;
+$purple-light:    #5b4b91;
+$purple-dark:     #2c2843;
+$purple-bright:   #6c69dc;
+$purple-warm-bright: #875fbb;
+$pink:            #b13464;
+$pink-bright:     #c24076;
+
+$base-font:       $black;
+$base-color:      $black;
+$base-color-dark: $black;
+$base-outline:    #A5C7FE;
+
+/// breakpoints
+///
+/// sets the breakpoint
+/// @example
+/// .element {
+///  @include breakpoint(sm)
+/// }
+@mixin breakpoint($class) {
+  @if $class == xxxxs {
+    @media (max-width: 333px) { @content; }
+  }
+  @if $class == xxxs {
+    @media (max-width: 444px) { @content; }
+  }
+  @if $class == xxs {
+    @media (max-width: 555px) { @content; }
+  }
+  @if $class == xs {
+    @media (max-width: 666px) { @content; }
+  }
+  @else if $class == s {
+    @media (max-width: 777px) { @content; }
+  }
+  @else if $class == m {
+    @media (max-width: 888px) { @content; }
+  }
+  @else if $class == l {
+    @media (max-width: 999px) { @content; }
+  }
+  @else if $class == xl {
+    @media (max-width: 1111px) { @content; }
+  }
+  @else if $class == xxl {
+    @media (max-width: 1222px) { @content; }
+  }
+  @else if $class == xxxl {
+    @media (max-width: 1555px) { @content; }
+  }
+  @else if $class == xxxxl {
+    @media (min-width: 1223px) { @content; }
+  }
+  @else if $class == xxxxxl {
+    @media (min-width: 1500px) { @content; }
+  }
+  @else {
+    // @warn "Breakpoint mixin supports: xxxs, xxs, xs, s, m, l, xl, xxl, xxxl";
+  }
+}
+
+// Output media queries where the above px are converted to ems.
+// @include breakpoint-set('to ems', true);
+
+
+// Zen grids
+//
+// The default grid system is built using the Zen Grids sass module. Full
+// documentation is available on the [Zen Grids website](http://zengrids.com/).
+//
+// Note: if you are more comfortable using another grid system, you can easily
+// remove Zen Grids and its layouts.
+//
+// Style guide: sass.variables.zen-grids
+
+// Enable grid background during development
+$display-zen-grid-background: false;
+// $zen-grid-color: #ffdede;
+
+// These are needed for all breakpoints on all layouts.
+$zen-auto-include-grid-item-base: false;
+$zen-box-sizing: universal-border-box;
+
+// First we set the values we need for the mobile version of our layouts (the
+// version that does _not_ appear inside any @media queries.)
+$zen-columns: 1;
+$zen-gutters: 20px;
+
+// Then we set the values we need for each of the layouts at larger media query
+// sizes. Note how the names of the layouts match the names of our breakpoints
+// above. That allows a single zen-respond-to() to both use the proper item
+// from $zen-layouts and from $breakpoints.
+$zen-layouts: (
+  m: (
+    columns: 2,
+    gutters: 20px,
+  ),
+  xl: (
+    columns: 12,
+    gutters: 20px,
+  )
+);
+
+// See $include-rtl below.
+$zen-rtl-selector: '[dir="rtl"]';

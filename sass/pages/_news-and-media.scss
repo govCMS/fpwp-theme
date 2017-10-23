@@ -1,0 +1,193 @@
+/* News and media section landing page. */
+
+//.page-news-media.section-news-media #main #content-body h2:before {
+.page-news-media.section-news-media #main #content-body h2:before {
+  height: 2px;
+  background: linear-gradient(90deg, #6157e7, #e53872);
+  display: inline-block;
+  margin-left: 2rem;
+  vertical-align: middle;
+  width: 3.75rem;      
+}
+
+//.page-news-media.section-news-media #main #content-body {
+.page-news-media.section-news-media #main #content-body {
+  background: $grey-light;
+  h2 {
+    margin-bottom: rem(20);
+    position: relative;    
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .view-content li {
+    margin-bottom: rem(15);
+    a {
+      background: $white;
+      border-radius: rem(2);
+      border: 1px solid $grey-mid-light;                  
+      color: $purple-lightest;
+      transition: .2s ease-out all;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.1);
+        .group-left img {
+          transition: .5s ease-out all;
+          opacity: .8;
+          -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+        }       
+      }
+      &:visited {
+        color: $purple-light;
+      }
+    }
+  }
+  #block-views-news-media-block-media-releases,
+  #block-views-news-media-block-speeches,
+  #block-views-news-media-block-news,
+  #block-views-news-media-block-videos,
+  #block-views-news-media-block-1 {
+    position: relative;
+    margin-top: rem(100);
+  }
+  .node-media-release.node-teaser.view-mode-teaser {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+  }
+  .group-left,
+  .group-right {
+    vertical-align: top;
+    display: inline-block;
+    float: none;
+  }
+  .group-left {
+    background: #6855e1;
+    margin: 0 25px 0 0;
+    width: 35%;
+    overflow: hidden;
+    position: relative;
+    img {
+      transition: .5s ease-out all;
+      display: block;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      max-width: none;
+      @include absolute(top 50% left 50%);
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);   
+    }
+    @include breakpoint(xs) {
+      margin: auto;
+      width: 100%;      
+      //display: block;
+      //min-width: 100%;
+      //min-height: 100%;
+      img {
+        // width: 100%;
+        // max-width: none;
+        // margin: auto;
+        // @include relative(top left);
+        // transform: none;
+      }       
+    }       
+  }
+  .group-right {
+    width: 60%;
+    padding: rem(15);
+    box-sizing: border-box;
+    //margin-left: 40%;    
+    h3 {
+      margin-top: 0;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    .intro-text {
+      font-size: rem(16);
+    }
+  }
+  .more-link {
+    @include absolute(top 7px right);
+    display: block;
+    @include breakpoint(s) {
+      position: static;
+    }
+    a {
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, .3);
+      border-radius: 50px;
+      font-family: $sans;
+      font-size: rem(13);
+      font-weight: $semibold;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 1rem 1.3rem;
+      color: black;
+      transition: .2s ease-out all;
+      &:hover,
+      &:focus {
+        // text-decoration: none;
+        // background: $white;
+        // box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.3);
+        // transform: translate(-5px);
+        text-decoration: none;
+        background: white;
+        border: 1px solid white;
+        box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.1);                        
+      }
+    }
+  }
+  .pager-item a {
+    color: $purple-light;
+  }
+  .pager-next a,
+  .pager-previous a,
+  .pager-first a,
+  .pager-last a {
+    color: $purple-dark;
+  }  
+  @include breakpoint(l) {
+    box-sizing: border-box;
+    padding: 2rem 1rem;
+    li {
+      min-height: 100px;
+    }
+  }
+  @include breakpoint(xs) {
+    .block-views {
+      margin-bottom: rem(50);
+    }
+    .group-left,
+    .group-right {
+      display: block;
+      float: none;
+      width: 100%;
+    }
+    .field-name-field-image {
+      min-height: inherit;
+      height: 200px;
+    }
+  }
+  @include breakpoint(xxs) {
+    h2,
+    h3 {
+      font-size: rem(25);
+    }
+    .more-link a {
+      display: block;
+    }
+  }
+}
+//.page-news-media.section-news-media #main {
+.page-news-media.section-news-media #main {
+  background: $grey-light;
+}

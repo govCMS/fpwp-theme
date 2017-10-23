@@ -1,0 +1,20 @@
+/// Box Shadow
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [5px] - Blur
+/// @param {Color} $color [rgba($black,.4)] - Color
+/// @param {Boolean} $inset - Inset
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba($black,.4), $inset: "") {
+  @if ($inset != "") {
+    box-shadow: $inset $x $y $blur $color;
+  } @else {
+    box-shadow: $x $y $blur $color;
+  }
+}
+
+@mixin box-shadow-media {
+  border-radius: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0px 50px 90px -40px #00050c;
+}

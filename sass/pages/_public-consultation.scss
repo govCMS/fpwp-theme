@@ -1,0 +1,82 @@
+//.not-front.section-submissions #main #content-body {
+.not-front.section-public-consultations #main {
+  display: block;
+  #content-body {
+    #block-bean-submissions-intro {
+      @include gradient-border;
+      &:after {
+        width: 100%;
+        margin: 0;
+      }
+    }
+    .view-id-public_consultation_submissions {
+      li {
+        margin: rem(15) 0 0 0;
+        padding: 0 rem(10) 0 0;
+      }
+      .view-content {
+        column-count: 2;
+        column-width: 300px;
+        h3 {
+          margin-top: rem(50);
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        a {
+          color: $purple-light;
+        }
+        ul {
+          margin-bottom: rem(44);
+        }
+      }
+      .block-views {
+        clear: both;
+      }
+    }
+    .last.even {
+      @include gradient-border;
+      margin-top: rem(16);
+      &:after {
+        width: 100%;
+        margin: 0;
+      }
+      .view-content:nth-of-type(1) {
+        column-count: 1;
+        column-width: auto;
+      }
+    }
+    .region-content-bottom .content {
+      column-count: 2;
+      column-width: 300px;
+      margin-top: rem(50);
+      h3:first-child {
+        margin-top: 0;
+      }
+    }
+    @include breakpoint(l) {
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      .region-content-bottom .content {
+        column-count: 1;
+        column-width: auto;
+      }
+    }
+    @include breakpoint(xxs) {
+      padding: 0 1rem;
+      .last,
+      .region-content-bottom .content {
+        margin-top: 0;
+      }
+      .region-content-bottom .content h3:first-child {
+        margin-top: rem(22);
+      }
+      h2 {
+        font-size: rem(25);
+      }
+      .last.odd h3 {
+        font-size: rem(20);
+      }
+    }
+  }
+}

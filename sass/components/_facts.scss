@@ -1,0 +1,258 @@
+#block-views-fact-block-1 {
+  h2.block-title {
+    color: rgba($white,.9);
+    font-size: rem(16);
+    text-transform: uppercase;
+    // letter-spacing: 0.02rem;
+  }
+  // @include zen-grid-item(10, 2);
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+  max-width: 1100px;
+  @include clearfix;
+
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      margin: 0 1%;
+      &:nth-child(1),
+      &:nth-child(4), {
+        margin-left: 0;
+      }
+      &:nth-child(3),
+      &:nth-child(6), {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .view-mode-fact_1,
+  .view-mode-fact_2,
+  .view-mode-fact_3 {
+    font-family: $sans;
+    margin: 1rem 0 1rem 0;
+    background-color: $white;
+    border: none;
+    border-radius: rem(4);
+    padding: 1rem 1rem 4rem 1rem;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+
+    span {
+      margin: 0 0 rem(10);
+    }
+
+    p {
+      font-size: rem(26);
+      font-family: $sans;
+      font-weight: 600;
+      color: $purple-bright;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 0;
+    }
+
+    .field-name-fact-fact .fact__stat {
+      color: $purple-warm-bright;
+      font-family: $sans;
+      font-size: rem(64);
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .field-name-field-fact-source {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: rem(100);
+      font-size: rem(12);
+      color: $grey;
+      line-height: 1;
+      display: inline;
+      .field-label,
+      .field-items,
+      .field-item {
+        display: inline;
+        font-weight: 300;
+        float: none;
+      }
+    }
+    .field-name-share-fact,
+    .field-name-share-chart {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+  .view-mode-fact_1 {
+    width: calc(27% - 2rem);
+  }
+  .view-mode-fact_2,
+  .view-mode-fact_3 {
+    width: calc(40% - 2rem);
+
+    .field-name-fact-fact .fact__stat {
+      font-size: rem(100);
+    }
+  }
+
+  li:nth-child(1) .view-mode-fact_1 {
+    background-color: $pink-bright;
+    .fact__stat,
+    .fact__desc,
+    .field-name-field-fact-source,
+    .field-name-share-fact a.addthis_button_compact {
+      color: $white;
+    }
+    .field-name-share-fact svg .st0 {
+      fill: $white;
+    }
+  }
+  li:nth-child(2) .view-mode-fact_1 {
+    .fact__stat {
+      background: -webkit-linear-gradient(left, $purple-bright, $pink-bright);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  li:nth-child(6) .view-mode-fact_1 {
+    background-color: $purple-warm-bright;
+    .fact__stat,
+    .fact__desc,
+    .field-name-field-fact-source,
+    .field-name-share-fact a.addthis_button_compact {
+      color: $white;
+    }
+    .field-name-share-fact svg .st0 {
+      fill: $white;
+    }
+  }
+
+  li:nth-child(4) .view-mode-fact_2 {
+    background-color: $purple-bright;
+    .fact__stat {
+      color: $blue-dark;
+    }
+    .fact__desc,
+    .field-name-field-fact-source,
+    .field-name-share-fact a.addthis_button_compact {
+      color: $white;
+    }
+    .field-name-share-fact svg .st0 {
+      fill: $white;
+    }
+  }
+
+  .view-mode-fact_3 {
+    .field-name-field-fact-image {
+      display: inline-block;
+      height: auto;
+      width: 140px;
+      vertical-align: top;
+    }
+    .field-name-fact-fact {
+      padding-left: rem(25);
+      box-sizing: border-box;
+      display: inline-block;
+      width: calc(100% - 150px);
+    }
+    @include breakpoint(xxs) {
+      .field-name-field-fact-image {
+        width: 100%;
+        display: block;
+        img {
+          max-width: 100px;
+          margin: auto;
+          display: block;
+        }
+      }
+      .field-name-fact-fact {
+        width: 100%;
+        padding: 0;
+      }
+    }    
+  }
+
+  .view-mode-fact_3[about="/1st-australias-global-ranking-well-being"],
+  .view-mode-fact_3[about="/117-australian-embassies-high-commissions-and-consulates-around-world"] {
+    background-color: $blue-dark;
+    .fact__desc {
+      color: $grey;
+    }
+    .field-name-field-fact-source,
+    .field-name-share-fact a.addthis_button_compact {
+      color: $white;
+    }
+    .field-name-share-fact svg .st0 {
+      fill: $white;
+    }
+  }
+
+  @include breakpoint(l) {
+    ul li {
+      &:nth-child(1),
+      &:nth-child(3),
+      &:nth-child(5) {
+        margin: 0 1% 0 0;
+      }
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(6) {
+        margin: 0 0 0 1%;
+        margin-right: 0;
+      }
+      .view-mode-fact_1,
+      .view-mode-fact_2,
+      .view-mode-fact_3 {
+        margin: 1rem 0 0;
+        p {
+          font-size: rem(20);
+        }
+      }
+    }
+
+    .view-mode-fact_1 {
+      width: calc(48.5% - 2rem);
+      .field-name-fact-fact .fact__stat {
+        font-size: rem(40);
+      }
+    }
+    .view-mode-fact_2,
+    .view-mode-fact_3 {
+      // width: calc(100% - 2rem);
+      width: calc(48.5% - 2rem);
+      .field-name-fact-fact .fact__stat {
+        font-size: rem(80);
+      }
+    }
+  }
+  @include breakpoint(s) {
+    ul li {
+      .view-mode-fact_2,
+      .view-mode-fact_3 {
+        width: calc(100% - 2rem);
+      }
+      &:nth-child(3),
+      &:nth-child(4) {
+        margin: 0;
+      }
+    }
+  }
+  @include breakpoint(xxs) {
+    ul li {
+      margin: 0;
+      p {
+        text-align: center;
+      }      
+    }
+
+    .view-mode-fact_1,
+    .view-mode-fact_2,
+    .view-mode-fact_3 {
+      width: calc(100% - 2rem);
+    }
+  }
+}

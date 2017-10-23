@@ -1,0 +1,34 @@
+/**
+ * @front
+ * Layout styling for home page.
+ */
+// .front {
+.page-container[data-namespace="front"] {
+  #main {
+    padding-top: 0;
+  }
+  .region {
+    @include clearfix;
+  }
+  .region:not(.region-navigation) {
+    clear: both;
+    float: left;
+    width: 100%;
+    //padding: rem(50) 0;
+  }
+  .region-inner {
+    @include clearfix;
+    padding: rem(100) 2rem;
+  }
+  #page {
+    max-width: none;
+  }
+  @include breakpoint(xxs) {
+    .region:not(.region-navigation) {
+      padding: rem(25) 0;
+    }
+    .region-inner {
+      padding: 0 1rem;
+    }
+  }
+}

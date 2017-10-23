@@ -1,0 +1,6 @@
+# Ignore unwanted CSS generation files.
+.sass-cache
+
+# Ignore system files.
+*.DS_Store
+

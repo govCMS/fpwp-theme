@@ -1,0 +1,248 @@
+// Inline link wysiwyg style.
+article p a:not(.button) {
+  color: $base-color-dark;
+  border-bottom: 2px solid $base-color;
+
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: lighten($base-color, 30%);
+    border-bottom: 2px solid lighten($base-color, 30%);
+  }
+}
+
+// Blockquote wysiwyg style.
+blockquote {
+  margin-left: -10%;
+  p {
+    color: $purple-dark;
+    display: inline;
+    font-family: $sans;
+    font-size: rem(24);
+    font-weight: $semibold;
+    font-style: italic;
+    &:before {
+      content: open-quote;
+    }
+    &:after {
+      content: close-quote;
+    }
+  }
+  &:after {
+    content: url('../images/icon-square.png');
+    height: rem(12);
+    width: rem(12);
+    display: inline-block;
+    margin-left: rem(5);
+  }
+}
+// Make sure it doesn't flow out of the text editor.
+.cke_editable blockquote {
+  margin-left: 0;
+}
+
+//Highlight box wysiwyg style.
+.highlight-box {
+  background: #e3e4e5;
+  margin: 3rem -10%;
+  padding: 5rem 3rem 3rem;
+  position: relative;
+  max-width: 120%;
+  margin-left: -10%;
+  width: 120%;
+  box-sizing: border-box;
+  @include breakpoint(m) {
+      max-width: 100%;
+      margin: auto;
+      width: calc(100% - .75rem);
+  }
+
+  &::after {
+    content: "HIGHLIGHT";
+    font-family: $sans;
+    font-size: rem(12);
+    color: $white;
+    border-radius: 3px;
+    display: block;
+    height: 1.5rem;
+    width: 4.5rem;
+    position: absolute;
+    text-align: center;
+    line-height: 1.5rem;
+    top: 1rem;
+    left: -.75rem;
+    background: linear-gradient(90deg, #6157e7, #e53872);
+  }
+
+  &::before {
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-top: 50px solid #fff;
+    border-left: 60px solid $purple-light;
+    box-shadow: 5px -5px 0 5px white, -4px 4px 15px rgba(0, 0, 0, 0.3);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+// Make sure it doesn't flow out of the text editor.
+.cke_editable blockquote {
+  margin-left: 0;
+}
+
+// Media element within basic page, contains image + any caption.
+.media-element-container {
+  position: relative;
+  margin: rem(50) auto;
+  margin-left: -10%;
+
+  &.media-full_width {
+    max-width: 120%;
+    width: 120%;
+    @include breakpoint(m) {
+      max-width: 100%;
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  &.media-portrait_left {
+    float: left;
+    margin-right: rem(50);
+    max-width: auto;
+    width: auto;
+
+    .field-name-field-image-caption {
+      // Margins don't collapse when floating and the media wrapper already has
+      // a bottom margin, so we don't need another one.
+      margin-bottom: 0;
+    }
+  }
+
+  .field-name-field-image-caption {
+    color: rgba($purple,.5);
+    font-family: $sans;
+    font-size: rem(12);
+    margin-bottom: rem(44);
+    .field-label {
+      font-size: rem(14);
+      margin-bottom: rem(1);
+      line-height: rem(20);
+      font-style: normal;
+      font-weight: 400;
+    }
+    .field-item {
+      font-size: rem(12);
+      line-height: rem(16);
+      font-style: normal;
+      font-weight: 300;
+    }
+  }
+
+  a {
+    @extend %inline-link;
+    padding-left: .5rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+  img {
+    margin: 0;
+    border: 1px solid #e6e6e6;
+  }
+  .file-icon {
+    margin: 0;
+  }
+}
+// Make sure it doesn't flow out of the text editor.
+.cke_editable .media-element-container {
+  margin-left: 0;
+}
+
+article .video-filter:first-child {
+  margin: rem(50) 0;
+}
+
+//styling for lists contained within an article only
+article {
+  ul, ol {
+    list-style-type: none;
+    padding: 0 0 0 30px;
+
+    > li li:before {
+      content: '';
+    }
+  }
+
+  ul  {
+    & ul {
+      list-style-type: circle;
+    }
+    & ul ul {
+      list-style: disc;
+    }
+
+    > li:before {
+      content: ">";
+      display: inline-block;
+      margin-left: -30px;
+      text-align: center;
+      width: 30px;
+    }
+  }
+
+  ol {
+    & ol {
+      list-style-type: lower-alpha;
+    }
+    & ol ol {
+      list-style: disc;
+    }
+    > li {
+      counter-increment: item;
+
+      &::before {
+        display: inline-block;
+        width: 30px;
+        margin-left: -30px;
+        font-weight: bold;
+        text-align: center;
+        content: counter(item);
+      }
+    }
+  }
+}
+
+table {
+  border: 0;
+  font-family: $sans;
+  font-size: rem(14);
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+
+  tr {
+    border-bottom: 1px solid #dbdbdb; // TODO: change to color variable
+  }
+
+  th,
+  td {
+    border: 0;
+    padding: .5rem 1rem;
+  }
+
+  tbody th {
+    font-weight: 400;
+  }
+}
+
+.intro-text {
+  font-size: rem(20);
+  line-height: 1.5;
+}

@@ -1,0 +1,31 @@
+/// Trans-prep
+///
+/// Prepares for transforms. Gives backface-visibility: hidden
+/// to remove flickering effect on Webkit browsers
+/// @link http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
+
+@mixin trans-prep {
+  // backface visibility
+  backface-visibility: hidden;
+}
+
+@mixin transition-timing-ease-in {
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+@mixin transition-timing-cubic-bezier {
+  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+@mixin transition-duration {
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}

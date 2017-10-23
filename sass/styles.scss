@@ -1,0 +1,98 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+// Import Sass mixins, variables, Compass modules, etc.
+@import "init";
+
+// Utilities and variables
+// -------
+@import "utils/variables";
+@import "utils/mixins/position-offset";
+@import "utils/mixins/arrows";
+@import "utils/mixins/box-shadow";
+@import "utils/mixins/buttons";
+@import "utils/mixins/clearfix";
+@import "utils/mixins/content-body-shadows";
+@import "utils/mixins/font-sizing";
+@import "utils/mixins/font-smoothing";
+@import "utils/mixins/form-input";
+@import "utils/mixins/opacity";
+@import "utils/mixins/pixelstorem";
+@import "utils/mixins/placeholder-text";
+@import "utils/mixins/left-border-decoration";
+@import "utils/mixins/right-border-decoration";
+@import "utils/mixins/text-overflow";
+@import "utils/mixins/transitions";
+@import "utils/mixins/triangle";
+@import "utils/mixins/vertical-align";
+@import "utils/mixins/visually-hidden";
+@import "utils/functions";
+
+// Vendors
+// ---------
+@import "vendors/vendors";
+
+// HTML element (SMACSS base) rules
+@import "normalize-rtl.scss";
+@import "normalize.scss";
+
+// Layout rules
+// ---------
+@import "layouts/content-layout";
+@import "layouts/responsive";
+@import "layouts/front";
+
+// Reset and base files
+// --------------------
+@import "base/reset";
+@import "base/typography";
+@import "base/links";
+@import "base/wysiwyg-styles";
+
+// Component (SMACSS module) rules
+// ---------
+@import "components/facts";
+@import "components/featured-stories";
+@import "components/iframe";
+@import "components/maps";
+@import "components/misc";
+@import "components/news-media";
+@import "components/footer";
+@import "components/navigation-mobile";
+@import "components/navigation";
+@import "components/animations/wp-animation";
+@import "components/landing-blocks";
+//@import "components/animations/front-temp";
+@import "components/charts";
+@import "components/slideout-menu";
+@import "components/admin";
+@import "components/share";
+
+// Pages
+// ---------
+@import "pages/case-study";
+@import "pages/content-page";
+@import "pages/foreign-policy";
+@import "pages/home";
+@import "pages/topic";
+@import "pages/basic-page";
+@import "pages/search";
+@import "pages/wp-content";
+@import "pages/wp-landing";
+@import "pages/news-and-media";
+@import "pages/news-and-media-content";
+@import "pages/public-consultation";
+@import "pages/social-media";
+
+// Optionally, add your own components here
+// ---------
+@import "print";
+
+// SMACSS theme rules
+// @import "theme-A";
+// @import "theme-B";

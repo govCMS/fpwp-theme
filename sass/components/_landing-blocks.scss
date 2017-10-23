@@ -1,0 +1,349 @@
+// Copy of landing-block.scss
+// Read the WP and FP in practice boxes.
+.page-container[data-namespace="front"] .region.region-home-row-1 {
+  min-height: 850px;
+  padding: 0;
+  box-sizing: border-box;
+  .contextual-links-region {
+    min-height: 850px;
+    @include absolute(top);
+    width: 50%;
+    .contextual-links-wrapper {
+      top: rem(150);
+    }
+    .bean-basic {
+      transition: .6s ease all;
+      text-align: center;      
+      width: 100%;
+      padding: 0 2rem;
+      box-sizing: border-box;
+      .content {        
+        position: relative;
+        z-index: 20;
+        max-width: 38rem;
+        margin: auto;
+      }
+    }
+    h2 {
+      @include right-border-decoration;
+      font-family: $heading;
+      &::after {
+        display: block;
+        margin: 2.9rem auto 2.5rem auto;
+        width: 5.5rem;
+      }
+    }
+    a.button {
+      @extend %button--feature;
+      @include button-box-shadow;
+      display: inline-block;
+      min-width: 100px;
+    }
+  }
+}
+
+#block-bean-read-the-white-paper {
+  transition: .6s ease all;
+  -webkit-transform: scaleX(1) translateX(0%) translate3d(0, 0, 0);
+  transform: scaleX(1) translateX(0%) translate3d(0, 0, 0); 
+  left: 0;
+  width: 50%;
+  height: 850px;
+  background: white;
+  z-index: 20; // make the paper container sit on top of the learn container
+  a:nth-of-type(2) {
+    @extend %inline-link;
+    padding-left: 10%;
+    display: inline-block;    
+  }
+    .bean-basic {
+      @include absolute(top 210px left 0);
+    }
+    .year {
+      display: block;
+      color: #717d89;
+      font-family: "sofia-pro", Arial, sans-serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0;
+    }
+}
+
+#block-bean-read-the-white-paper,
+.page-container[data-namespace="policy-landing"] #content-body .view-fpwp-book-menu .view-header {
+  transition: all .6s ease;
+  &::before {
+    transition: transform .6s ease;
+    -webkit-transform: scaleX(1) translateX(0%) skewX(0deg) translateZ(0) translate3d(0, 0, 0);
+    transform: scaleX(1) translateX(0%) skewX(0deg) translateZ(0) translate3d(0, 0, 0); 
+    background: white;
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    @include absolute(top left);   
+  }
+  &::after {
+    transition: transform .6s ease;
+    -webkit-transform: scale(1) translateX(0) translateZ(0) translate3d(0, 0, 0);
+    transform: scale(1) translateX(0) translateZ(0) translate3d(0, 0, 0); // translateZ to force layer creation, prime for animation
+    background: url("../images/paper-map3.png") no-repeat;
+    background-position: right;
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    @include absolute(top left);    
+    max-height: 800px; 
+  }
+  .bean-basic {
+    transition: transform .6s ease;
+    transform: translateX(0);
+    z-index: 1;
+    // position: relative;
+  }
+}
+
+#block-bean-foreign-policy-in-practice {
+  transition: .6s ease all;
+  right: 0%;
+  width: 100%;
+  height: 850px;
+  background-color: #384291;
+  color: $white;
+  overflow: hidden;
+  .bean-basic {
+    @include absolute(top 260px right 0);
+    width: 50%;    
+    h2 {
+      @include right-border-decoration;
+      &::after {
+        border-bottom: 1px solid white;
+        display: block;
+        margin: 2.9rem auto 2.5rem auto;
+        width: 5.5rem;
+      }
+    }
+    p {
+      margin-top: rem(30);
+    }
+  }  
+  &:before {
+    @include absolute(top right);
+    display: block;
+    min-width: 70vw;
+    min-height: 75vh;
+    content: " ";
+    background: url(/sites/all/themes/fpwp/images/banner-learn.jpg) top right no-repeat;
+    background-size: cover;
+    opacity: .7;
+    -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+    transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+    z-index: 5;
+    transition: transform .6s ease;
+    @include breakpoint(l) {
+      opacity: .5;
+    }    
+  }
+  &:after {
+    @include absolute(top right);
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background-image: url(/sites/all/themes/fpwp/images/learn-grad.png);
+    background-size: 100vw 100vh;
+    background-position: top right;
+    transform: scale(1);
+    z-index: 10;       
+  }   
+}
+
+/* ---------------- !
+   Hover animations 
+! ----------------- */
+@media (min-width: 888px) {
+  .hover-left #block-bean-read-the-white-paper {
+    &:before {
+      transform: scaleX(1.2) translateX(-5%) skewX(-2.5deg);
+      transition: transform .6s ease;
+    }
+    &:after {
+      transform: scale(1.1) translateX(0);
+      transition: transform .6s ease;
+    }
+  }
+
+  .hover-right {
+    #block-bean-read-the-white-paper {      
+      transform: translateX(-10%);
+      transition: transform .6s ease;
+      .bean-basic {
+        transition: transform .6s ease;
+        transform: translateX(10%);
+      }
+      &:after {
+        transition: transform .6s ease;
+        transform: translateX(10%);
+      }   
+      &:before {
+        transition: transform .6s ease;
+        transform: scaleX(1.2) translateX(-5%) skewX(2.5deg);      
+      }    
+    }
+    #block-bean-foreign-policy-in-practice {
+      &:before {
+        transition: transform .6s ease;      
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+/* --------- !
+  Responsive 
+! --------- */
+
+// Ensure homepage background image and page background are identical
+.page-container[data-namespace="case-landing"] #content-header .field-name-field-image {
+  // @include absolute(top right);
+  img {
+    display: none;
+  }
+}
+
+
+// Workaround for issues with small viewport height
+@media (max-height: 850px) {
+  #block-bean-foreign-policy-in-practice:before {
+    min-height: 850px;
+  }
+  #block-bean-foreign-policy-in-practice:after {
+    background-size: 100% 850px; // No smaller than the height of the box on the homepage
+  }
+}
+
+// .page-container[data-namespace="policy-landing"] #view-header:before,
+.page-container[data-namespace="case-landing"] #main:before {
+  transform: scale(1.2);
+  background-position: fixed;
+}
+.page-container[data-namespace="front"] #main {
+  overflow: hidden;
+}
+.page-container[data-namespace="case-landing"] {
+  #content {
+    z-index: 30;
+  }
+  #main {
+    overflow: hidden;
+    &:before {
+      position: fixed;
+    }
+    &:after {
+      position: fixed;
+    }
+  }
+  #footer {
+    z-index: 15;
+  }
+}
+
+.page-container[data-namespace="front"] .region.region-home-row-1 {
+  @include breakpoint(m) {
+    min-height: inherit;
+    .region-inner {
+      padding: 0;
+    }
+    .contextual-links-region {
+      min-height: inherit;
+      position: relative;
+      float: left;
+      width: 100%;
+      padding: 0;
+      &#block-bean-read-the-white-paper,
+      &#block-bean-foreign-policy-in-practice {
+        .bean-basic {
+          text-align: center;
+          padding: 2rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          z-index: 11;
+        }
+      }
+      &#block-bean-read-the-white-paper {
+        background: url(../images/paper-map.jpg) bottom 53% left 44% no-repeat;
+        background-size: cover;
+        padding-top: rem(130);
+        position: relative;
+        height: 425px;
+        width: 100%;        
+
+        &:before {
+          display: none;
+        }
+        &:after {
+          background: rgba($white, .5);
+          height: 100%;
+          width: 100%;          
+          content: "";
+          display: block;
+          @include absolute(top left);
+          z-index: -1;
+        }
+
+        .bean-basic {
+          padding: 8.125rem 2rem 2rem;
+        }
+      }
+      &#block-bean-foreign-policy-in-practice {
+        height: 555px;
+        &:before {
+          background: url(/sites/all/themes/fpwp/images/banner-learn.jpg) top left 75% no-repeat;
+          z-index: 0;
+          min-width: 100vw;
+        }
+        &:after {
+        	background-size: cover;
+        }
+      }
+    }
+  }
+  @include breakpoint(xs) {
+    .contextual-links-region#block-bean-read-the-white-paper,
+    .contextual-links-region#block-bean-foreign-policy-in-practice {
+      width: 100%;
+      position: static;
+      height: 300px;
+      overflow: hidden;
+    }
+    .contextual-links-region#block-bean-foreign-policy-in-practice:before {
+      opacity: .3;
+      background-size: 100%;
+    }
+  }
+  @include breakpoint(xxxs) {
+    .contextual-links-region {
+      width: 100%;      
+      h3 {
+        font-size: rem(15);
+        margin-bottom: 2rem;
+        &::before {
+          display: block;
+          margin: 2rem 0;
+        }
+      }
+
+      &#block-bean-read-the-white-paper {
+        a:nth-of-type(2) {
+          padding-top: 2rem !important;
+          display: block;
+        }
+      }
+    }
+  }
+}

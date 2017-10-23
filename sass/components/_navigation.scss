@@ -1,0 +1,498 @@
+header.header {
+  @include absolute(left top);
+  width: 100%;
+  z-index: 10000;
+  transition: all ease-out 200ms;
+  .header-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+  }
+  .header__name-and-slogan {
+    clear: both;
+    float: left;
+    a {
+      // @include hide-text;
+      // @include transition-duration;
+      // removed to let outline be visible with keyboard only nav...
+      font-size: 0;
+      z-index: 21;
+      position: relative;
+      background-size: cover;
+      border-bottom: none;
+      display: block;
+      width: 285px;
+      height: 110px;
+    }
+  }
+
+  // Navigation menu items.
+  #navigation {
+    position: relative;
+    .sf-item-1.sf-depth-1 a,
+    .sf-item-2.sf-depth-1 a {
+      border-bottom: none;
+      color: $white;
+      font-family: $sans;
+      font-weight: $light;
+      font-size: rem(16);
+      padding: rem(11) 0;
+      position: relative;
+      letter-spacing: 0.025rem;
+      &:before {
+        content: "";
+        @include absolute(bottom left);
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        visibility: hidden;
+        @include transform(scaleX(0));
+        @include transition(all 0.3s ease-out 0s);
+      }
+      &:hover {
+        outline: 0;
+        text-decoration: none;
+      }
+      &:hover:before,      
+      &.active:before {        
+        visibility: visible;
+        @include transform(scaleX(1));
+      }
+    }
+    .region-navigation .menu a,
+    .region-mobile-nav .menu a {
+        border-bottom: none;
+        color: $white;
+        font-family: $sans;
+        font-weight: $semibold;
+        font-size: rem(16);
+        padding: rem(11);
+    }
+
+    //Desktop navigation.
+    .region-navigation {
+      @include clearfix;
+      float: right;
+      position: relative;
+      width: rem(500);
+      #block-superfish-1 {
+        top: 0;
+        float: left;
+        padding: 3px; // workaround to show outline on focus
+      }
+      @include breakpoint(xl) {
+        @include element-invisible;
+      }
+    }
+
+    //Mobile navigation.
+    .region-mobile-nav {
+      display: none;
+      @include breakpoint(xl) {
+        display: block;
+
+
+        > .content-wrapper {
+          background: linear-gradient(60deg, #000000 20%, #141921);
+          box-shadow: 0px 27px 69px -15px rgba(black, .5);
+          @include absolute(top left right);
+          text-align: left;
+          margin: auto;
+          max-height: 100vh;
+          width: 100%;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 150px 60px 40px;
+          transform: translateY(-100%);
+          opacity: 0;
+          transition: transform .3s ease, opacity .6s ease;
+          z-index: 25;
+          &:after {
+            display: block;
+            @include absolute(top 2rem left 2rem);
+            content: " ";
+            width: 285px;
+            height: 110px;
+            background: url('../images/site-logo-rev.png') no-repeat;
+            background-size: contain;
+            @include breakpoint(xxs) {
+              width: 250px;
+              height: 65px;
+            }
+          }
+
+          .block-search-api-page .toggle-wrapper,
+          .search-block-form--show {
+            @include element-invisible;
+          }
+
+          .form-type-textfield {
+            display: inline-block;
+            width: 100%;
+          }
+
+          .menu {
+            padding-bottom: 1rem;
+            text-align: center;
+            li {
+              float: none;
+              padding: 10px;
+              display: inline-block;
+              &:first-of-type {
+                @include gradient-border;
+                &:after {
+                  background: #737373;
+                  width: 1px;
+                  height: 35px;
+                }
+              }
+            }
+
+            a {
+              color: white;
+            }
+          }
+          .search-form-widget {
+            position: relative;
+            label.element-invisible,
+            input[type=text] {
+              width: 100%;
+            }
+          }
+
+          input[type=text] {
+            font-family: $sans;
+            border: transparent;
+            color: white;
+            background: transparent;
+            border: 1px solid #737373;
+            height: rem(45);
+            padding: 15px 45px 15px 15px;
+            &:focus {
+              background: #292929;
+              border-color: #292929;
+              text-align: left;
+            }
+          }
+          input[type=submit] {
+            background: url(../images/icon-search.png) no-repeat center;
+            @include absolute(top 0 right 0);
+            width: 45px;
+            padding: 0;
+            height: 45px;
+            border: 0;
+            @include  hide-text;
+            transition: .2s ease-out all;
+            &:hover {
+              background-color: lighten( $black, 70% );
+              text-decoration: none;
+            }
+          }
+        }
+
+        .toggle-wrapper .toggle-mobile {
+          background: url('../images/icon-hamburger.jpg') no-repeat center center;
+          height: rem(60);
+          width: rem(60);
+          position: absolute;
+          top: 2rem;
+          right: 0;
+          z-index: 9999;
+          transition: .2s ease-out opacity;
+          &:hover {
+            opacity: .75;
+          }
+        }
+      }
+    }
+
+    .search-form-widget .form-item {
+      margin: 0;
+    }
+    .logged-in {
+      header {
+        margin-top: rem(74);
+      }
+      #main {
+        margin-top: rem(120);
+      }
+    }
+
+    @include breakpoint(xxxs) {
+      .region-mobile-nav > .content-wrapper {
+        .search-form-widget .form-type-textfield {
+          float: none;
+          margin-bottom: 1rem;
+          width: 100%;
+
+          input[type=text] {
+            padding: 5px 40px 5px 5px;
+            box-sizing: border-box;
+            text-align: left;
+            transition: .3s ease-out all;
+          }
+        }
+        input[type=submit] {
+          float: none;
+        }
+      }
+    }
+  }
+
+  #block-search-api-page-default-search {
+    height: rem(25);
+    border-left: 1px solid rgba( $white, 0.5 );
+    float: right;
+    margin-left: rem(9);
+    padding: rem(11) rem(11) rem(11) rem(18);
+    .content-wrapper {
+      display: block;
+      visibility: hidden;
+      form {
+        width: 0;
+        transition: all 0.23s ease-out;
+        -webkit-transition: all 0.23s ease-out;
+        -moz-transition: all 0.23s ease-out;
+        position: absolute;
+        top: rem(-29);
+        right: 0;
+      }
+    }
+  }
+  .toggle-wrapper a:first-of-type {
+    @include hide-text;
+    background-image: url('../images/icon-search.png');
+    background-repeat: no-repeat;
+    border-bottom: none;
+    display: block;
+    overflow: hidden;
+    height: 22px;
+    width: 15px;
+    &:active {
+      outline: none;
+    }    
+  }
+  @include breakpoint(xl) {
+    .header-wrapper {
+      padding: 0;
+      .header__name-and-slogan {
+        padding: 2rem 2rem 0;
+      }
+    }
+  }
+  @include breakpoint(xs) {
+    .header__name-and-slogan {
+      padding: 2rem 0 0 2rem;
+    }
+    #navigation .region-mobile-nav > .content-wrapper .menu li {
+      display: block !important;
+      &:first-of-type:after {
+        display: none;
+      }
+    }
+  }
+  @include breakpoint(xxxs) {
+    .header__name-and-slogan a {
+      width: 250px;
+      height: 65px;
+      background-size: contain !important;
+    }
+  }
+  @include breakpoint(xxxxs) {
+    .header__name-and-slogan a {
+      width: 200px;
+      //background-size: contain !important;
+    }
+  }
+}
+
+/*.front header.headroom--top .header__name-and-slogan a {
+  background: url('../images/site-logo-front.png') no-repeat;
+}
+.not-front header.headroom--top .header__name-and-slogan a {
+  background: url('../images/site-logo-rev.png') no-repeat;
+}*/
+
+#block-superfish-1 {
+  width: calc(100% - 80px);
+  overflow: hidden;
+  -webkit-transition: all 0.23s ease-out;
+  -moz-transition: all 0.23s ease-out;
+  transition: all 0.23s ease-out;
+  position: absolute;
+  top: rem(30);
+  left: 20px;
+  display: block;
+  #superfish-1 {
+    width: 1600px;
+  }
+}
+.search-block-form--show .header-wrapper .region-navigation {
+  position: relative;
+  #block-superfish-1 {
+    width: 0;
+    -webkit-transition: all 0.23s ease-out;
+    -moz-transition: all 0.23s ease-out;
+    transition: all 0.23s ease-out;
+  }
+  #block-search-api-page-default-search {
+    .content-wrapper {
+      visibility: visible;
+      form {
+        width: 100%;
+      }
+    }
+    .toggle-wrapper a:first-of-type {
+      background-image: url('../images/icon-close.png');
+    }
+  }
+  input,
+  textarea {
+    font-size: rem(24);
+    color: $white;
+    text-shadow: 0 0 0 $white;
+    -webkit-text-fill-color: transparent;
+  }
+  textarea {
+    padding: rem(10);
+  }
+  input::placeholder,
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder,
+  input::-moz-placeholder,
+  textarea::-moz-placeholder,
+  input::-ms-input-placeholder,
+  textarea::-ms-input-placeholder {
+    color: rgba( $white, 0.6 );
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+    text-align: left;
+  }
+}
+/*
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear, all ease-out 200ms;
+}
+.headroom--pinned {
+  transition: transform 200ms linear, all ease-out 200ms;
+  transform: translateY(0%);
+  &.headroom--not-top {
+    background: linear-gradient(60deg, $black 20%, #141921);
+    border-bottom: 1px solid rgba(240, 240, 240, .3);
+    .header__name-and-slogan a {
+      background: url('../images/site-logo-wordmark.png') no-repeat;
+      margin-top: 0;
+    }
+  }
+}
+.headroom--unpinned {
+  transition: transform 200ms linear, all ease-out 200ms;
+  transform: translateY(-100%);
+}
+*/
+
+#block-search-api-page-default-search {
+  input[type="text"] {
+    color: $white;
+    display: inline-block;
+    outline: none;
+    position: absolute;
+    top: rem(15);
+    right: 0;
+    font-family: $paragraph;
+    font-style: italic;
+    font-size: rem(20);
+    font-weight: 100;
+    z-index: 9999;
+    border: transparent;
+    border-bottom: 1px solid rgba( $white, 0.5 );
+    background-color: transparent;
+    padding: 1rem rem(60) rem(15) 0;
+    margin-right: 5.7rem;
+    width: 64%;
+    min-width: 34%;
+  }
+  input[type="submit"] {
+    position: absolute;
+    top: rem(30);
+    right: rem(90);
+    height: .8rem;
+    z-index: 100000;
+    vertical-align: middle;
+    min-width: 2rem;
+    background-color: transparent;
+    background-image: url('../images/icon-search.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: none;
+    font-size: 0;
+    &:hover,
+    &:active {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  @include breakpoint(xl) {
+    input[type="text"] {
+      width: 55%;
+    }
+  }
+}
+
+//Display mobile navigation
+body.mobile-nav--show #navigation {
+  position: relative;
+  z-index: 23;
+  .region-mobile-nav {
+    .toggle-wrapper .toggle-mobile {
+      background-image: url(../images/icon-contents-close.png);
+      background-position: center;
+      background-color: #f3ba29;
+    }
+    @include breakpoint(xl) {
+      > .content-wrapper {
+        transform: translateY(0%);
+        opacity: 1;
+        transition: transform .3s ease, opacity .2s ease;
+      }
+    }
+  }
+}
+
+/* reversed logo in headers */
+.node-type-policy header .header__name-and-slogan a,
+.not-front header .header__name-and-slogan a,
+.section-foreign-policy-in-action header .header__name-and-slogan a {
+  background: url('../images/site-logo-rev.png') no-repeat;
+  background-size: contain;
+}
+
+/* Full colour logo in headers */
+.page-container[data-namespace="front"] header .header__name-and-slogan a,
+.page-container[data-namespace="policy-landing"] header .header__name-and-slogan a {
+  background: url('../images/site-logo-front.png') no-repeat;
+  background-size: contain;
+}
+
+.not-front.node-type-policy {
+  header #navigation .region-navigation a {
+    color: $purple-dark;
+  }
+  header #navigation .region-navigation .sf-item-1.sf-depth-1 a:before,
+  header #navigation .region-navigation .sf-item-2.sf-depth-1 a:before {
+    background-color: $purple-dark;
+  }
+  #block-search-api-page-default-search  {
+    border-left: 1px solid $grey;
+    input[type="text"] {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      color: $black;
+      -webkit-text-fill-color: $black;
+    }
+  }
+  header .toggle-wrapper a:first-of-type {
+    background-image: url('../images/icon-search-black.png')
+  }
+}

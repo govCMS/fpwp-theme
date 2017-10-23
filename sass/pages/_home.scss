@@ -1,0 +1,60 @@
+// .front {
+.page-container[data-namespace="front"] {
+  .page__title {
+    @include element-invisible;
+  }
+  // Read the WP and FP in practice boxes.
+  #block-bean-read-the-white-paper,
+  #block-bean-foreign-policy-in-practice {
+    h2 {
+      font-size: rem(50);
+      line-height: 1.1;
+    }
+    @include breakpoint(xxs) {
+      h2 {
+        font-size: rem(34);
+      }
+    }
+  }
+}
+
+.page-container[data-namespace="front"] {
+  #block-superfish-1 {
+    display: none; //hide menu items on home page
+  }
+  #navigation,
+  header.header .header-wrapper,
+  .region.region-navigation {
+    position: static !important; //reset navigation to allow search bar to be centered in right block
+  }
+  header.header #block-search-api-page-default-search {
+    float: none;
+    border: none;
+    margin: auto;
+    @include absolute(left 50vw);
+    width: 50vw;
+    .toggle-wrapper {
+      display: none;
+    }
+    .content-wrapper {
+      display: block;
+      visibility: visible;
+      form {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        position: relative;
+        input[type="text"] {
+          width: 100%;
+          margin: auto;
+          color: $white;
+          text-shadow: 0 0 0 rgba($white,.8);
+          -webkit-text-fill-color: transparent;
+        }
+        input[type="submit"] {
+          right: -20px;
+        }               
+      }
+    }
+  }  
+}

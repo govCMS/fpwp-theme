@@ -1,0 +1,169 @@
+/*
+ * Case study
+ */
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 100vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#footer {
+  -webkit-flex: 1;
+  -ms-flexbox: 1;
+  -webkit-box: 1;
+  flex: 1;
+}
+
+// @TODO What is this for? Centering the layout?
+// .page-node,
+// .not-front {
+//   #content-body {
+//     @include zen-grid-item(8, 3);
+//     .node-page {
+//       width: 80%;
+//       margin: 0 auto;
+//     }
+//   }
+// }
+
+// .section-foreign-policy-in-action:not(.page-foreign-policy-in-action) #main {
+.section-foreign-policy-in-action:not(.page-foreign-policy-in-action) {
+  .breadcrumb {
+    max-width: 1600px;
+    margin: 1rem auto 2rem;
+    // padding: 2rem;
+    padding: 0 2rem;
+  }
+  #content-header {
+    position: relative;
+    //min-height: 50vh;
+    //overflow: hidden;
+    // padding-top: rem(135);
+    padding-top: rem(150);
+    @include breakpoint(xxs) {
+      padding-top: rem(100);
+    }
+    #content-header-fields {
+      max-width: rem(811);
+      margin: rem(70) auto rem(170);
+      text-align: left;
+    }
+    .content-type,
+    .field-name-field-image-attribution {
+      margin-bottom: rem(30);
+    }
+    .field-name-field-image-attribution {
+      margin-top: 1.25rem;
+    }
+    .field-name-field-subtitle .field-item {
+      display: inline-block;
+      margin-top: rem(30);
+    }
+    .field-name-field-topic {
+      display: inline-block;
+    }
+    .field-name-field-image {
+      background: #1a1a1a;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      img {
+        @include absolute(top right);
+        // min-width: 100%;
+        // min-height: 100%;
+        min-width: 70vw;
+        // min-height: 70vh;
+        // max-width: none;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        // filter: saturate(4) brightness(.7);
+        // -webkit-filter: saturate(4) brightness(.7);
+      }
+      &:after {
+        @include absolute(top right);
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: " ";
+        background-image: url(/sites/all/themes/fpwp/images/case-grad.png);
+        background-size: 100vw 100vh;
+        z-index: 10;
+        // mix-blend-mode: multiply;
+        @include breakpoint(xs) {
+          display: none;
+        }
+      }
+    }
+  }
+  #content-body {
+    z-index: 4;
+    position: relative;
+    padding: 6rem 0 0;
+    max-width: rem(1018);
+    width: 100%;
+    float: none;
+    margin: -12rem auto 0;
+    article {
+      margin: auto;
+      box-sizing: border-box;
+      padding: 5rem rem(45);
+      max-width: rem(1018);
+      width: 100%;
+      margin: rem(-120) auto 0;
+      .field-name-field-location {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+  .region-tertiary-content {
+    @include clearfix;
+    padding: rem(87) 0;
+    position: relative;
+    .block-views {
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: rem(35);
+    }
+  }
+  @include breakpoint(xxs) {
+    .breadcrumb {
+      padding: 1rem;
+    }
+    #content-body article {
+      padding: rem(45) 1rem;
+    }
+  }
+  @include breakpoint(m) {
+    #content-body {
+      margin: 0 !important;
+    }
+    #content-header {
+      padding-bottom: rem(50);
+    }
+    #content-header #content-header-fields {
+      margin: 0 2rem;
+    }
+  }
+  @include breakpoint(xl) {
+    #content-body {
+      max-width: none;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

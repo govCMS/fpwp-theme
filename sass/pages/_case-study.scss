@@ -1,0 +1,156 @@
+// .not-front.node-type-case-study #main {
+.node-type-case-study {
+  #content-header {
+    h1,
+    h2,
+    p,
+    a,
+    .field,
+    .content-type {
+      text-align: left;
+    }
+    h1 {
+      @include rainbow-border-decoration;
+      font-style: normal;
+      font-weight: 400;
+      position: relative;
+      // Reposition the dividing line
+      &::before {
+        top: -1rem;
+        left: -2.25rem;
+      }
+    }
+
+    .field-name-field-image::before {
+        background: rgba($purple-dark, .6);
+        display: block;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @include breakpoint(xs) {
+          background: rgba($purple-dark, .8);
+        }
+    }
+  }
+  #content-body {
+    max-width: rem(1018);
+    width: 100%;
+    float: none;
+    margin: rem(-120) auto 0;
+    padding: 0;
+    article {
+      box-sizing: border-box;
+      width: 100%;
+      margin: auto;
+      position: relative;
+      div > p:first-child:first-letter {
+        color: $purple-dark;
+        float: left;
+        font-family: $sans;
+        font-size: rem(92);
+        line-height: rem(70);
+        font-weight: 800;
+        margin: -.3rem .2rem .2rem -.3rem;
+      }
+      .field-name-body,
+      .field-name-field-location {
+        max-width: 626px;
+        margin: auto;
+      }
+
+      .field-name-field-location {
+        margin-bottom: rem(40);
+        .field-item {
+          @include right-border-decoration;
+          font-family: $sans;
+          font-weight: $semibold;
+          &::after {
+            border-bottom: 1px solid black;
+            margin-left: 1rem;
+            width: 5%;
+          }
+        }
+      }
+    }
+    .addthis_inline_share_toolbox_wmxb {
+      position: absolute;
+      top: 0;
+    }
+    .at4-show {
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      width: 5rem;
+      height: 5rem;
+      margin-top: 15rem;
+      margin-left: 13%;
+      @include breakpoint(l) {
+        display: none !important; /* Using important tag to override default AddThis styling, using more specific classes without the important tag didn't work */
+      }
+    }
+  } 
+  .region-inner {
+    padding: 0 2rem;
+  }
+
+  table {
+    display: none;
+  }
+  iframe {
+    max-width: 100%;
+    border-radius: rem(6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 50px 90px -40px #00050c;
+    @include breakpoint(xxxl) { // TODO: fix problem differently + implement proper breakpoint format
+      width: 100%;
+      height: 350px;
+    }
+    @include breakpoint(xs) {
+      height: 310px;
+    }
+    @include breakpoint(xxs) {
+      height: 230px;
+    }
+    @include breakpoint(xxxs) {
+      height: 164px;
+    }
+  }
+  @include breakpoint(xxs) {
+    .highlight-box::after {
+      left: rem(-5);
+    }
+  }
+  @include breakpoint(m) {  
+    #content-header-fields {
+      padding: 0 rem(25);
+    }
+    .region-inner {
+      padding: 0 1rem;
+    }
+    blockquote,
+    .media-element-container {
+      width: 100%;
+      margin-left: 0;
+    }
+    .highlight-box {
+      margin: 3rem 0;
+    }
+  }
+  @include breakpoint(xl) {
+    #content-body {
+      max-width: none;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+// .not-front.node-type-case-study #at4-share {
+.node-type-case-study #at4-share {
+  display: none;
+}

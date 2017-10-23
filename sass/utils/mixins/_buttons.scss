@@ -1,0 +1,101 @@
+@mixin button {
+	font-size: rem(18);
+	background-color: transparent;
+	padding: 5px 25px;
+  color: $white !important;
+  font-family: $font-heading;
+  text-decoration: none;
+  display: inline-block;
+	border-radius: 3px;
+
+	&:hover,
+  &:focus {
+		cursor: pointer;
+		background: $base-color-dark;
+	}
+	&:active {
+		outline: none;
+	}
+}
+
+@mixin button-inverted {
+	font-size: rem(18);
+	background-color: transparent;
+	padding: 5px 25px;
+  color: $transparent !important;
+  font-family: $font-heading;
+  text-decoration: none;
+  display: inline-block;
+  border:	2px solid $transparent;
+	border-radius: 3px;
+
+	&:hover,
+  &:focus {
+		cursor: pointer;
+		background: $base-color-dark;
+	}
+}
+
+@mixin button-default {
+	@include button;
+}
+
+@mixin button-form {
+	@include button;
+	border:0;
+	border-radius: 5px;
+	height: 50px;
+	box-shadow:0;
+}
+
+
+@mixin button-style {
+	display: block;
+	float: right;
+	background-color: $transparent;
+	color: $white;
+	font-family: $font-heading;
+	text-decoration: none;
+	position: relative;
+	padding: .8rem 1rem .6rem 1rem;
+	font-size: rem(16);
+	border: 0;
+	border-radius: 3px;
+	&:after {
+	  content: " ";
+	  background-image:url('../images/icon-chevron.png');
+	  display: inline-block;
+	  width:10px;
+	  height: 10px;
+	  margin-left:10px;
+	  background-position: center;
+	  background-repeat:no-repeat;
+	}
+	&:hover,
+  &:focus {
+		cursor: pointer;
+		background: $base-color-dark;
+	}
+}
+
+@mixin button-box-shadow {
+	-webkit-appearance: none;
+	-webkit-box-shadow: 0px 27px 69px -15px rgba(0,0,0,0.40);
+	-moz-box-shadow: 0px 27px 69px -15px rgba(0,0,0,0.40);
+	box-shadow: 0px 27px 69px -15px rgba(0,0,0,0.40);
+	&:hover {
+		// background-color: rgba(0, 0, 0, .1);
+		text-decoration: none;
+	}
+	&:focus {
+		@include base-outline;
+	}
+	&:active {
+		box-shadow: inset 0 0 5px #888;
+	}
+}
+
+@mixin base-outline {
+	outline: 3px solid $base-outline;
+	// outline: auto -webkit-focus-ring-color;
+}

@@ -1,0 +1,13 @@
+@mixin small-arrow {
+  &::after {
+    content: "";
+    display: block;
+    background: url('../images/icon-arrow-purple.png') no-repeat;
+    background-size: 8px 12px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 12px;
+    width: 8px;
+  }
+}

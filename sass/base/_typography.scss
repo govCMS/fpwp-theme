@@ -1,0 +1,97 @@
+// Typogrpahy
+// ----------
+// fonts and font-styles
+// ==========
+//
+
+// Typography
+// ----------
+// fonts and font-styles
+// ==========
+html {
+  color: $black;
+  // 16px default font size.
+  font-size: 100%;
+
+  @include breakpoint(xxs) {
+    // 14px.
+    font-size: 87.5%;
+  }
+  @include breakpoint(s) {
+    // 14px.
+    font-size: 93.5%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+  font-weight: $normal;
+  line-height: 1.2;
+  margin: 2.5rem 0 1rem;
+}
+
+h1,
+%h1 {
+  font-family: $heading;
+  font-size: rem(50);
+  line-height: 1.1;
+  // letter-spacing: -0.025em;
+}
+
+h2,
+%h2 {
+  font-family: $sans;
+  font-size: rem(35);
+  letter-spacing: -0.025em;
+}
+
+h3,
+%h3 {
+  font-family: $sans;
+  font-size: rem(26);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h4,
+%h4 {
+  font-family: $sans;
+  font-size: rem(24);
+}
+
+h5,
+%h5 {
+  font-family: $sans;
+  font-size: rem(18);
+  line-height: 1.2;
+}
+
+h6,
+%h6 {
+  font-family: $sans;
+  font-size: rem(11);
+  text-transform: uppercase;
+}
+
+p,
+ul,
+ol {
+  color: $purple-lightest;
+  font-family: $paragraph;
+  font-weight: $light;
+  line-height: 1.6;
+  margin: 0 0 rem(30);
+  // letter-spacing: 0.01rem;
+}
+
+b, strong {
+  font-weight: 700;
+}
+i, em {
+  font-style: italic;
+}

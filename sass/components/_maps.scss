@@ -1,0 +1,54 @@
+// Maps
+// ----------
+// section present on home page
+// ==========
+
+.region-home-row-4,
+.page-foreign-policy-in-action .region-tertiary-content {
+  @include zen-grid-item(12, 1);
+  background: linear-gradient(to left, transparent, $purple), url(../images/globe.jpg) no-repeat;
+  background-size: cover;
+  color: $white;
+  padding: 0 !important;
+  text-align: center;
+
+  .region-inner {
+    min-height: 45vh;
+    position: relative;
+    padding: rem(50) 0;
+  }
+  .block-bean {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  h2 {
+    font-family: $sans;
+    font-style: normal;
+    font-size: rem(18);
+    text-transform: uppercase;
+  }
+  h3 {
+    font-family: $heading;
+    font-weight: $normal;
+    font-size: rem(50);
+  }
+  a.button {
+    @extend %button--feature;
+    display: inline-block;
+  }
+  @include breakpoint(xxs) {
+    h2 {
+      font-size: rem(15);
+    }
+    h3 {
+      font-size: rem(34);
+    }
+  }
+}
+
+.region-home-row-4,
+.page-foreign-policy-in-action .region-tertiary-content {
+  display: none;
+}

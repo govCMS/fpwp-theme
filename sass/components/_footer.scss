@@ -1,0 +1,107 @@
+#footer {
+  padding: rem(20) 0;
+  text-align: center;
+  background: linear-gradient(60deg, $black 20%, #141921);
+  border-top: 1px solid rgba($grey-light, .3);
+  // z-index: 3;
+  z-index: 20;
+
+  .block {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    @include element-invisible;
+  }
+  .menu-name-menu-footer > .menu {
+    @include gradient-border;
+    &:after {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  .menu-block-1 {
+    margin: 0;
+  }
+  .menu-block-wrapper > ul {
+    text-align: left;
+    padding-left: 0;
+    width: 50%;
+    vertical-align: middle;
+    margin: 0 rem(16) 0 rem(60);
+    .menu__item.is-leaf {
+      display: inline-block;
+      list-style: none;
+      padding: rem(8);
+    }
+    a {
+      border-bottom: none;
+      color: $white;
+    }
+  }
+  .menu-block-3 {
+    margin: 0;
+
+    ul {
+      margin-top: 0;
+    }
+  }
+  .field-name-field-bean-body {
+    .field-item ul {
+      color: $white;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0;
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+  #block-bean-footer-right {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    margin: rem(23) rem(60) rem(20) 0;
+  }
+  @include breakpoint(l) {
+    #block-bean-footer-right {
+      margin: rem(36) rem(30) rem(20) 0;
+    }
+    .menu-block-wrapper > ul {
+      margin: rem(8) rem(16) 0 rem(20);
+    }
+  }
+  @include breakpoint(xs) {
+    .menu-block-wrapper > ul {
+      float: none;
+      margin: rem(16) 0 0 rem(16);
+      padding: 0;
+    }
+    .menu-block-wrapper > ul .menu__item.is-leaf {
+      display: block;
+      padding: .2rem;
+    }
+    .menu-block-1 {
+      margin-bottom: 0;
+    }
+    .menu-block-3 ul {
+      @include gradient-border;
+      &:after {
+        width: 100%;
+        margin: 0;
+      }
+      margin-top: 0;
+    }
+    #block-bean-footer-right {
+      position: relative;
+      text-align: left;
+      margin: rem(6) rem(30) rem(20) rem(16);
+      li {
+        padding: rem(2);
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+// .not-front:not(.section-foreign-policy-in-action) #main {
+
+  .breadcrumb {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  #content-header {
+  	z-index: 3;
+    position: relative;
+    overflow: hidden;
+    padding: rem(135) 0 rem(100);
+    #content-header-fields {
+      max-width: rem(860);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .content-type, .field-name-field-image-attribution {
+      margin-bottom: rem(30);
+    }
+    .field-name-field-image-attribution {
+      margin-top: rem(29);
+    }
+    .field-name-field-subtitle .field-item {
+      display: inline-block;
+      margin-top: rem(30);
+    }
+    .field-name-field-topic {
+      display: inline-block;
+    }
+    .field-name-field-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100%;
+      overflow: hidden;
+      z-index: -2;
+      img {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+      }
+    }
+  }
+  #content-body {
+    z-index: 4;
+    padding: 0;
+    max-width: 860px;
+    width: 100%;
+    float: none;
+    margin: 50px auto;
+    box-sizing: border-box;
+    &:before, &:after {
+      display: none;
+    }
+    article {
+      padding: 0;
+      max-width: none;
+      width: 100%;
+      margin: 0 auto;
+      @include breakpoint(m) {
+        padding: 0 25px;
+        box-sizing: border-box;
+      }      
+    }
+  }
+// }
+.logged-in .region-highlighted .contextual-links-region {
+  position: static;
+}

@@ -1,0 +1,578 @@
+// Featured stories
+// ----------
+// section present on home page
+// ==========
+.region-home-row-3,
+.region-tertiary-content {
+  background-image: linear-gradient(90deg, rgba(203, 206, 216, .4) 50%, rgba(225, 227, 229, .4) 50%), url(../images/map.jpg); // TODO: change to color variables;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .region-inner {
+    @include clearfix;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .field-item h2 {
+    font-family: $heading;
+    margin: 0 0 5rem 0;
+  }
+
+  h2 {
+    @include right-border-decoration;
+    font-family: $heading;
+    &::after {
+      margin-left: 1rem;
+      width: rem(75);
+    }
+    @include breakpoint(l) {
+      text-align: center;
+    }
+  }
+
+  h3.block-title {
+    font-size: rem(16);
+    font-weight: $semibold;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    letter-spacing: 0.025em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #block-bean-homepage-heading-policy {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  //Browse by topic
+  #block-views-topics-block {
+    @include zen-grid-item(3, 1);
+    padding: 7rem 0 0 0;
+    position: relative;
+    text-align: center;
+    // transform: translateY(50%);
+    .view-topics {
+      a {
+        // font-family: $sans;
+        line-height: 1.2;
+        border-top: 1px solid rgba($blue, 0.25);
+        color: $blue;
+        display: block;
+        font-weight: normal;
+        text-decoration: none;
+        padding: .8rem .25rem;
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+    h3,
+    .view-topics {
+      float: right;
+      width: 18rem;
+      margin-right: 2rem;
+    }
+  }
+  @include breakpoint(xxxl) {
+    .region-inner {
+      box-sizing: border-box;
+      position: relative;
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+    #block-views-topics-block {
+      z-index: 5;
+      transform: none;
+      @include absolute (top 80px right 32px);
+      margin: auto;
+      box-sizing: border-box;
+      float: none;
+      width: 300px;
+      padding: 1rem;
+      a.topic-expander {
+        color: black;
+        background: transparent;
+        display: inline-block;
+        border: 1px solid $black;
+        border-radius: 25px;
+        padding: 1rem 1.5rem;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background: white;
+          border: 1px solid white;
+          transition: .2s ease-out all;
+          h3.block__title:after {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .topic-expander {
+        color: $black;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      h3.block__title {
+        @include small-arrow;
+        padding: 0 1.5rem 0 0;
+        position: relative;
+        box-sizing: border-box;
+        position: relative;
+        float: none;
+        margin: auto;
+        width: auto;
+        &::after {
+          right: 0;
+          left: auto;
+          transform: rotate(0deg);
+          transition: .2s ease-out all;
+        }
+      }
+      .view-topics {
+        padding: 1rem;
+        background: white;
+        float: none;
+        margin: auto;
+        width: auto;
+        width: auto;
+        border-radius: 2px;
+        opacity: 1;
+        height: auto;
+        box-shadow: 0 -1rem 2rem transparent;
+        margin-top: 22px;
+        position: relative;
+        transition: .3s ease-out all;
+        &:after {
+          border: .8rem solid transparent;
+          border-bottom-color: #fff;
+          content: "";
+          @include absolute(top -22px left right);
+          margin: auto;
+          height: 0;
+          width: 0;
+        }
+        ul {
+          margin-bottom: auto;
+        }
+        li:first-of-type a {
+          border-top: none;
+        }
+      }
+
+      .view-topics--hide {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  @include breakpoint(l) {
+    h2::after {
+      // margin: 0 auto;
+      // top: -30px;
+      // left: 0;
+      // right: 0;
+      // position: absolute;
+      display: none;
+    }    
+    #block-views-topics-block {
+      @include absolute(top 140px left right);
+      margin: auto;
+    }
+  }
+  @include breakpoint(s) {
+    #block-views-topics-block {
+      margin-top: 0;
+      position: absolute;
+      top: 160px;
+      left: 0;
+      right: 0;
+    }
+  }
+  @include breakpoint(xxs) {
+    h2 {
+      font-size: rem(34);
+    }
+    #block-views-topics-block {
+      top: 65px;
+    }
+  }
+  @include breakpoint(xxs) {
+    background-image: linear-gradient(180deg, rgba(203, 206, 216, .4) 100%, rgba(225, 227, 229, .4) 0%), url(../images/map.jpg); // TODO: change to color variables;
+  }
+  @include breakpoint(xxxs) {
+    #block-views-topics-block {
+      top: 100px;
+    }
+  }
+}
+
+//Grid layouts for all featured stories site wide.
+.view-display-id-featured_stories,
+.view-display-id-page {
+  @include zen-grid-item(10, 2);
+  @include clearfix;
+}
+// Override for vase study page
+.section-foreign-policy-in-action:not(.page-foreign-policy-in-action) .view-display-id-featured_stories {
+  @include zen-grid-item(12, 1);
+  padding: 0 2rem;
+  width: calc(100% - 4rem);
+}
+
+.section-foreign-policy-in-action:not(.page-foreign-policy-in-action) .region-tertiary-content h2 {
+  padding: 0 2rem;
+}
+
+.page-container[data-namespace="front"] #block-views-case-studies-featured-stories {
+  @include zen-grid-item(9, 4);
+
+  .view-display-id-featured_stories {
+    @include zen-grid-item(12, 1);
+  }
+  @include breakpoint(xxxl) {
+    @include zen-grid-item(12, 1);
+
+    .field-name-field-card-image {
+      min-height: rem(340);
+    }
+    #block-views-case-studies-featured-stories .field-name-title,
+    .view-display-id-featured_stories > .view-content > .item-list > ul .field-name-title {
+      top: 20%;
+      max-height: 185px;
+      overflow: hidden;
+    }
+  }
+  @include breakpoint(l) {
+    .field-name-field-card-image {
+      min-height: rem(310);
+    }
+  }
+  @include breakpoint(s) {
+    margin-top: 4rem;
+  }
+}
+
+// These selectors are currently so specific to avoid styling the WP table of contents
+#block-views-case-studies-featured-stories,
+.view-display-id-featured_stories > .view-content > .item-list > ul,
+.view-display-id-page > .view-case-studies > .view-content > .item-list > ul,
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul {
+  @include clearfix;
+  > li {
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 40px 70px -20px rgba(black, .5);
+    background: #48447b;
+    float: left;
+    margin: 1rem 0.5% 0.5%;
+    position: relative;
+    width: 24%;
+    list-style: none;
+    a.node-wrapper-link:focus {
+        /* display: inline; */
+        outline: auto #a5c7fe;
+        .field-name-field-card-image {
+          @include base-outline;
+        }
+    }
+    &::after,
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    &::before {
+      background: url('../images/icon-arrow-white.png');
+      height: 25px;
+      width: 15px;
+      top: 2.5rem;
+      left: 1.4rem;
+      z-index: 2;
+    }
+    a.node-wrapper-link:after {
+      content: "";
+      @include absolute(left 1.4rem bottom);
+      background: linear-gradient(90deg, #6157e7, #e53872);
+      margin-left: 0;
+      height: 10px;
+      width: 100px;
+      z-index: 3;
+      transition: width .3s ease-out;
+    }
+  }
+  > li {
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  .field-name-field-card-image,
+  .field-name-field-image {
+    // background: linear-gradient(to bottom, #6157e7, #e53872);
+    border-radius: 4px 4px 0 0;
+    display: block;
+    height: 100%;
+    min-height: rem(525);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    img {
+      transition: transform 0.5s ease-out,opacity 0.5s ease-out,-webkit-transform 0.5s ease-out;
+      height: auto;
+      width: auto;
+      min-height: 100%;
+      min-width: 100%;
+      max-width: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%) scale(1) translate3d(0, 0, 0);
+      transform: translate(-50%, -50%) scale(1) translate3d(0, 0, 0);
+    }
+
+    &::after {
+      transition: all 0.25s ease-out;
+      @include position-absolute;
+      content: "";
+      display: block;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0,40,60,0.75) 60%, rgba(0,5,60,1));
+      &:hover {
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+  .field-name-field-card-image {
+    z-index: 1; // this prevents the 1px border from appearing on hover.
+  }
+
+  .field-name-field-topic,
+  .field-name-policy-label,
+  .field-name-title {
+    color: $white;
+    position: absolute;
+    padding: 0 1.4rem;
+    z-index: 2;
+  }
+
+  .field-name-field-topic,
+  .field-name-policy-label {
+    bottom: 1.6rem;
+    text-transform: uppercase;
+    font-family: $sans;
+    font-weight: 400;
+    font-size: rem(11);
+    letter-spacing: 0.1em;
+    p {
+      color: $white;
+      font-family: $sans;
+      font-weight: 400;
+      line-height: normal;
+      margin: 0;
+    }
+  }
+
+  .field-name-title {
+    top: 53%;
+    h3 {
+      line-height: 1.1;
+    }
+    .field-item h2,
+    .field-item h3 {
+      font-family: $sans;
+      font-size: 1.625rem;
+    }
+  }
+}
+
+/* Fix for image rendering on Chrome adding a small right gap for case studies. */
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul > li {
+  width: 23%;
+}
+
+@include breakpoint(l) {
+  .view-display-id-featured_stories > .view-content > .item-list > ul > li,
+  .view-case-studies > .view-content > .item-list > ul > li,
+  .section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul > li {
+    margin: 1rem 2%;
+    width: 48%;
+    &:nth-child(1n) {
+      margin-left: 0;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
+@include breakpoint(m) {
+  @include zen-grid-item(12, 1);
+  clear: both;
+  h2,
+  h3 {
+    font-size: rem(24);
+  }
+}
+@include breakpoint(xxs) {
+  .view-display-id-featured_stories > .view-content > .item-list > ul > li,
+  .view-case-studies > .view-content > .item-list > ul > li,
+  .section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul > li {
+    width: 100%;
+    margin: .5rem 0;
+  }
+
+  .field-name-field-image {
+    min-height: rem(300);
+  }
+
+  .view-display-id-featured_stories {
+    @include zen-grid-item(12, 1);
+  }
+
+  .view-display-id-page {
+    @include zen-grid-item(10, 2);
+  }
+}
+
+/* Updating min-height and font-size for FPiP and case studies not on front page. */
+.view-display-id-featured_stories > .view-content > .item-list > ul {
+
+  @include breakpoint(xxxl) {
+
+    .field-name-field-card-image,
+    .field-name-field-image {
+      min-height: rem(310);
+    }
+
+    .field-name-title {
+      top: 20%;
+      max-height: 185px;
+      overflow: hidden;
+    }
+  }
+}
+
+.view-display-id-featured_stories > .view-content > .item-list > ul,
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul {
+  @include breakpoint(l) {
+    h2,
+    h3 {
+      font-size: rem(22);
+    }
+    .field-name-field-card-image,
+    .field-name-field-image {
+      min-height: rem(310);
+    }
+  }
+}
+
+.section-foreign-policy-in-action .view-display-id-page {
+  ul {
+    padding: 0;
+  }
+  @include breakpoint(m) {
+    box-sizing: border-box;
+  }
+}
+
+#block-views-case-studies-featured-stories .view-display-id-featured_stories > .view-content > .item-list > ul li a:hover,
+.region-tertiary-content .view-recommended-reading .view-content .item-list ul li a:hover,
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:hover,
+#block-views-case-studies-featured-stories .view-display-id-featured_stories > .view-content > .item-list > ul li a:focus,
+.region-tertiary-content .view-recommended-reading .view-content .item-list ul li a:focus,
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:focus  {  
+  .field-name-field-card-image,
+  .field-name-field-image {
+    img {
+      opacity: .8;
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+    &::after {
+      opacity: 0.7;
+    }
+  }
+}
+
+#block-views-case-studies-featured-stories .view-display-id-featured_stories > .view-content > .item-list > ul li a:hover,
+.region-tertiary-content .view-recommended-reading .view-content .item-list ul li a:hover,
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:hover,
+#block-views-case-studies-featured-stories .view-display-id-featured_stories > .view-content > .item-list > ul li a:focus,
+.region-tertiary-content .view-recommended-reading .view-content .item-list ul li a:focus,
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:focus {
+  &:after {
+    width: 85%;
+    transition: width .3s ease-out;
+  }
+}
+
+/* Scrolling featured stories */
+.section-foreign-policy-in-action #main #content-body .view-display-id-page:not(.region-content-bottom) {
+  // @include breakpoint(xxxxxl) {
+  width: 100%;
+  float: none;
+  margin: auto;
+  .view-content .item-list > ul {
+    display: flex;
+    justify-content: center;
+  }
+  .view-content .item-list > ul > li {
+    width: 15%;
+  }
+  // }
+  @include breakpoint(xxxl) {
+    width: 83.33333%;
+    max-width: 1100px;
+    margin: 0 auto rem(50);
+    .view-content .item-list > ul {
+      display: block;
+      //justify-content: center;
+    }
+    .view-content .item-list > ul > li {
+      width: 31% !important;
+      margin: 15px 1.5%;
+      &:first-of-type,
+      &:nth-of-type(4n) {
+        margin-left: 0;
+      }
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+  // @include breakpoint(xxl) {
+  @include breakpoint(l) {
+    .view-content .item-list > ul > li {
+      width: 48% !important;
+      max-width: 1100px;
+      margin: 15px 1.5%;
+      &:nth-of-type(1n) {
+        margin: 15px 1.5% 15px 0!important;
+      }
+      &:nth-of-type(2n) {
+        margin: 15px 0 15px 1.5%!important;
+      }
+    }
+  }
+  @include breakpoint(xxs) {
+    .view-content .item-list > ul > li {
+      width: 100% !important;
+      margin: .5rem 0;
+      &:nth-of-type(1n),
+      &:nth-of-type(2n) {
+        margin: .5rem auto!important;
+      }
+    }
+  }
+}

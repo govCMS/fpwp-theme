@@ -1,0 +1,37 @@
+@mixin right-border-decoration() {
+  &::after {
+    content: "";
+    border-bottom: 1px solid $black;
+    display: inline-block;
+    margin-left: 2rem;
+    vertical-align: middle;
+    width: 15%;
+  }
+}
+
+@mixin rainbow-border-decoration() {
+  &::before {
+    content: "";
+    display: block;
+    vertical-align: middle;
+    position: absolute;
+    top: -20px;
+    left: -25px;
+    bottom: 0;
+    background: linear-gradient(90deg, #6157e7, #e53872);
+    height: 1px;
+    width: rem(62);
+  }
+}
+
+@mixin gradient-border {
+  &::after {
+    content: "";
+    height: 1px;
+    background: linear-gradient(90deg, #6157e7, #e53872);
+    display: inline-block;
+    margin-left: 2rem;
+    vertical-align: middle;
+    width: 3.75rem;
+  }
+}

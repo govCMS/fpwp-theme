@@ -1,0 +1,336 @@
+/**
+* @file
+* foreign policy in practice layout.
+*/
+.page-container[data-namespace="case-landing"] #main {
+  background-color: #384291;
+  &:before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    min-width: 70vw;
+    min-height: 75vh;
+    content: " ";
+    background: url(/sites/all/themes/fpwp/images/banner-learn.jpg) top right no-repeat;
+    background-size: cover;
+    opacity: .7;
+    transform: scale(1.2) translateZ(0);
+    z-index: 5;
+    @include breakpoint(l) {
+      opacity: .3;
+    }
+    @include breakpoint(xs) {
+      background-position: top right 20%;
+    }    
+  }
+  &:after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background-image: url(/sites/all/themes/fpwp/images/learn-grad.png);
+    background-size: 100vw 100vh;
+    background-position: top right;
+    transform: scale(1);
+    z-index: 10;    
+  }
+  @media (max-height: 850px) {
+    &:before {
+      min-height: 850px;
+      opacity: .3;
+    }
+  }
+}
+
+// .section-foreign-policy-in-action.page-foreign-policy-in-action #main,
+// .page-taxonomy-term.section-foreign-policy-in-action #main {
+.page-container[data-namespace="case-landing"],
+.page-taxonomy-term.section-foreign-policy-in-action {
+  #content-header {
+    padding-bottom: 1rem;
+
+    .field-name-field-image {
+      position: fixed;
+      min-height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #content-header-fields {
+      position: relative;
+      text-align: left;
+      margin-bottom: 0;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      a {
+        color: white;
+      }
+      h1 {
+        @include gradient-border;
+        line-height: 1;
+        // max-width: 22rem;
+        max-width: 500px;
+        margin-bottom: 2rem;
+        &::after {
+          display: block;
+          margin-left: -1.5rem;
+          margin-top: 1.5rem;
+        }
+      }
+      .region-content-header {
+        max-width: 600px;
+      }
+
+      h3,
+      .field-name-field-subtitle .field-item {
+        text-transform: uppercase;
+        font-family: $sans;
+        font-weight: 600;
+        font-size: rem(14);
+        margin-bottom: .75rem;
+        margin-top: 0;
+        letter-spacing: 0.1em;
+      }
+      p {
+        color: white;
+        margin-top: 0;
+      }
+      @include breakpoint(m) {
+        margin: auto auto auto 2rem;
+      }
+      @include breakpoint(xs) {
+        margin: auto;
+      }      
+    }
+    @include breakpoint(m) {
+      padding: 126px 25px 15px;
+    }
+  }
+  #content-body {
+    position: relative;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: rem(100);
+    box-sizing: border-box;
+    &:before,
+    &:after {
+      display: none;
+    }
+    .view-content .item-list ul {
+      @include clearfix;
+      padding: 0;
+    }
+    .view-id-topics .item-list li.views-row {
+      @include box-shadow(0, 50px, 70px, -30px, rgba($black, .5));
+      background: $purple;
+      float: left;
+      margin: 0 1% 5% 1%;
+      position: relative;
+      list-style: none;
+      width: 31%;
+      height: 22.5rem;
+      border-radius: 8px 8px 2px 2px;
+      overflow: hidden;
+      .field-name-field-card-image {
+        position: relative;
+        overflow: hidden;
+      }
+      .taxonomy-term {
+        @include position-absolute;        
+        top: 0;
+        color: white;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        .field-name-title {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          padding: 2rem;
+          box-sizing: border-box;
+        }
+        .field-name-field-subtitle {
+          color: $white;
+          font-family: $sans;
+          padding: rem(0) rem(4) rem(4) rem(20);
+          position: relative;
+          text-transform: uppercase;
+          font-size: rem(10);
+        }
+        // FPIP heading
+        h2 {
+          color: $white;
+          font-family: $sans;
+          font-size: rem(28);
+          line-height: 1.09;
+          position: absolute;
+          top: 50%;
+          max-width: 7em;
+          left: rem(30);
+          right: rem(30);
+          font-weight: 600;
+          letter-spacing: -0.025em;
+        }
+        a:hover,
+        a:active  {
+          text-decoration: none;
+        }
+        img {
+          @include position-absolute;
+          max-width: none;
+          width: auto;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%;
+          min-height: 100%;
+        }
+        .field-name-field-image:after {
+          transition: all 0.25s ease-out;
+          @include position-absolute;
+          content: "";
+          display: block;
+          background: linear-gradient(to bottom, transparent 30%, rgba(0,5,60,0.5) 60%, rgba(0,40,80,0.8));
+          &:hover,
+          &:active {
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+
+    .view-id-topics .view-content ul {
+      /* loop */
+      $i: 0.5s;      
+      @for $level from 0 to 6 {              
+        li:nth-child(#{$level + 1}) {
+          animation: shift-in-up 1s ease $i both;          
+        }
+        $i: $i + .2s;
+      }
+    }    
+
+    @include breakpoint(l) {
+      .view-id-topics .view-content .item-list ul li {
+        margin: 1%;
+        width: 48%;
+        &:first-child,
+        &:nth-child(4),
+        &:last-child,
+        &:nth-child(3) {
+          margin-left: 1%;
+          margin-right: 1%;
+        }
+      }
+    }
+    @include breakpoint(s) {
+      padding: 0;
+    }
+    @include breakpoint(xs) {
+      #content-header p {
+        font-size: rem(18);
+      }
+      .view-id-topics .view-content .item-list {
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        ul li {
+          width: 100%;
+          margin: 0 0 rem(28) 0;
+          h2 {
+            font-size: rem(25);
+          }
+          h3 {
+            font-size: rem(23);
+          }
+        }
+      }
+      .field-name-field-image {
+        min-height: inherit;
+      }
+    }
+  }
+  .region-tertiary-content {
+    position: relative;
+  }
+  @include breakpoint(xxs) {
+    #content-header h1 {
+      font-size: rem(34);
+    }
+  }
+}
+
+#footer {
+  position: relative;
+}
+
+// @TODO Liam to clean up...
+
+// //.page-taxonomy-term.section-foreign-policy-in-action #main #content #content-header .field-name-field-image,
+// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image {
+// .page-taxonomy-term.section-foreign-policy-in-action #content-header .field-name-field-image,
+// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image {
+//   &:after {
+//     background: radial-gradient(ellipse farthest-corner at 100% -50%, rgb(59, 61, 140) 0%, #3b3d8c 55%, #3b3d8c 75%, #006c8c 100%);
+//   }
+// }
+// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image {
+// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image {
+//   background: radial-gradient(ellipse farthest-corner at 100% -50%, rgb(59, 61, 140) 0%, #3b3d8c 55%, #3b3d8c 75%, #006c8c 100%);
+// }
+// //.not-front:not(.page-foreign-policy-in-action) #main #content-header::before,
+// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image:after {
+// .not-front:not(.page-foreign-policy-in-action) #content-header::before,
+// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image:after {
+//   display: none;
+// }
+
+// //.section-foreign-policy-in-action:not(.page-foreign-policy-in-action) #main #content-header .field-name-field-image img,
+// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image img {
+// .section-foreign-policy-in-action:not(.page-foreign-policy-in-action) #content-header .field-name-field-image img,
+// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
+//   -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 60%);
+//   mask-image: radial-gradient(rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 60%);
+//   @include absolute (top -45vh right -30vw);
+//   left: initial;
+//   transform: none;
+//   z-index: 100000;
+//   height: auto;
+//   filter: saturate(2) contrast(1.2);
+//   opacity: .6;
+//   max-width: none;
+// }
+
+.page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
+  display: none;
+}
+
+//.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image img {
+.page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
+  //@include absolute (top -30% right -20%);
+  @include breakpoint(xl) {
+      @include absolute (top -50% right -50%);
+  }
+  @include breakpoint(l) {
+      @include absolute (top -50% right -80%);
+  }
+  @include breakpoint(s) {
+      @include absolute (top -60% right -140%);
+  }
+  @include breakpoint(xs) {
+      @include absolute (top -60% right -180%);
+  }
+  @include breakpoint(xxs) {
+      @include absolute (top -60% right -200%);
+  }
+}

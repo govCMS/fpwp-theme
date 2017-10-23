@@ -1,0 +1,88 @@
+
+// .not-front.section-search #main,
+// .not-front.section-search #main #content-body {
+.not-front.section-search #main,
+.not-front.section-search #main #content-body {
+  background: $grey-light;
+  .search-form {
+    label {
+      display: none;
+    }
+    input[type=text] {
+      border: 1px solid $grey-mid-light;
+      padding: 1rem rem(60) rem(15) rem(16);
+      width: 100%;
+    }
+    input[type="submit"] {
+      float: right;
+      margin: rem(24) 0;
+    }
+  }
+  .form-item {
+    margin: rem(24) 0 rem(48) 0;
+    width: calc(100% - 140px);
+    float: left;
+  }
+  .search-api-page-results {
+    clear: both;
+  }
+  .pager-item a {
+    color: $purple-light;
+  }
+  .pager-next a,
+  .pager-previous a,
+  .pager-first a,
+  .pager-last a {
+    color: $purple-dark;
+  }
+  ol.search-results {
+    padding: 0;
+    margin: rem(24) 0 rem(44) 0;
+    li.search-result {
+      padding: rem(15);
+      background: $white;
+      border-radius: rem(2);
+      border: 1px solid $grey-mid-light;
+    }
+    h3 a {
+      color: $purple-lightest;
+      &:visited {
+        color: $purple-light;
+      }
+    }
+  }
+}
+
+/* Responsive styling for content body section of search page */
+// .not-front.section-search #main #content-body,
+// .page-news-media.section-news-media #main #content-body {
+.not-front.section-search #main #content-body,
+.page-news-media.section-news-media #main #content-body {
+  @include breakpoint(l) {
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 2rem 1rem;
+  }
+  @include breakpoint(xxs) {
+    h2 {
+      font-size: rem(25);
+    }
+    .form-item {
+      width: calc(100% - 140px);
+    }
+    .pager {
+      font-size: rem(14);
+      .pager-first,
+      .pager-last {
+        display: none;
+      }
+    }
+  }
+
+  /* Including smaller font size for xs screen sizes (iPhone 5) as pager doesn't fit onto one line */
+  @include breakpoint(xs) {
+    .pager {
+      font-size: rem(13);
+    }
+  }
+}

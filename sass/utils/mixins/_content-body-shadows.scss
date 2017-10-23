@@ -1,0 +1,22 @@
+@mixin content-body-shadows {
+  &::before {
+    background: url('../images/shadow-left.png') no-repeat;
+    content: "";
+    width: 8px;
+    height: 100px;
+    // top: 12rem;
+    // left: -8px;
+    display: block;
+    @include absolute(top 12rem left -8px);
+  }
+  &::after {
+    background: url('../images/shadow-right.png') no-repeat;
+    content: "";
+    width: 8px;
+    height: 100px;
+    // top: 12rem;
+    // right: -8px;
+    display: block;
+    @include absolute(top 12rem right -8px);
+  }
+}
