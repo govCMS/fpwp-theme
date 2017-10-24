@@ -12,7 +12,7 @@
     min-width: 70vw;
     min-height: 75vh;
     content: " ";
-    background: url(/sites/all/themes/fpwp/images/banner-learn.jpg) top right no-repeat;
+    background: url(../images/banner-learn.jpg) top right no-repeat;
     background-size: cover;
     opacity: .7;
     transform: scale(1.2) translateZ(0);
@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
     content: " ";
-    background-image: url(/sites/all/themes/fpwp/images/learn-grad.png);
+    background-image: url(../images/learn-grad.png);
     background-size: 100vw 100vh;
     background-position: top right;
     transform: scale(1);
