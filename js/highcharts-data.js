@@ -402,7 +402,17 @@
          // format: '${point.y} MIL'
           format: '{point.percentage:.1f}%'
         },
-        showInLegend: true
+        showInLegend: true,
+        point: {
+          events: {
+            // Do nothing if a legend is clicked, instead of removing the piece
+            // of pie. Otherwsie, because we're displaying percentages the pie
+            // will redraw without that piece and have incorrect percentages.
+            legendItemClick: function(e) {
+              e.preventDefault();
+            }
+          }
+        }
       }
     },
     series: [{
