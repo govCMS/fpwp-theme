@@ -9,8 +9,8 @@
   <?php if (isset($title_suffix['contextual_links'])): ?>
   <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
-
-  <a class="node-wrapper-link" href="<?php print url("node/" . $nid) ?>">
+  
+  <a class="node-wrapper-link" href="<?php print url("node/" . $nid) ?>" title="<?php print $title ?>">
     <?php print $ds_content; ?>
   </a>
 </<?php print $ds_content_wrapper ?>>

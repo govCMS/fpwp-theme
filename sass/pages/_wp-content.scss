@@ -33,11 +33,13 @@
     color: $purple-dark;
     position: relative;
     #content {
-      margin: 0 0 0 40vw;
-      padding: rem(297) rem(30) 0 rem(192);
       box-sizing: border-box;
+      // margin: 0 0 0 40vw;
+      margin: 0 0 0 40%;
+      padding: rem(297) rem(30) 0 rem(192);
       right: 0;
-      width: 60vw;
+      // width: 58vw;
+      width: 60%;
       .addthis_inline_share_toolbox_wmxb {
         transition: .2s ease-out all;
         position: fixed;
@@ -74,7 +76,9 @@
 
       }
       @include breakpoint(xxl) {
-        padding: rem(120) rem(30) 0 11vw;
+        // padding: rem(120) rem(30) 0 11vw;
+        padding-top: rem(120);
+        padding-right: rem(30);
       }
       #content-header {
         padding: 0;
@@ -117,8 +121,10 @@
       }
     }
     #content-nav {
-      @include absolute(left 40vw top 0);
-      width: 10vw;
+      // @include absolute(left 40vw top 0);
+      @include absolute(left 40% top 0);
+      // width: 10vw;
+      width: 10%;
       height: 100%;
       z-index: 1;
       @include breakpoint(xxl) {
@@ -155,7 +161,13 @@
           padding-left: rem(25);
           &::before {
             content: "";
-            background: url('../images/wp-navigation-next-image.png') no-repeat; // TODO: Placeholder image - remove once backend implements image.
+            // background: url('../images/wp-navigation-next-image.png') no-repeat; // TODO: Placeholder image - remove once backend implements image.
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            // border: 1px solid #3333337d;
+            // border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
             filter: drop-shadow(0px 10px 12px rgba($black,.5));
             display: inline-block;
             @include absolute(left -25px);
@@ -173,7 +185,7 @@
             position: absolute;
             width: rem(15);
             height: rem(25);
-            // transition: .3s ease-out transform; // The transitionend bubbles up and creates issues
+            transition: .3s ease-out top;
           }
           &:hover {
             text-decoration: none;
@@ -184,11 +196,10 @@
         .page-previous {
           top: rem(200);
           &:before {
-            background: url('../images/wp-navigation-prev-image.png') no-repeat; // TODO: Placeholder image - remove once backend implements image.
+            // background: url('../images/wp-navigation-prev-image.png') no-repeat; // TODO: Placeholder image - remove once backend implements image.
           }
           &:hover:after {
-            transform: translateY(-5px) translateX(-75%);
-            // transition: .3s ease-out transform; // The transitionend bubbles up and creates issues
+            top: -2.5rem;
           }
         }
         .page-next {
@@ -197,15 +208,18 @@
             top: auto;
             bottom: -3rem;
             transform: translateX(-75%) rotate(180deg);
+            transition: .3s ease-out bottom;
           }
           &:hover:after {
-            transform: translateY(5px) translateX(-75%) rotate(180deg);
+            // transform: translateY(5px) translateX(-75%) rotate(180deg);
+            bottom: -3.5rem;
           }
         }
         .page-menu {
           position: fixed;
           top: 350px;
-          left: calc(40vw - 60px);
+          // left: calc(40vw - 60px);
+          left: calc(40% - 60px);
           // right: calc(60vw - 75px);
           background: url('../images/icon-contents.jpg') no-repeat left top;
           height: rem(46);
@@ -245,8 +259,8 @@
             }
           }
           @include breakpoint(m) {
-            left: calc(20vw - 60px);
-            right: calc(80vw - 75px);            
+            left: calc(20% - 60px);
+            right: calc(80% - 75px);
           }
         }
       }
@@ -256,6 +270,7 @@
       left: 0;
       top: 0;
       width: 40vw;
+      width: 40%;
       height: 100vh;
       .field-type-image {
         position: relative;
@@ -300,6 +315,7 @@
         margin: 0 auto;
         position: relative;
         width: 100vw;
+        width: 100%;
       }
       #content {
         -webkit-order: 2;
@@ -410,7 +426,7 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
     @include absolute(top 200px left right);
     margin: auto;
     height: auto;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);        
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
     .book-navigation {
       width: 100%;
       box-sizing: border-box;
@@ -439,14 +455,14 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
           background: white url('../images/icon-contents-white.jpg') no-repeat left top 6px;
           background-size: 45px;
           background-blend-mode: multiply;
-          transition: 0s;          
+          transition: 0s;
           @include breakpoint(xs) {
             width: 170px;
           }
         }
         &:hover,
-        &:focus { 
-          transition: 0s; // transition is turned off so it doesn't show the transition back from the slideout menu            
+        &:focus {
+          transition: 0s; // transition is turned off so it doesn't show the transition back from the slideout menu
           text-decoration: none;
           background-color: #e5e5e5;
           span.toggle-text {
@@ -458,7 +474,7 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
         background-color: white;
         display: block;
         padding: 0;
-        width: 100%;                
+        width: 100%;
         .page-previous,
         .page-next {
           bottom: 0;

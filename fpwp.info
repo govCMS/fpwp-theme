@@ -54,6 +54,7 @@ scripts[] = js/highcharts.js
 scripts[] = js/highcharts-map.js
 scripts[] = js/highcharts-world-custom.js
 scripts[] = js/highcharts-data.js
+scripts[] = js/highcharts-accessibility.js
 scripts[] = js/jquery.matchHeight-min.js
 scripts[] = js/share-this.js
 scripts[] = js/share-this-email.js

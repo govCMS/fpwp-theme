@@ -263,12 +263,13 @@ header.header {
   .toggle-wrapper a:first-of-type {
     @include hide-text;
     background-image: url('../images/icon-search.png');
+    background-position: center center;
     background-repeat: no-repeat;
     border-bottom: none;
     display: block;
     overflow: hidden;
     height: 22px;
-    width: 15px;
+    width: 22px; // 15px;
     &:active {
       outline: none;
     }    

@@ -47,7 +47,6 @@
     }
   }
   #content-body {
-    @include content-body-shadows;
     background: $white;
     article .field-name-field-location {
       color: $purple-dark;
@@ -78,4 +77,9 @@
 }
 .logged-in .region-highlighted .contextual-links-region {
   position: static;
+}
+
+body.node-type-case-study #content-body {
+  // It fixes the overflow issue
+  @include content-body-shadows;
 }

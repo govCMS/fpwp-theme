@@ -3,12 +3,17 @@
 // Default link styling.
 a {
   text-decoration: none;
+  outline: none;
   &:hover {
     text-decoration: underline;
   }
   &:focus {
     @include base-outline;
   }
+  /* &:active:focus,
+  &:active {
+    outline: none !important;
+  } */
 }
 
 // Link with underline.

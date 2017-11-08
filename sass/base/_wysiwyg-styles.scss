@@ -159,6 +159,14 @@ blockquote {
   .file-icon {
     margin: 0;
   }
+  .file-image {
+    .element-invisible {
+      a {
+        // Avoid focus
+        display: none;
+      }
+    }
+  }
 }
 // Make sure it doesn't flow out of the text editor.
 .cke_editable .media-element-container {

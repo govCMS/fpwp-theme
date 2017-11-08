@@ -309,6 +309,8 @@
   margin: rhythm(1) 0;
   padding: 0 2px;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 %tabs__tab {
   float: left; /* LTR */

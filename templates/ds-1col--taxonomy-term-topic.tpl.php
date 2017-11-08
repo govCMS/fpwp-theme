@@ -10,7 +10,7 @@
   <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
 
-  <a class="term-wrapper-link" href="<?php print url("taxonomy/term/" . $tid) ?>">
+  <a class="term-wrapper-link" href="<?php print url("taxonomy/term/" . $tid) ?>" title="<?php print $term->name ?>">
     <?php print $ds_content; ?>
   </a>
 </<?php print $ds_content_wrapper ?>>

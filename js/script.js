@@ -346,7 +346,7 @@ Drupal.behaviors.fpwpAddThisAccessibility = {
       var addthisInterval = setInterval(function(){
         var addthisBlock = $('.addthis_inline_share_toolbox_wmxb .at-share-btn-elements');
         if ($(addthisBlock).find('a').length) {
-          $(addthisBlock).find('a').removeAttr('tabindex').wrapAll('<ul></ul>');
+          $(addthisBlock).find('a').attr('tabindex', 0).wrapAll('<ul></ul>');
           $(addthisBlock).find('ul > a').wrap('<li></li>');
           clearInterval(addthisInterval);
         }
@@ -379,5 +379,31 @@ Drupal.behaviors.fpwpYoutubeEmbed = {
     });
   }
 };
+
+/**
+ * IE Fix for "jumpy" fixed background - @see http://brospars.github.io/snippets/ie-jumpy-bg
+ */
+ // if IE (no Edge)
+if(navigator.userAgent.match(/Trident\/7\./)) {
+  // Drupal.behaviors.fpwpJumpyIE = {
+  //   attach: function (context, settings) {
+      $(document).bind('mousewheel',function(event){
+          event.preventDefault();
+          var wheelDelta = event.wheelDelta;
+          var currentScrollPosition = window.pageYOffset;
+          window.scrollTo(0, currentScrollPosition - wheelDelta);
+      });
+  //   }
+  // };
+}
+
+/**
+ * Activate "keynav" mode, to better highlight tab focus, and to do not display outline on click (when off)
+ */
+$(document).bind('keydown',function(event){
+  if(event.keyCode == 9 ) {
+    $('body').addClass('keynav');
+  }
+});
 
 })(jQuery, Drupal, this, this.document);

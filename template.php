@@ -221,6 +221,38 @@ function fpwp_preprocess_field(&$variables, $hook) {
 }
 
 /**
+ * Processes variables for book-navigation.tpl.php.
+ *
+ * It creates the thumbnail url variable for the previous and next pages of the book navigation
+ */
+function fpwp_preprocess_book_navigation(&$variables) {
+  $book_link = $variables['book_link'];
+  $variables['prev_image'] = null;
+  if ($book_link['mlid']) {
+    $variables['tree'] = book_children($book_link);
+    if ($prev = book_prev($book_link)) {
+      if ($prev['link_path']) {
+        if($prev_id = menu_get_item($prev['link_path'])) {
+          if(isset($prev_id['page_arguments'][0]->field_image['und'][0]['uri'])) {
+            $variables['prev_image'] = image_style_url('thumbnail', $prev_id['page_arguments'][0]->field_image['und'][0]['uri']);
+          }
+        }
+      }
+    }
+    $variables['next_image'] = null;
+    if ($next = book_next($book_link)) {
+      if ($next['link_path']) {
+        if($next_id = menu_get_item($next['link_path'])) {
+          if(isset($next_id['page_arguments'][0]->field_image['und'][0]['uri'])) {
+            $variables['next_image'] = image_style_url('thumbnail', $next_id['page_arguments'][0]->field_image['und'][0]['uri']);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function fpwp_form_alter(&$form, &$form_state, $form_id) {

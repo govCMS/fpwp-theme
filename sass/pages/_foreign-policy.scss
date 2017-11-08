@@ -3,7 +3,8 @@
 * foreign policy in practice layout.
 */
 .page-container[data-namespace="case-landing"] #main {
-  background-color: #384291;
+  // background-color: #384291;
+  background-color: darken(#384291, 5%); // Aceesibility Fix
   &:before {
     position: fixed;
     top: 0;
@@ -14,7 +15,7 @@
     content: " ";
     background: url(../images/banner-learn.jpg) top right no-repeat;
     background-size: cover;
-    opacity: .7;
+    opacity: .45;
     transform: scale(1.2) translateZ(0);
     z-index: 5;
     @include breakpoint(l) {

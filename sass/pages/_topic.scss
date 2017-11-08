@@ -85,21 +85,28 @@
   background: linear-gradient(to bottom, #6157e7, #e53872);
   z-index: 1;
   overflow: initial;
-  .taxonomy-term a .field-name-field-image {
-    border-radius: 8px 8px 2px 2px;
-    overflow: hidden;
-    @include relative;
-    width: 100%;
-    height: 100%;    
-      img {
-      transition: transform 0.5s ease-out,opacity 0.5s ease-out,-webkit-transform 0.5s ease-out;
-    }
-  }
   .taxonomy-term {
     overflow: initial;
-  }
-  .taxonomy-term a .field-name-title {
-    @include absolute(top left);
+    a {
+      .field-name-field-image {
+        border-radius: 8px 8px 2px 2px;
+        overflow: hidden;
+        @include relative;
+        width: 100%;
+        height: 100%;    
+          img {
+          transition: transform 0.5s ease-out,opacity 0.5s ease-out,-webkit-transform 0.5s ease-out;
+        }
+      }
+      .field-name-title {
+        @include absolute(top left);
+      }
+      &:focus {
+        .field-name-field-image {
+          @include base-outline;
+        }
+      }
+    }
   }
 }
 //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-body .view-id-topics .item-list li.views-row .taxonomy-term a:hover img {

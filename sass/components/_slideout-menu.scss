@@ -39,7 +39,7 @@
     display: block;
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
     .slideout-menu__titles {
       animation: fade-in 2s both;
@@ -61,7 +61,7 @@
     }
     .view-fpwp-book-menu .view-content {
       float: right;
-      width: 60vw;
+      width: 60%;
       transform: translateX(100%);
       opacity: 0;
       animation: slide-in-left-2 .7s both;

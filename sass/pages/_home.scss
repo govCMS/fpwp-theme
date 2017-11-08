@@ -25,14 +25,17 @@
   #navigation,
   header.header .header-wrapper,
   .region.region-navigation {
-    position: static !important; //reset navigation to allow search bar to be centered in right block
+    position: relative !important; //reset navigation to allow search bar to be centered in right block
   }
   header.header #block-search-api-page-default-search {
     float: none;
     border: none;
     margin: auto;
-    @include absolute(left 50vw);
-    width: 50vw;
+    // @include absolute(left 50vw);
+    // width: 50vw;
+    @include absolute(left 0 right 0);
+    width: 100%;
+    box-sizing: border-box;
     .toggle-wrapper {
       display: none;
     }

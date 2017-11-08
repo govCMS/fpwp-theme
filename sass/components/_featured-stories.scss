@@ -250,8 +250,8 @@
     }
     #block-views-case-studies-featured-stories .field-name-title,
     .view-display-id-featured_stories > .view-content > .item-list > ul .field-name-title {
-      top: 20%;
-      max-height: 185px;
+      top: 40%;
+      max-height: 128px;
       overflow: hidden;
     }
   }
@@ -376,12 +376,20 @@
     font-weight: 400;
     font-size: rem(11);
     letter-spacing: 0.1em;
-    p {
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: nowrap;
+    max-width: 100%;    
+    p,
+    .field-item {
       color: $white;
       font-family: $sans;
       font-weight: 400;
       line-height: normal;
       margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;      
     }
   }
 
@@ -446,6 +454,20 @@
   }
 }
 
+/* Topic landing page required different responsive styling for case studies */
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul {  
+  @include breakpoint(l) {
+    .field-name-title {
+      top: 40%;
+      overflow: hidden;
+      max-height: 128px;
+      h3 {
+        margin: 15px auto;
+      }
+    }
+  }    
+}
+
 /* Updating min-height and font-size for FPiP and case studies not on front page. */
 .view-display-id-featured_stories > .view-content > .item-list > ul {
 
@@ -457,9 +479,12 @@
     }
 
     .field-name-title {
-      top: 20%;
-      max-height: 185px;
+      top: 40%;
+      max-height: 128px;
       overflow: hidden;
+      h3 {
+        margin: 15px auto;
+      }      
     }
   }
 }
