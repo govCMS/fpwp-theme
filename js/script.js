@@ -280,16 +280,18 @@ Drupal.behaviors.fpwpShareThis = {
   attach: function (context, settings) {
     $('#content-body').once('sharethis', function() {
       var shareThis = window.ShareThis;
-      Drupal.selectionShare = shareThis({
-        selector: '#content-body',
-        sharers: [
-          window.ShareThisViaTwitter,
-          window.ShareThisViaFacebook,
-          window.ShareThisViaLinkedIn,
-          window.ShareThisViaEmail
-        ]
-      });
-      Drupal.selectionShare.init();
+      if (shareThis) {
+        Drupal.selectionShare = shareThis({
+          selector: '#content-body',
+          sharers: [
+            window.ShareThisViaTwitter,
+            window.ShareThisViaFacebook,
+            window.ShareThisViaLinkedIn,
+            window.ShareThisViaEmail
+          ]
+        });
+        Drupal.selectionShare.init();
+      }
     });
   }
 };
@@ -299,14 +301,16 @@ Drupal.behaviors.fpwpShareThis = {
  */
 Drupal.behaviors.fpwpShareCharts = {
   attach: function (context, settings) {
-    $('.field-name-field-paragraphs .chart').once('addthis-chart', function() {
-      var addthisLink = $('.addthis_button_compact', this);
-      if (addthisLink.length) {
-        var text = $('.field-name-field-chart-title', this).text().trim();
-        var shareUrl = $(addthisLink).data('share-url');
-        addthis.button($(addthisLink)[0], {services_compact: 'facebook,twitter,linkedin,pinterest_share', services_exclude: 'print'}, {url: shareUrl, title: text});
-      }
-    });
+    if (window.addthis) {
+      $('.field-name-field-paragraphs .chart').once('addthis-chart', function() {
+        var addthisLink = $('.addthis_button_compact', this);
+        if (addthisLink.length) {
+          var text = $('.field-name-field-chart-title', this).text().trim();
+          var shareUrl = $(addthisLink).data('share-url');
+          addthis.button($(addthisLink)[0], {services_compact: 'facebook,twitter,linkedin,pinterest_share', services_exclude: 'print'}, {url: shareUrl, title: text});
+        }
+      });
+    }
   }
 };
 
@@ -315,14 +319,16 @@ Drupal.behaviors.fpwpShareCharts = {
  */
 Drupal.behaviors.fpwpShareFacts = {
   attach: function (context, settings) {
-    $('#block-views-fact-block-1 .node-fact').once('addthis-fact', function() {
-      var addthisLink = $('.addthis_button_compact', this);
-      if (addthisLink.length) {
-        var text = $('.field-name-fact-fact', this).text().trim();
-        var shareUrl = $(addthisLink).data('share-url');
-        addthis.button($(addthisLink)[0], {services_compact: 'facebook,twitter,linkedin,pinterest_share', services_exclude: 'print'}, {url: shareUrl, title: text});
-      }
-    });
+    if (window.addthis) {
+      $('#block-views-fact-block-1 .node-fact').once('addthis-fact', function() {
+        var addthisLink = $('.addthis_button_compact', this);
+        if (addthisLink.length) {
+          var text = $('.field-name-fact-fact', this).text().trim();
+          var shareUrl = $(addthisLink).data('share-url');
+          addthis.button($(addthisLink)[0], {services_compact: 'facebook,twitter,linkedin,pinterest_share', services_exclude: 'print'}, {url: shareUrl, title: text});
+        }
+      });
+    }
   }
 };
 
@@ -331,7 +337,7 @@ Drupal.behaviors.fpwpShareFacts = {
  */
 Drupal.behaviors.fpwpShareRefresh = {
   attach: function (context, settings) {
-    if (addthis && addthis.layers && addthis.layers.refresh) {
+    if (window.addthis && addthis.layers && addthis.layers.refresh) {
       addthis.layers.refresh();
     }
   }

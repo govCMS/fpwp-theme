@@ -56,12 +56,12 @@ scripts[] = js/highcharts-world-custom.js
 scripts[] = js/highcharts-data.js
 scripts[] = js/highcharts-accessibility.js
 scripts[] = js/jquery.matchHeight-min.js
-scripts[] = js/share-this.js
-scripts[] = js/share-this-email.js
-scripts[] = js/share-this-facebook.js
-scripts[] = js/share-this-linked-in.js
-scripts[] = js/share-this-reddit.js
-scripts[] = js/share-this-twitter.js
+;scripts[] = js/share-this.js
+;scripts[] = js/share-this-email.js
+;scripts[] = js/share-this-facebook.js
+;scripts[] = js/share-this-linked-in.js
+;scripts[] = js/share-this-reddit.js
+;scripts[] = js/share-this-twitter.js
 scripts[] = js/script.js
 
 
