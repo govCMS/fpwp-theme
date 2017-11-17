@@ -1319,7 +1319,7 @@
 
   Highcharts.chartData['chart-2.2'] = new ChartData().setOptions({
     chart: {
-      type: 'areaspline'
+      type: 'spline'
     },
     credits: {
       enabled: false
@@ -1336,7 +1336,8 @@
       title: {
         text: 'Percentage of world manufacturing output'
       },
-      max: 50
+      max: 50,
+      min: 0
     },
     legend: {
       enabled: false
@@ -1360,11 +1361,6 @@
       valueDecimals: 1
     },
     series: [{
-      name: 'Difference',
-      enableMouseTracking: false,
-      marker: false,
-      data: [27.7, 27.1, 24.2, 23, 22.4, 23.1, 23.6, 26.5, 24.2, 21.8, 22.9, 23, 22.9, 22.6, 22.1, 21.8, 20.9, 18.9, 15.3, 12.9, 11.7, 9.9, 10.5, 9.6, 7.3, 6.4]
-    }, {
       name: 'Asia’s share of global manufacturing output',
       data: [27.3, 27.9, 30.8, 32.0, 32.6, 31.9, 31.4, 28.5, 30.8, 33.2, 32.1, 32.0, 32.1, 32.4, 32.9, 33.2, 34.1, 36.1, 39.7, 42.1, 43.3, 45.1, 44.5, 45.4, 47.7, 48.6]
     }]
@@ -1611,7 +1607,7 @@
       },
       spline: {
         marker: {
-          enabled: true
+          enabled: false
         }
       },
       areaspline: {
