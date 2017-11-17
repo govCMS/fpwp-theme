@@ -285,6 +285,13 @@ table {
   tbody th {
     font-weight: 400;
   }
+
+  // The profile image table on the ministerial foreword page.
+  &.profile-image {
+    td {
+      width: 50%;
+    }
+  }
 }
 
 .intro-text {

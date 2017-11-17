@@ -1376,6 +1376,9 @@ table td {
 table tbody th {
   font-weight: 400;
 }
+table.profile-image td {
+  width: 50%;
+}
 
 .intro-text {
   font-size: 1.25rem;
