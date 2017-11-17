@@ -22,7 +22,8 @@ header.header {
       background-size: cover;
       border-bottom: none;
       display: block;
-      width: 285px;
+      // width: 285px;
+      width: 350px; // temporary width for alt logo //
       height: 110px;
     }
   }
@@ -308,6 +309,7 @@ header.header {
   }
 }
 
+
 /*.front header.headroom--top .header__name-and-slogan a {
   background: url('../images/site-logo-front.png') no-repeat;
 }
@@ -495,5 +497,18 @@ body.mobile-nav--show #navigation {
   }
   header .toggle-wrapper a:first-of-type {
     background-image: url('../images/icon-search-black.png')
+  }
+}
+
+// temporary logo(alt) cropping for home page
+.page-container[data-namespace="front"] header {
+  @include breakpoint(m) {
+    .header__name-and-slogan {
+      padding: 2rem 0 0 2rem;
+      a {
+        background-size: 400px;
+        width: 150px;
+      }
+    }  
   }
 }

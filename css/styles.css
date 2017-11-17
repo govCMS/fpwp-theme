@@ -1010,7 +1010,7 @@ h3 {
 
 h4 {
   font-family: "sofia-pro", Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
 }
 
 h5 {
@@ -1140,13 +1140,24 @@ input[type="submit"]:active {
 }
 
 article p a:not(.button) {
-  color: black;
-  border-bottom: 2px solid black;
+  color: rgba(24, 19, 60, 0.5);
 }
 article p a:not(.button):active, article p a:not(.button):hover, article p a:not(.button):focus {
   text-decoration: none;
   color: #4d4d4d;
   border-bottom: 2px solid #4d4d4d;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  color: #757288;
 }
 
 blockquote {
@@ -1180,13 +1191,17 @@ blockquote:after {
 
 .highlight-box {
   background: #e3e4e5;
-  margin: 3rem -10%;
-  padding: 5rem 3rem 3rem;
+  margin: 3rem auto;
+  padding: 3rem;
   position: relative;
-  max-width: 120%;
-  margin-left: -10%;
-  width: 120%;
+  width: 100%;
   box-sizing: border-box;
+}
+.highlight-box h4 {
+  margin-top: 0;
+}
+.highlight-box p:last-of-type {
+  margin-bottom: 0;
 }
 @media (max-width: 888px) {
   .highlight-box {
@@ -1194,22 +1209,6 @@ blockquote:after {
     margin: auto;
     width: calc(100% - .75rem);
   }
-}
-.highlight-box::after {
-  content: "HIGHLIGHT";
-  font-family: "sofia-pro", Arial, sans-serif;
-  font-size: 0.75rem;
-  color: white;
-  border-radius: 3px;
-  display: block;
-  height: 1.5rem;
-  width: 4.5rem;
-  position: absolute;
-  text-align: center;
-  line-height: 1.5rem;
-  top: 1rem;
-  left: -.75rem;
-  background: linear-gradient(90deg, #6157e7, #e53872);
 }
 .highlight-box::before {
   display: block;
@@ -1226,6 +1225,16 @@ blockquote:after {
 
 .cke_editable blockquote {
   margin-left: 0;
+}
+
+.chart-source {
+  color: rgba(24, 19, 60, 0.5);
+  font-family: "sofia-pro", Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  margin: 15px auto 35px;
 }
 
 .media-element-container {
@@ -1311,11 +1320,23 @@ article ul ul ul {
   list-style: disc;
 }
 article ul > li:before {
-  content: ">";
+  content: " ";
   display: inline-block;
   margin-left: -30px;
+  margin-right: 15px;
   text-align: center;
-  width: 30px;
+  width: 8px;
+  height: 8px;
+  background: #c24076;
+}
+article ul > li.book_add_child:before,
+article ul > li.book_printer:before {
+  content: " ";
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 article ol ol {
   list-style-type: lower-alpha;
@@ -1350,6 +1371,7 @@ table th,
 table td {
   border: 0;
   padding: .5rem 1rem;
+  vertical-align: top;
 }
 table tbody th {
   font-weight: 400;
@@ -3603,7 +3625,7 @@ header.header .header__name-and-slogan a {
   background-size: cover;
   border-bottom: none;
   display: block;
-  width: 285px;
+  width: 350px;
   height: 110px;
 }
 header.header #navigation {
@@ -4094,6 +4116,16 @@ body.mobile-nav--show #navigation .region-mobile-nav .toggle-wrapper .toggle-mob
 }
 .not-front.node-type-policy header .toggle-wrapper a:first-of-type {
   background-image: url("../images/icon-search-black.png");
+}
+
+@media (max-width: 888px) {
+  .page-container[data-namespace="front"] header .header__name-and-slogan {
+    padding: 2rem 0 0 2rem;
+  }
+  .page-container[data-namespace="front"] header .header__name-and-slogan a {
+    background-size: 400px;
+    width: 150px;
+  }
 }
 
 /*
@@ -4666,7 +4698,7 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
   min-width: 70vw;
   min-height: 75vh;
   content: " ";
-  background: url(../images/banner-learn.jpg) top right no-repeat;
+  background: url(../images/casestudy-collage.jpg) top right no-repeat;
   background-size: cover;
   opacity: .45;
   -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
@@ -4695,7 +4727,7 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
 }
 
 /* ---------------- !
-   Hover animations 
+   Hover animations
 ! ----------------- */
 @media (min-width: 888px) {
   .hover-left #block-bean-read-the-white-paper:before {
@@ -4729,7 +4761,7 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
   }
 }
 /* --------- !
-  Responsive 
+  Responsive
 ! --------- */
 .page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
   display: none;
@@ -5776,6 +5808,8 @@ input.highcharts-range-selector {
 
 .not-front.node-type-policy.slideout-menu--show {
   overflow-x: hidden;
+  overflow: hidden;
+  height: 100vh;
 }
 .not-front.node-type-policy.slideout-menu--show .header-wrapper,
 .not-front.node-type-policy.slideout-menu--show footer {
@@ -6207,6 +6241,20 @@ a.addthis_button_compact svg {
     background: rgba(44, 40, 67, 0.8);
   }
 }
+.node-type-case-study #content-header .field-name-field-image img {
+  top: -25% !important;
+  right: 50% !important;
+  transform: translateX(50%);
+  min-width: 100vw !important;
+}
+.node-type-case-study #content-header .field-name-field-image:after {
+  opacity: .7;
+}
+@media (max-width: 666px) {
+  .node-type-case-study #content-header .field-name-field-image:after {
+    display: none;
+  }
+}
 .node-type-case-study #content-body {
   max-width: 63.625rem;
   width: 100%;
@@ -6220,7 +6268,7 @@ a.addthis_button_compact svg {
   margin: auto;
   position: relative;
 }
-.node-type-case-study #content-body article div > p:first-child:first-letter {
+.node-type-case-study #content-body article .field-type-text-with-summary > div > div > p:first-child:first-letter {
   color: #2c2843;
   float: left;
   font-family: "sofia-pro", Arial, sans-serif;
@@ -6271,6 +6319,9 @@ a.addthis_button_compact svg {
     display: none !important;
     /* Using important tag to override default AddThis styling, using more specific classes without the important tag didn't work */
   }
+}
+.node-type-case-study #content-body .at4-show ul li:before {
+  display: none;
 }
 .node-type-case-study .region-inner {
   padding: 0 2rem;
@@ -7279,6 +7330,10 @@ body.keynav .page-container[data-namespace="case-landing"] #content-body .view-i
   padding: 0;
   margin: 0;
 }
+.page-container[data-namespace="policy-content"] #main #content .addthis_inline_share_toolbox_wmxb ul:before,
+.page-container[data-namespace="policy-content"] #main #content .addthis_inline_share_toolbox_wmxb li:before {
+  display: none;
+}
 .page-container[data-namespace="policy-content"] #main #content .addthis_inline_share_toolbox_wmxb a:focus {
   outline: 3px auto #85b3ff;
 }
@@ -7385,6 +7440,7 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next,
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous {
+  line-height: 1.4;
   padding-left: 1.5625rem;
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next::before,
@@ -7422,9 +7478,6 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous {
   top: 12.5rem;
 }
-.page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous:hover:after {
-  top: -2.5rem;
-}
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next {
   bottom: 4rem;
 }
@@ -7433,9 +7486,6 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   bottom: -3rem;
   transform: translateX(-75%) rotate(180deg);
   transition: .3s ease-out bottom;
-}
-.page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next:hover:after {
-  bottom: -3.5rem;
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-menu {
   position: fixed;
@@ -7532,6 +7582,29 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 }
 .page-container[data-namespace="policy-content"] #main #content-body blockquote {
   margin: 1.5em 0;
+}
+.page-container[data-namespace="policy-content"] #main #content-body .chart__table {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.page-container[data-namespace="policy-content"] #main #content-body .media-element-container img {
+  border: none;
+}
+.page-container[data-namespace="policy-content"] #main #content-body .media-element-container .field-name-field-image-caption {
+  max-width: calc(80% + 15px);
+  margin: auto;
+}
+.page-container[data-namespace="policy-content"] #main #content-body .field-name-field-chart-source .field-items p,
+.page-container[data-namespace="policy-content"] #main #content-body .field-name-field-chart-notes .field-items p {
+  display: inline;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  color: rgba(24, 19, 60, 0.5);
 }
 @media (max-width: 999px) {
   .page-container[data-namespace="policy-content"] #main #content,
@@ -7775,6 +7848,31 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 .field-name-field-chart-id {
   z-index: 50;
   position: relative;
+}
+
+/*
+ * Minister page styling
+ */
+.profile-image .media-element-container {
+  margin: auto;
+}
+.profile-image tr,
+.profile-image td {
+  border-bottom: none;
+  padding-left: 0;
+  vertical-align: top;
+}
+
+.mt-profile-image .media-element-container {
+  margin: initial;
+  max-width: 300px;
+  text-align: left;
+}
+.mt-profile-image tr,
+.mt-profile-image td {
+  border-bottom: none;
+  padding-left: 0;
+  vertical-align: top;
 }
 
 /**

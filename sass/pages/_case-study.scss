@@ -20,7 +20,6 @@
         left: -2.25rem;
       }
     }
-
     .field-name-field-image::before {
         background: rgba($purple-dark, .6);
         display: block;
@@ -35,6 +34,21 @@
           background: rgba($purple-dark, .8);
         }
     }
+    // adjust banner treatment for case studies only //
+    .field-name-field-image {
+      img {
+        top: -25% !important;
+        right: 50% !important;
+        transform: translateX(50%);
+        min-width: 100vw !important;
+      }
+      &:after {
+        opacity: .7;
+        @include breakpoint(xs) {
+          display: none;
+        }
+      }
+    }
   }
   #content-body {
     max-width: rem(1018);
@@ -47,7 +61,7 @@
       width: 100%;
       margin: auto;
       position: relative;
-      div > p:first-child:first-letter {
+      .field-type-text-with-summary > div > div > p:first-child:first-letter {
         color: $purple-dark;
         float: left;
         font-family: $sans;
@@ -90,8 +104,11 @@
       @include breakpoint(l) {
         display: none !important; /* Using important tag to override default AddThis styling, using more specific classes without the important tag didn't work */
       }
+      ul li:before {
+        display: none;
+      }
     }
-  } 
+  }
   .region-inner {
     padding: 0 2rem;
   }
@@ -123,7 +140,7 @@
       left: rem(-5);
     }
   }
-  @include breakpoint(m) {  
+  @include breakpoint(m) {
     #content-header-fields {
       padding: 0 rem(25);
     }

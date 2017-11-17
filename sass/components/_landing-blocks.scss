@@ -13,11 +13,11 @@
     }
     .bean-basic {
       transition: .6s ease all;
-      text-align: center;      
+      text-align: center;
       width: 100%;
       padding: 0 2rem;
       box-sizing: border-box;
-      .content {        
+      .content {
         position: relative;
         z-index: 20;
         max-width: 38rem;
@@ -45,7 +45,7 @@
 #block-bean-read-the-white-paper {
   transition: .6s ease all;
   -webkit-transform: scaleX(1) translateX(0%) translate3d(0, 0, 0);
-  transform: scaleX(1) translateX(0%) translate3d(0, 0, 0); 
+  transform: scaleX(1) translateX(0%) translate3d(0, 0, 0);
   left: 0;
   width: 50%;
   height: 850px;
@@ -83,13 +83,13 @@
   &::before {
     transition: transform .6s ease;
     -webkit-transform: scaleX(1) translateX(0%) skewX(0deg) translateZ(0) translate3d(0, 0, 0);
-    transform: scaleX(1) translateX(0%) skewX(0deg) translateZ(0) translate3d(0, 0, 0); 
+    transform: scaleX(1) translateX(0%) skewX(0deg) translateZ(0) translate3d(0, 0, 0);
     background: white;
     content: "";
     width: 100%;
     height: 100%;
     display: block;
-    @include absolute(top left);   
+    @include absolute(top left);
   }
   &::after {
     transition: transform .6s ease;
@@ -101,8 +101,8 @@
     width: 100%;
     height: 100%;
     display: block;
-    @include absolute(top left);    
-    max-height: 800px; 
+    @include absolute(top left);
+    max-height: 800px;
   }
   .bean-basic {
     transition: transform .6s ease;
@@ -123,7 +123,7 @@
   overflow: hidden;
   .bean-basic {
     @include absolute(top 260px right 0);
-    width: 50%;    
+    width: 50%;
     h2 {
       @include right-border-decoration;
       &::after {
@@ -136,14 +136,14 @@
     p {
       margin-top: rem(30);
     }
-  }  
+  }
   &:before {
     @include absolute(top right);
     display: block;
     min-width: 70vw;
     min-height: 75vh;
     content: " ";
-    background: url(../images/banner-learn.jpg) top right no-repeat;
+    background: url(../images/casestudy-collage.jpg) top right no-repeat;
     background-size: cover;
     opacity: .45; //.7; // Accessibility Fix
     -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
@@ -152,7 +152,7 @@
     transition: transform .6s ease;
     @include breakpoint(l) {
       opacity: .5;
-    }    
+    }
   }
   &:after {
     @include absolute(top right);
@@ -164,12 +164,12 @@
     background-size: 100vw 100vh;
     background-position: top right;
     transform: scale(1);
-    z-index: 10;       
-  }   
+    z-index: 10;
+  }
 }
 
 /* ---------------- !
-   Hover animations 
+   Hover animations
 ! ----------------- */
 @media (min-width: 888px) {
   .hover-left #block-bean-read-the-white-paper {
@@ -184,7 +184,7 @@
   }
 
   .hover-right {
-    #block-bean-read-the-white-paper {      
+    #block-bean-read-the-white-paper {
       transform: translateX(-10%);
       transition: transform .6s ease;
       .bean-basic {
@@ -194,15 +194,15 @@
       &:after {
         transition: transform .6s ease;
         transform: translateX(10%);
-      }   
+      }
       &:before {
         transition: transform .6s ease;
-        transform: scaleX(1.2) translateX(-5%) skewX(2.5deg);      
-      }    
+        transform: scaleX(1.2) translateX(-5%) skewX(2.5deg);
+      }
     }
     #block-bean-foreign-policy-in-practice {
       &:before {
-        transition: transform .6s ease;      
+        transition: transform .6s ease;
         transform: scale(1.2);
       }
     }
@@ -210,7 +210,7 @@
 }
 
 /* --------- !
-  Responsive 
+  Responsive
 ! --------- */
 
 // Ensure homepage background image and page background are identical
@@ -289,7 +289,7 @@
         padding-top: rem(130);
         position: relative;
         height: 425px;
-        width: 100%;        
+        width: 100%;
 
         &:before {
           display: none;
@@ -297,7 +297,7 @@
         &:after {
           background: rgba($white, .5);
           height: 100%;
-          width: 100%;          
+          width: 100%;
           content: "";
           display: block;
           @include absolute(top left);
@@ -336,7 +336,7 @@
   }
   @include breakpoint(xxxs) {
     .contextual-links-region {
-      width: 100%;      
+      width: 100%;
       h3 {
         font-size: rem(15);
         margin-bottom: 2rem;

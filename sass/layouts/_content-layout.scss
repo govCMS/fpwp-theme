@@ -12,39 +12,20 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
-
 #footer {
   -webkit-flex: 1;
   -ms-flexbox: 1;
   -webkit-box: 1;
   flex: 1;
 }
-
-// @TODO What is this for? Centering the layout?
-// .page-node,
-// .not-front {
-//   #content-body {
-//     @include zen-grid-item(8, 3);
-//     .node-page {
-//       width: 80%;
-//       margin: 0 auto;
-//     }
-//   }
-// }
-
-// .section-foreign-policy-in-action:not(.page-foreign-policy-in-action) #main {
 .section-foreign-policy-in-action:not(.page-foreign-policy-in-action) {
   .breadcrumb {
     max-width: 1600px;
     margin: 1rem auto 2rem;
-    // padding: 2rem;
     padding: 0 2rem;
   }
   #content-header {
     position: relative;
-    //min-height: 50vh;
-    //overflow: hidden;
-    // padding-top: rem(135);
     padding-top: rem(150);
     @include breakpoint(xxs) {
       padding-top: rem(100);
@@ -79,16 +60,7 @@
       z-index: -1;
       img {
         @include absolute(top right);
-        // min-width: 100%;
-        // min-height: 100%;
         min-width: 70vw;
-        // min-height: 70vh;
-        // max-width: none;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        // filter: saturate(4) brightness(.7);
-        // -webkit-filter: saturate(4) brightness(.7);
       }
       &:after {
         @include absolute(top right);
@@ -99,7 +71,6 @@
         background-image: url(../images/case-grad.png);
         background-size: 100vw 100vh;
         z-index: 10;
-        // mix-blend-mode: multiply;
         @include breakpoint(xs) {
           display: none;
         }

@@ -9,6 +9,8 @@
 
 .not-front.node-type-policy.slideout-menu--show {
   overflow-x: hidden;
+  overflow: hidden; // stop page scrolling //
+  height: 100vh;  // fixed height of browser //
   .header-wrapper,
   footer {
     display: none;

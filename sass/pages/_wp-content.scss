@@ -1,13 +1,6 @@
 //.not-front.node-type-policy {
 .page-container[data-namespace="policy-content"] {
   header.header {
-    // &.headroom.headroom--top #navigation .region-navigation a {
-    //   color: $purple-dark;
-    // }
-    // &.headroom.headroom--top #navigation .region-navigation .sf-item-1.sf-depth-1 a:before,
-    // &.headroom.headroom--top #navigation .region-navigation .sf-item-2.sf-depth-1 a:before {
-    //   background-color: $purple-dark;
-    // }
     #block-search-api-page-default-search  {
       border-left: 1px solid $grey;
       input[type="text"] {
@@ -16,10 +9,6 @@
         -webkit-text-fill-color: $black;
       }
     }
-    // &.headroom.headroom--top .toggle-wrapper a:first-of-type,
-    // #block-search-api-page-default-search input[type="submit"] {
-    //   background-image: url('../images/icon-search-black.png')
-    // }
     input {
       caret-color: $purple-dark;
     }
@@ -34,11 +23,9 @@
     position: relative;
     #content {
       box-sizing: border-box;
-      // margin: 0 0 0 40vw;
       margin: 0 0 0 40%;
       padding: rem(297) rem(30) 0 rem(192);
       right: 0;
-      // width: 58vw;
       width: 60%;
       .addthis_inline_share_toolbox_wmxb {
         transition: .2s ease-out all;
@@ -68,15 +55,16 @@
           list-style: none;
           padding: 0;
           margin: 0;
+          &:before {
+            display: none;
+          }
         }
         a:focus {
-          // outline: dashed;
           @include base-outline;
         }
 
       }
       @include breakpoint(xxl) {
-        // padding: rem(120) rem(30) 0 11vw;
         padding-top: rem(120);
         padding-right: rem(30);
       }
@@ -121,9 +109,7 @@
       }
     }
     #content-nav {
-      // @include absolute(left 40vw top 0);
       @include absolute(left 40% top 0);
-      // width: 10vw;
       width: 10%;
       height: 100%;
       z-index: 1;
@@ -158,22 +144,19 @@
         }
         .page-next,
         .page-previous {
+          line-height: 1.4;
           padding-left: rem(25);
           &::before {
             content: "";
-            // background: url('../images/wp-navigation-next-image.png') no-repeat; // TODO: Placeholder image - remove once backend implements image.
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            // border: 1px solid #3333337d;
-            // border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             filter: drop-shadow(0px 10px 12px rgba($black,.5));
             display: inline-block;
             @include absolute(left -25px);
             width: rem(46);
             height: rem(46);
-            // transition: .3s ease-out transform; // The transitionend bubbles up and creates issues
           }
           &::after {
             content: "";
@@ -189,18 +172,14 @@
           }
           &:hover {
             text-decoration: none;
-            // transition: .3s ease-out all; // The transitionend bubbles up and creates issues
             color: $purple;
           }
         }
         .page-previous {
           top: rem(200);
-          &:before {
-            // background: url('../images/wp-navigation-prev-image.png') no-repeat; // TODO: Placeholder image - remove once backend implements image.
-          }
-          &:hover:after {
-            top: -2.5rem;
-          }
+          // &:hover:after {
+          //   top: -2.5rem;
+          // }
         }
         .page-next {
           bottom: rem(64);
@@ -210,22 +189,18 @@
             transform: translateX(-75%) rotate(180deg);
             transition: .3s ease-out bottom;
           }
-          &:hover:after {
-            // transform: translateY(5px) translateX(-75%) rotate(180deg);
-            bottom: -3.5rem;
-          }
+          // &:hover:after {
+          //   bottom: -3.5rem;
+          // }
         }
         .page-menu {
           position: fixed;
           top: 350px;
-          // left: calc(40vw - 60px);
           left: calc(40% - 60px);
-          // right: calc(60vw - 75px);
           background: url('../images/icon-contents.jpg') no-repeat left top;
           height: rem(46);
           text-indent: -9999px;
           transition: .5s ease all;
-          // width: rem(120);
           span {
             text-indent: 0;
             display: block;
@@ -306,6 +281,30 @@
       margin-left: 0;
       blockquote {
         margin: 1.5em 0;
+      }
+      .chart__table {
+        // hide all sr-only tables //
+        @include element-invisible;
+      }
+      .media-element-container {
+        // resets img styling for custom infographics //
+        img {
+          border: none;
+        }
+        .field-name-field-image-caption {
+          // counter the container's width to appear inline with rest of text //
+          max-width: calc(80% + 15px);
+          margin: auto;
+        }
+      }
+      .field-name-field-chart-source .field-items p,
+      .field-name-field-chart-notes .field-items p {
+        display: inline;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        color: rgba(24, 19, 60, 0.5);
       }
     }
     @include breakpoint(l) {
@@ -521,7 +520,6 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
   }
 }
 
-// .not-front.node-type-policy.search-block-form--show .header-wrapper .region-navigation #block-search-api-page-default-search .toggle-wrapper a:first-of-type {
 .node-type-policy.search-block-form--show .header-wrapper .region-navigation #block-search-api-page-default-search .toggle-wrapper a:first-of-type {
   background-image: url('../images/icon-close-black.png');
 }
@@ -529,4 +527,33 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
 .field-name-field-chart-id {
   z-index:  50;
   position: relative;
+}
+
+/*
+ * Minister page styling
+ */
+
+.profile-image {
+  .media-element-container {
+    margin: auto;
+  }
+  tr,
+  td {
+    border-bottom: none;
+    padding-left: 0;
+    vertical-align: top;
+  }
+}
+.mt-profile-image {
+  .media-element-container {
+    margin: initial;
+    max-width: 300px;
+    text-align: left;
+  }
+  tr,
+  td {
+    border-bottom: none;
+    padding-left: 0;
+    vertical-align: top;
+  }
 }
