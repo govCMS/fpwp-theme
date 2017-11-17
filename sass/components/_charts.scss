@@ -204,6 +204,9 @@ g.highcharts-series,
 }
 
 // Chart specific colours.
+.highcharts-pie-series .highcharts-data-label-connector {
+  fill: none !important;
+}
 .highcharts-pie-series .highcharts-color-0 {
   fill: nth($colors, 7);
   stroke: nth($colors, 7);

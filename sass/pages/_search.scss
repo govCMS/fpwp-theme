@@ -39,16 +39,29 @@
     padding: 0;
     margin: rem(24) 0 rem(44) 0;
     li.search-result {
-      padding: rem(15);
+      padding: rem(20);
       background: $white;
       border-radius: rem(2);
       border: 1px solid $grey-mid-light;
+    }
+    h3.title {
+      margin-top: 0;
     }
     h3 a {
       color: $purple-lightest;
       &:visited {
         color: $purple-light;
       }
+    }
+    p {
+      margin-bottom: 0;
+    }
+    .result-type {
+      background-color: $grey-light;
+      display: inline-block;
+      margin-top: 1.875rem;
+      padding: .25rem .5rem;
+      font-size: rem(12);
     }
   }
 }

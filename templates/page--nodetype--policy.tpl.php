@@ -82,9 +82,11 @@
     <?php print render($page['footer']); ?>
     <div id="slideout-menu" aria-hidden="true">
       <div class="slideout-menu__titles">
-        <div class="slideout-menu__chapter">
-          <?php print $chapter_number; ?>
-        </div>
+        <?php if ($chapter_number): ?>
+          <div class="slideout-menu__chapter">
+            <?php print $chapter_number; ?>
+          </div>
+        <?php endif; ?>
         <?php if ($title): ?>
           <h1 class="slideout-menu__title" id="slideout-menu-title"><?php print $title; ?></h1>
         <?php endif; ?>

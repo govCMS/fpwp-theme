@@ -50,12 +50,16 @@ function fpwp_preprocess_page(&$variables, $hook) {
     }
 
     if ($node->type == 'policy') {
-      $menu_trail = menu_get_active_trail();
-      // We assume only 3 levels of book, including the top level page, which
-      // isn't used in the book, so level 2 are chapters and level 3 are
-      // sections.
-      $chapter_number = explode(':', $menu_trail[2]['link_title']);
-      $variables['chapter_number'] = $chapter_number[0];
+      // Don't display the chapter number if we're on a chapter level page.
+      $variables['chapter_number'] = '';
+      if ($node->book['depth'] != 2) {
+        $menu_trail = menu_get_active_trail();
+        // We assume only 3 levels of book, including the top level page, which
+        // isn't used in the book, so level 2 are chapters and level 3 are
+        // sections.
+        $chapter_number = explode(':', $menu_trail[2]['link_title']);
+        $variables['chapter_number'] = $chapter_number[0];
+      }
     }
   }
 
@@ -219,37 +223,35 @@ function fpwp_preprocess_field(&$variables, $hook) {
       }
     }
   }
+
+  // Add an anchor to chart titles.
+  if ($element['#field_name'] == 'field_chart_title') {
+    $variables['chart_title_id'] = '';
+    if ($items = field_get_items('paragraphs_item', $element['#object'], 'field_chart_id')) {
+      $variables['chart_title_id'] = 'chart-title-' . str_replace('.', '-', $items[0]['value']);
+    }
+  }
 }
 
 /**
- * Processes variables for book-navigation.tpl.php.
+ * Override or insert variables into the search-api-page-result templates.
  *
- * It creates the thumbnail url variable for the previous and next pages of the book navigation
+ * @param array $variables
+ *   An array of variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("block" in this case.)
  */
-function fpwp_preprocess_book_navigation(&$variables) {
-  $book_link = $variables['book_link'];
-  $variables['prev_image'] = null;
-  if ($book_link['mlid']) {
-    $variables['tree'] = book_children($book_link);
-    if ($prev = book_prev($book_link)) {
-      if ($prev['link_path']) {
-        if($prev_id = menu_get_item($prev['link_path'])) {
-          if(isset($prev_id['page_arguments'][0]->field_image['und'][0]['uri'])) {
-            $variables['prev_image'] = image_style_url('thumbnail', $prev_id['page_arguments'][0]->field_image['und'][0]['uri']);
-          }
-        }
-      }
-    }
-    $variables['next_image'] = null;
-    if ($next = book_next($book_link)) {
-      if ($next['link_path']) {
-        if($next_id = menu_get_item($next['link_path'])) {
-          if(isset($next_id['page_arguments'][0]->field_image['und'][0]['uri'])) {
-            $variables['next_image'] = image_style_url('thumbnail', $next_id['page_arguments'][0]->field_image['und'][0]['uri']);
-          }
-        }
-      }
-    }
+function fpwp_preprocess_search_api_page_result(&$variables, $hook) {
+  switch ($variables['item']->type) {
+    case 'policy':
+      $variables['result_type'] = t('White Paper');
+      break;
+    case 'case_study':
+      $variables['result_type'] = t('Foreign Policy in Action');
+      break;
+    default:
+      $variables['result_type'] = '';
+      break;
   }
 }
 

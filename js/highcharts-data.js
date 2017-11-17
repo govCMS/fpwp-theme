@@ -457,7 +457,7 @@
     },
     xAxis: {
       title: {
-        text: 'Year'
+        text: ''
 
       },
       categories: [2001, 2006, 2011, 2017],
@@ -510,19 +510,6 @@
   Highcharts.chartData['chart-1.4'].setOptions({
     chart: {
       map: 'custom/world-custom',
-      events: {
-        load: function () {
-          var ren = this.renderer;
-          // Separator, client from service
-          ren.label('Other<br/>$211.2b', 500, 300)
-            .attr({
-            })
-            .css({
-                color: 'black'
-            })
-            .add();
-        }
-      }
     },
     exporting: {
       fallbackToExportServer: false,
@@ -834,7 +821,7 @@
     },
     yAxis: {
       title: {
-        text: 'AUD$ billions'
+        text: '$ BILLION'
       },
     },
     plotOptions: {
@@ -944,7 +931,7 @@
     xAxis: {
       categories: ['Japan', 'Republic of Korea', 'EU-28', 'Thailand', 'China', 'US', 'Australia', 'Indonesia', 'Malaysia', 'India', 'Philippines'],
       title: {
-        text: 'Country'
+        text: ''
       },
     },
     yAxis: {
@@ -1114,6 +1101,7 @@
         minSize: 3,
         // maxSize: '8%',
         tooltip: {
+          headerFormat: '',
           pointFormat: '{point.displayName}: {point.z}'
         },
         data: [
@@ -1502,7 +1490,7 @@
     },
     yAxis: {
       title: {
-        text: 'Displaced persons (millions)'
+        text: 'DISPLACED PERSONS (MILLION)'
       },
       labels: {
         formatter: function () {
@@ -1528,10 +1516,10 @@
     tooltip: {
       shared: false,
       crosshairs: true,
-      valueDecimals: 1
+      valueDecimals: 0
     },
     series: [ {
-      name: 'Forcibly displaced worlwide (million)',
+      name: 'Forcibly displaced worldwide (million)',
       data: [39, 43, 42, 43, 44, 43, 45, 51, 59, 65, 66]
     }]
   });
@@ -1603,7 +1591,7 @@
     },
     yAxis: {
       title: {
-        text: '$US TRILLIONS'
+        text: 'US$ TRILLION'
       },
     },
     xAxis: {

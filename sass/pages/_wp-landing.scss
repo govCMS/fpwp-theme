@@ -44,7 +44,7 @@
             height: 10px;
             transform: translateX(-15px);
           }
-        }        
+        }
         &:hover,
         &:focus {
           text-decoration: none;
@@ -57,7 +57,7 @@
             transition: 0.4s ease-out all;
             @include breakpoint(xxs) {
               transform: translateX(-20px);
-            } 
+            }
           }
         }
       }
@@ -145,7 +145,7 @@
     &:before,
     &:after {
       display: none;
-    }    
+    }
   }
 
   .view-fpwp-book-menu {
@@ -164,7 +164,7 @@
     height: 100vh;
     background-color: white;
     &:after {
-      display: none;   
+      display: none;
     }
     &:before {
       transition: 0s;
@@ -178,12 +178,12 @@
 
       height: 100%;
       display: block;
-      @include fixed(top left);    
+      @include fixed(top left);
       max-height: 800px;
       // z-index: 20;
       // clip-path: inset(0 17% 0 0);
       overflow: hidden;
-    }        
+    }
     // Intro text
     article {
       opacity: 0;
@@ -195,6 +195,10 @@
       box-sizing: border-box;
       animation: slide-in-up 1s both;
       animation-delay: 2s;
+
+      .paragraphs-items-field-paragraphs {
+        margin-top: 2rem;
+      }
 
       h1 {
         @include gradient-border;
@@ -219,7 +223,7 @@
           margin: 0; // Bring the list of links closer together
         }
         a {
-          // border-bottom: 0;
+          border: 0;
           color: black;
           font-family: "sofia-pro", Arial, sans-serif;
           font-size: rem(14);
@@ -228,8 +232,6 @@
           margin: 0 1rem 0 -0.5rem;
           letter-spacing: 0.025em;
           display: block;
-          border-bottom: 0;
-          border-top: 1px solid rgba(0,0,0,0.15);
           text-transform: uppercase;
           &:hover {
             transition: all 0.5s ease;
@@ -244,7 +246,7 @@
         left: 0;
         max-width: 40vw;
         padding: 2rem;
-        top: 200px;        
+        top: 200px;
       }
     }
   }
@@ -270,10 +272,10 @@
         @include relative(top left);
         height: auto;
         width: auto;
-        overflow: initial;        
+        overflow: initial;
         padding: 150px 15px 25px;
         background: url(../images/paper-map4.png) no-repeat -300px -40px;
-        background-size: 1000px;         
+        background-size: 1000px;
         article {
           position: static;
           height: auto;
@@ -287,7 +289,7 @@
         }
         &:before {
           display: none;
-        }      
+        }
         &:after {
           display: none;
         }
@@ -341,7 +343,7 @@
   }
 }
 
-@media (max-height: 750px) and (min-width: 999px) { 
+@media (max-height: 750px) and (min-width: 999px) {
 // workaround to stop footer floating over content on short browsers
   .page-container[data-namespace="policy-landing"] {
     #content-body .view-fpwp-book-menu .view-header article {

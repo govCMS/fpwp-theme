@@ -50,4 +50,9 @@
       <p class="search-snippet"><?php print $snippet; ?></p>
     <?php endif; ?>
   </div>
+  <?php if ($result_type): ?>
+    <div class="result-type">
+      <?php print $result_type; ?>
+    </div>
+  <?php endif; ?>
 </li>
