@@ -16,8 +16,7 @@
  *   The name of the template being rendered ("html" in this case).
  */
 function fpwp_preprocess_html(&$variables, $hook) {
-  // $variables['add_this_init_code'] = '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59b8c68ee102f011"></script>';
-  $variables['add_this_init_code'] = '';
+  $variables['add_this_init_code'] = '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59b8c68ee102f011"></script>';
 }
 
 /**
