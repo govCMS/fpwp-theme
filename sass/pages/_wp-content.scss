@@ -300,11 +300,11 @@
       .field-name-field-chart-source .field-items p,
       .field-name-field-chart-notes .field-items p {
         display: inline;
-        font-size: 0.75rem;
-        line-height: 1rem;
+        font-size: rem(12);
+        line-height: 1.5rem;
         font-style: normal;
         font-weight: 300;
-        color: rgba(24, 19, 60, 0.5);
+        color: $purple-light-grey;
       }
     }
     @include breakpoint(l) {
@@ -536,6 +536,9 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
 .profile-image {
   .media-element-container {
     margin: auto;
+    margin-left: 0;
+    max-width: 300px;
+    text-align: left;
   }
   tr,
   td {
@@ -545,6 +548,8 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
   }
 }
 .mt-profile-image {
+  width: inherit !important;
+  margin: 0 .5rem .5rem 0;
   .media-element-container {
     margin: initial;
     max-width: 300px;

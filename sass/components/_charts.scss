@@ -69,6 +69,7 @@ $highlight-color-10: #e6ebf5 !default; // Pressed button, color axis min color.
 .field-name-field-chart-title {
     fill: $neutral-color-80;
     font-size: rem(24);
+    text-align: center;
 }
 .highcharts-subtitle {
     fill: $neutral-color-60;
@@ -204,9 +205,6 @@ g.highcharts-series,
 }
 
 // Chart specific colours.
-.highcharts-pie-series .highcharts-data-label-connector {
-  fill: none !important;
-}
 .highcharts-pie-series .highcharts-color-0 {
   fill: nth($colors, 7);
   stroke: nth($colors, 7);
@@ -698,28 +696,21 @@ input.highcharts-range-selector {
 .paragraphs-item-chart {
     margin-bottom: rem(30);
     .field-name-field-chart-source {
-        margin: 2rem auto 1rem;
+        margin: 2rem auto 0rem;
     }
     .field-name-field-chart-title .field-item {
       font-family: $sans;
       font-size: rem(26);
       color: $purple;
     }
-    .field-label {
-        font-family: $sans;
-        font-size: rem(14);
-        line-height: 1.25;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba($purple,.5);
-    }
+    .field-label,
     .field-item {
         font-family: $sans;
         font-size: rem(12);
-        line-height: 1.5;
+        line-height: 1.5rem;
         font-style: normal;
         font-weight: 300;
-        color: rgba($purple,.5);
+        color: $purple-light-grey;
     }
     // Multiple line text fields with inline labels.
     .field-type-text-long.field-label-inline {

@@ -169,19 +169,14 @@
     &:before {
       transition: 0s;
       transform: scale(1.1) translateX(0) translateZ(0); // translateZ to force layer creation, prime for animation
-      background: url("../images/paper-map4.jpg") no-repeat;
-      background-color: white;
-      background-position: right -176px top -105px;
+      background: url("../images/paper-map4.png") no-repeat;
+      background-position: left -750px top -105px;
       content: "";
-      width: 39%;
-      width: 37.6%;
-
+      width: 50%;
       height: 100%;
       display: block;
-      @include fixed(top left);
+      @include absolute(top left);
       max-height: 800px;
-      // z-index: 20;
-      // clip-path: inset(0 17% 0 0);
       overflow: hidden;
     }
     // Intro text

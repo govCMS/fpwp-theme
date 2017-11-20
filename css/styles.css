@@ -1323,7 +1323,7 @@ article ul > li:before {
   content: " ";
   display: inline-block;
   margin-left: -30px;
-  margin-right: 15px;
+  margin-right: 22px;
   text-align: center;
   width: 8px;
   height: 8px;
@@ -3289,7 +3289,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1501717616');
+  background-image: url('../images/progress.gif?1506560471');
 }
 
 .contextual-links li::before {
@@ -4644,7 +4644,7 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
   -webkit-transform: scale(1) translateX(0) translateZ(0) translate3d(0, 0, 0);
   transform: scale(1) translateX(0) translateZ(0) translate3d(0, 0, 0);
   background: url("../images/paper-map4.png") no-repeat;
-  background-position: right;
+  background-position: left -750px top -105px;
   content: "";
   width: 100%;
   height: 100%;
@@ -4701,18 +4701,13 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
   min-width: 70vw;
   min-height: 75vh;
   content: " ";
-  background: url(../images/casestudy-collage.jpg) top right no-repeat;
+  background: url(../images/banner-learn.jpg) top right no-repeat;
   background-size: cover;
-  opacity: .45;
+  opacity: .35;
   -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
   transform: scale(1) translateZ(0) translate3d(0, 0, 0);
   z-index: 5;
   transition: transform .6s ease;
-}
-@media (max-width: 999px) {
-  #block-bean-foreign-policy-in-practice:before {
-    opacity: .5;
-  }
 }
 #block-bean-foreign-policy-in-practice:after {
   position: absolute;
@@ -4946,6 +4941,7 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
 .field-name-field-chart-title {
   fill: #333333;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .highcharts-subtitle {
@@ -5143,10 +5139,6 @@ g.highcharts-series,
 .highcharts-color-10 {
   fill: #613d91;
   stroke: #613d91;
-}
-
-.highcharts-pie-series .highcharts-data-label-connector {
-  fill: none !important;
 }
 
 .highcharts-pie-series .highcharts-color-0 {
@@ -5726,28 +5718,21 @@ input.highcharts-range-selector {
   margin-bottom: 1.875rem;
 }
 .paragraphs-item-chart .field-name-field-chart-source {
-  margin: 2rem auto 1rem;
+  margin: 2rem auto 0rem;
 }
 .paragraphs-item-chart .field-name-field-chart-title .field-item {
   font-family: "sofia-pro", Arial, sans-serif;
   font-size: 1.625rem;
   color: #18133c;
 }
-.paragraphs-item-chart .field-label {
-  font-family: "sofia-pro", Arial, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.25;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(24, 19, 60, 0.5);
-}
+.paragraphs-item-chart .field-label,
 .paragraphs-item-chart .field-item {
   font-family: "sofia-pro", Arial, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
   font-style: normal;
   font-weight: 300;
-  color: rgba(24, 19, 60, 0.5);
+  color: #77748b;
 }
 .paragraphs-item-chart .field-type-text-long.field-label-inline .field-items {
   float: none;
@@ -6518,14 +6503,9 @@ body.node-type-case-study #content-body::after {
   content: " ";
   background: url(../images/banner-learn.jpg) top right no-repeat;
   background-size: cover;
-  opacity: .45;
+  opacity: .25;
   transform: scale(1.2) translateZ(0);
   z-index: 5;
-}
-@media (max-width: 999px) {
-  .page-container[data-namespace="case-landing"] #main:before {
-    opacity: .3;
-  }
 }
 @media (max-width: 666px) {
   .page-container[data-namespace="case-landing"] #main:before {
@@ -7624,10 +7604,10 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 .page-container[data-namespace="policy-content"] #main #content-body .field-name-field-chart-notes .field-items p {
   display: inline;
   font-size: 0.75rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
   font-style: normal;
   font-weight: 300;
-  color: rgba(24, 19, 60, 0.5);
+  color: #77748b;
 }
 @media (max-width: 999px) {
   .page-container[data-namespace="policy-content"] #main #content,
@@ -7878,6 +7858,9 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
  */
 .profile-image .media-element-container {
   margin: auto;
+  margin-left: 0;
+  max-width: 300px;
+  text-align: left;
 }
 .profile-image tr,
 .profile-image td {
@@ -7886,6 +7869,10 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   vertical-align: top;
 }
 
+.mt-profile-image {
+  width: inherit !important;
+  margin: 0 .5rem .5rem 0;
+}
 .mt-profile-image .media-element-container {
   margin: initial;
   max-width: 300px;
@@ -8081,15 +8068,13 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 .page-container[data-namespace="policy-landing"] #content-body .view-fpwp-book-menu .view-header:before {
   transition: 0s;
   transform: scale(1.1) translateX(0) translateZ(0);
-  background: url("../images/paper-map4.jpg") no-repeat;
-  background-color: white;
-  background-position: right -176px top -105px;
+  background: url("../images/paper-map4.png") no-repeat;
+  background-position: left -750px top -105px;
   content: "";
-  width: 39%;
-  width: 37.6%;
+  width: 50%;
   height: 100%;
   display: block;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   max-height: 800px;

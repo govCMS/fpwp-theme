@@ -381,6 +381,17 @@ Drupal.behaviors.fpwpYoutubeEmbed = {
 };
 
 /**
+ * Add wrapper to figure titles
+ */
+Drupal.behaviors.wrapFigureTitle = {
+  attach: function (context, settings) {
+    $('.paragraphs-item-chart .field-name-field-chart-title h4, .node-type-policy .figure-title').once('wrap-figure-title', function() {
+      $(this).html(($(this).html().replace(/(^Figure [^ ]+)/gi, '<span>$1</span>')));
+    });
+  }
+};
+
+/**
  * IE Fix for "jumpy" fixed background - @see http://brospars.github.io/snippets/ie-jumpy-bg
  */
  // if IE (no Edge)
