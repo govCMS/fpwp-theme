@@ -58,7 +58,7 @@ HTML comment.
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><h4 id="<?php print $chart_title_id; ?>"><?php print render($item); ?></h4></div>
+      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><<?php print $chart_title_level; ?> id="<?php print $chart_title_id; ?>"><?php print render($item); ?></<?php print $chart_title_level; ?>></div>
     <?php endforeach; ?>
   </div>
 </div>

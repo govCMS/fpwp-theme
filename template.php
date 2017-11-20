@@ -228,6 +228,15 @@ function fpwp_preprocess_field(&$variables, $hook) {
     $variables['chart_title_id'] = '';
     if ($items = field_get_items('paragraphs_item', $element['#object'], 'field_chart_id')) {
       $variables['chart_title_id'] = 'chart-title-' . str_replace('.', '-', $items[0]['value']);
+      // Set heading level for specific charts
+      // Default to H4
+      $variables['chart_title_level'] = 'h4';
+      switch ($items[0]['value']) {
+        case '4.4a':
+        case '4.4b':
+          $variables['chart_title_level'] = 'h5';
+          break;
+      }
     }
   }
 }
