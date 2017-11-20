@@ -1263,7 +1263,7 @@ blockquote:after {
   margin-bottom: 0;
 }
 .media-element-container .field-name-field-image-caption {
-  color: rgba(24, 19, 60, 0.5);
+  color: #77748b;
   font-family: "sofia-pro", Arial, sans-serif;
   font-size: 0.75rem;
   margin-bottom: 2.75rem;
@@ -4942,6 +4942,12 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
   fill: #333333;
   font-size: 1.5rem;
   text-align: center;
+}
+
+.highcharts-title .wrap-figure-title-processed > span,
+.field-name-field-chart-title .wrap-figure-title-processed > span,
+.figure-title > span {
+  margin-right: 1rem;
 }
 
 .highcharts-subtitle {

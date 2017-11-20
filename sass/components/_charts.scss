@@ -71,6 +71,11 @@ $highlight-color-10: #e6ebf5 !default; // Pressed button, color axis min color.
     font-size: rem(24);
     text-align: center;
 }
+.highcharts-title .wrap-figure-title-processed > span,
+.field-name-field-chart-title .wrap-figure-title-processed > span,
+.figure-title > span {
+  margin-right: 1rem;
+}
 .highcharts-subtitle {
     fill: $neutral-color-60;
 }
