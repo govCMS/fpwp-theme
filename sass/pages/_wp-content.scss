@@ -84,7 +84,7 @@
           }
         }
         .breadcrumb {
-          padding: 2rem 0 0 0;
+          padding: 2rem 0 1rem 0;
           li {
             color: $grey;
           }
@@ -93,8 +93,12 @@
             font-size: rem(11);
             text-decoration: none;
             text-transform: uppercase;
+            border-bottom: 1px solid transparent;
             &:first-child {
               font-weight: $semibold;
+            }
+            &:hover {
+              border-color: black;
             }
           }
         }
@@ -160,37 +164,42 @@
           }
           &::after {
             content: "";
-            background: url('../images/icon-page-arrow.png') no-repeat;
-            background-size: 15px 25px;
+            background: url('../images/icon-page-arrow2.png') no-repeat;
+            background-size: cover;
             display: block;
-            top: -2rem;
+            @include absolute(top -2rem left 2.5rem);
+            // top: -2rem;
+            // left: 2.5rem;
             transform: translateX(-75%);
-            position: absolute;
-            width: rem(15);
+            // position: absolute;
+            width: rem(25);
             height: rem(25);
-            transition: .3s ease-out top;
+            // transition: .3s ease-out top;
           }
           &:hover {
             text-decoration: none;
-            color: $purple;
+            color: $grey;
+            &::after {
+              background-image: url('../images/icon-page-arrow3.png');
+            }
           }
         }
         .page-previous {
           top: rem(200);
           // &:hover:after {
-          //   top: -2.5rem;
+          //   top: -2.1rem;
           // }
         }
         .page-next {
           bottom: rem(64);
           &::after {
             top: auto;
-            bottom: -3rem;
+            bottom: -2rem;
             transform: translateX(-75%) rotate(180deg);
-            transition: .3s ease-out bottom;
+            // transition: .3s ease-out bottom;
           }
           // &:hover:after {
-          //   bottom: -3.5rem;
+          //   bottom: -2.1rem;
           // }
         }
         .page-menu {
@@ -201,6 +210,7 @@
           height: rem(46);
           text-indent: -9999px;
           transition: .5s ease all;
+          text-decoration: none;
           span {
             text-indent: 0;
             display: block;

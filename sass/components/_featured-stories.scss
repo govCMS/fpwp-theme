@@ -186,7 +186,7 @@
       // right: 0;
       // position: absolute;
       display: none;
-    }    
+    }
     #block-views-topics-block {
       @include absolute(top 140px left right);
       margin: auto;
@@ -379,7 +379,7 @@
     overflow: hidden;
     box-sizing: border-box;
     white-space: nowrap;
-    max-width: 100%;    
+    max-width: 100%;
     p,
     .field-item {
       color: $white;
@@ -389,7 +389,7 @@
       margin: 0;
       white-space: nowrap;
       text-overflow: ellipsis;
-      overflow: hidden;      
+      overflow: hidden;
     }
   }
 
@@ -455,7 +455,7 @@
 }
 
 /* Topic landing page required different responsive styling for case studies */
-.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul {  
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul {
   @include breakpoint(l) {
     .field-name-title {
       top: 40%;
@@ -465,7 +465,7 @@
         margin: 15px auto;
       }
     }
-  }    
+  }
 }
 
 /* Updating min-height and font-size for FPiP and case studies not on front page. */
@@ -484,7 +484,7 @@
       overflow: hidden;
       h3 {
         margin: 15px auto;
-      }      
+      }
     }
   }
 }
@@ -517,7 +517,7 @@
 .section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:hover,
 #block-views-case-studies-featured-stories .view-display-id-featured_stories > .view-content > .item-list > ul li a:focus,
 .region-tertiary-content .view-recommended-reading .view-content .item-list ul li a:focus,
-.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:focus  {  
+.section-foreign-policy-in-action .view-display-id-page > .view-content > .item-list > ul li a:focus  {
   .field-name-field-card-image,
   .field-name-field-image {
     img {

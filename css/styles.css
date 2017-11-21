@@ -1265,9 +1265,6 @@ blockquote:after {
 .media-element-container.media-infographic {
   margin-top: 2rem;
 }
-.media-element-container.media-infographic img {
-  margin-bottom: 1.8rem;
-}
 .media-element-container .field-name-field-image-caption {
   color: #77748b;
   font-family: "sofia-pro", Arial, sans-serif;
@@ -1302,6 +1299,11 @@ blockquote:after {
 }
 .media-element-container .file-image .element-invisible a {
   display: none;
+}
+@media (max-width: 999px) {
+  .media-element-container {
+    margin-left: 0;
+  }
 }
 
 .cke_editable .media-element-container {
@@ -5736,7 +5738,7 @@ input.highcharts-range-selector {
   margin-bottom: 1.875rem;
 }
 .paragraphs-item-chart .field-name-field-chart-source {
-  margin: 2rem auto 0rem;
+  margin: 0 auto 0rem;
 }
 .paragraphs-item-chart .field-name-field-chart-source .field-label,
 .paragraphs-item-chart .field-name-field-chart-source .field-items,
@@ -5849,6 +5851,9 @@ input.highcharts-range-selector {
 .not-front.node-type-policy.slideout-menu--show #main #content-nav .page-menu.toggle-slideout-menu:hover {
   background-color: black;
   transition: .3s ease all;
+}
+.not-front.node-type-policy.slideout-menu--show #main #content-nav .page-menu.toggle-slideout-menu:hover span {
+  color: black;
 }
 .not-front.node-type-policy.slideout-menu--show #main #content-nav .page-menu.toggle-slideout-menu span:before {
   width: 0;
@@ -7408,7 +7413,7 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   width: 3.75rem;
 }
 .page-container[data-namespace="policy-content"] #main #content #content-header .breadcrumb {
-  padding: 2rem 0 0 0;
+  padding: 2rem 0 1rem 0;
 }
 .page-container[data-namespace="policy-content"] #main #content #content-header .breadcrumb li {
   color: #757288;
@@ -7418,9 +7423,13 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   font-size: 0.6875rem;
   text-decoration: none;
   text-transform: uppercase;
+  border-bottom: 1px solid transparent;
 }
 .page-container[data-namespace="policy-content"] #main #content #content-header .breadcrumb a:first-child {
   font-weight: 600;
+}
+.page-container[data-namespace="policy-content"] #main #content #content-header .breadcrumb a:hover {
+  border-color: black;
 }
 .page-container[data-namespace="policy-content"] #main #content #content-header-fields {
   text-align: left;
@@ -7495,20 +7504,24 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next::after,
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous::after {
   content: "";
-  background: url("../images/icon-page-arrow.png") no-repeat;
-  background-size: 15px 25px;
+  background: url("../images/icon-page-arrow2.png") no-repeat;
+  background-size: cover;
   display: block;
-  top: -2rem;
-  transform: translateX(-75%);
   position: absolute;
-  width: 0.9375rem;
+  top: -2rem;
+  left: 2.5rem;
+  transform: translateX(-75%);
+  width: 1.5625rem;
   height: 1.5625rem;
-  transition: .3s ease-out top;
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next:hover,
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous:hover {
   text-decoration: none;
-  color: #18133c;
+  color: #757288;
+}
+.page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next:hover::after,
+.page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous:hover::after {
+  background-image: url("../images/icon-page-arrow3.png");
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-previous {
   top: 12.5rem;
@@ -7518,9 +7531,8 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-next::after {
   top: auto;
-  bottom: -3rem;
+  bottom: -2rem;
   transform: translateX(-75%) rotate(180deg);
-  transition: .3s ease-out bottom;
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-menu {
   position: fixed;
@@ -7530,6 +7542,7 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   height: 2.875rem;
   text-indent: -9999px;
   transition: .5s ease all;
+  text-decoration: none;
 }
 .page-container[data-namespace="policy-content"] #main #content-nav .book-navigation .page-menu span {
   text-indent: 0;

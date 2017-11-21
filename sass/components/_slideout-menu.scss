@@ -27,6 +27,9 @@
     &:hover {
       background-color: $black;
       transition: .3s ease all;
+      span {
+        color: black;
+      }
     }
     span {
       &:before {

@@ -71,9 +71,9 @@ blockquote {
     margin-bottom: 0;
   }
   @include breakpoint(m) {
-      max-width: 100%;
-      margin: auto;
-      width: calc(100% - .75rem);
+    max-width: 100%;
+    margin: auto;
+    width: calc(100% - .75rem);
   }
   // client asked to remove label //
   // &::after {
@@ -151,9 +151,6 @@ blockquote {
   }
   &.media-infographic {
     margin-top: 2rem;
-    img {
-      margin-bottom: 1.8rem;
-    }
   }
 
   .field-name-field-image-caption {
@@ -200,6 +197,9 @@ blockquote {
         display: none;
       }
     }
+  }
+  @include breakpoint(l) {
+    margin-left: 0;
   }
 }
 // Make sure it doesn't flow out of the text editor.
