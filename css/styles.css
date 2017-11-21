@@ -4944,6 +4944,11 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
   text-align: center;
 }
 
+.figure-title,
+.field-name-field-chart-source {
+  text-align: center;
+}
+
 .highcharts-title .wrap-figure-title-processed > span,
 .field-name-field-chart-title .wrap-figure-title-processed > span,
 .figure-title > span {
@@ -5725,6 +5730,13 @@ input.highcharts-range-selector {
 }
 .paragraphs-item-chart .field-name-field-chart-source {
   margin: 2rem auto 0rem;
+}
+.paragraphs-item-chart .field-name-field-chart-source .field-label,
+.paragraphs-item-chart .field-name-field-chart-source .field-items,
+.paragraphs-item-chart .field-name-field-chart-notes .field-label,
+.paragraphs-item-chart .field-name-field-chart-notes .field-items {
+  display: inline-block;
+  float: none;
 }
 .paragraphs-item-chart .field-name-field-chart-title .field-item {
   font-family: "sofia-pro", Arial, sans-serif;

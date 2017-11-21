@@ -71,6 +71,10 @@ $highlight-color-10: #e6ebf5 !default; // Pressed button, color axis min color.
     font-size: rem(24);
     text-align: center;
 }
+.figure-title,
+.field-name-field-chart-source {
+  text-align: center;
+}
 .highcharts-title .wrap-figure-title-processed > span,
 .field-name-field-chart-title .wrap-figure-title-processed > span,
 .figure-title > span {
@@ -702,6 +706,14 @@ input.highcharts-range-selector {
     margin-bottom: rem(30);
     .field-name-field-chart-source {
         margin: 2rem auto 0rem;
+    }
+    .field-name-field-chart-source,
+    .field-name-field-chart-notes {
+      .field-label,
+      .field-items {
+        display: inline-block;
+        float: none;
+      }
     }
     .field-name-field-chart-title .field-item {
       font-family: $sans;
