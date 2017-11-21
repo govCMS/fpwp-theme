@@ -5741,7 +5741,11 @@ input.highcharts-range-selector {
 .paragraphs-item-chart .field-name-field-chart-source .field-label,
 .paragraphs-item-chart .field-name-field-chart-source .field-items,
 .paragraphs-item-chart .field-name-field-chart-notes .field-label,
-.paragraphs-item-chart .field-name-field-chart-notes .field-items {
+.paragraphs-item-chart .field-name-field-chart-notes .field-items,
+.paragraphs-item-chart .field-name-field-chart-source.field-label-inline .field-label,
+.paragraphs-item-chart .field-name-field-chart-source.field-label-inline .field-items,
+.paragraphs-item-chart .field-name-field-chart-notes.field-label-inline .field-label,
+.paragraphs-item-chart .field-name-field-chart-notes.field-label-inline .field-items {
   display: inline-block;
   float: none;
 }

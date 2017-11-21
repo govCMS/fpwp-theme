@@ -709,7 +709,9 @@ input.highcharts-range-selector {
         margin: 2rem auto 0rem;
     }
     .field-name-field-chart-source,
-    .field-name-field-chart-notes {
+    .field-name-field-chart-notes,
+    .field-name-field-chart-source.field-label-inline,
+    .field-name-field-chart-notes.field-label-inline {
       .field-label,
       .field-items {
         display: inline-block;
