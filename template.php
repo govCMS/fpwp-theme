@@ -239,6 +239,21 @@ function fpwp_preprocess_field(&$variables, $hook) {
       }
     }
   }
+
+  // Prepend title in compact view with the chapter number if the page is part
+  // of a book. Only applies to policy and case study.
+  if ($element['#field_name'] == 'title' && $element['#view_mode'] == 'compact') {
+    $node = $element['#object'];
+    if ($node->type == 'policy' || $node->type == 'case_study') {
+      if (isset($node->book['depth']) && $node->book['depth'] == 3) {
+        $parent_menu = menu_link_load($node->book['plid']);
+        $chapter_number = explode(':', $parent_menu['link_title']);
+        $variables['items'][0]['#markup'] = '<h3>' . $chapter_number[0] . ': ' . $variables['items'][0]['#markup'] . '</h3>';
+      } else {
+        $variables['items'][0]['#markup'] = '<h3>' . $variables['items'][0]['#markup'] . '</h3>';
+      }
+    }
+  }
 }
 
 /**
@@ -252,10 +267,13 @@ function fpwp_preprocess_field(&$variables, $hook) {
 function fpwp_preprocess_search_api_page_result(&$variables, $hook) {
   switch ($variables['item']->type) {
     case 'policy':
-      $variables['result_type'] = t('White Paper');
+      $variables['result_type'] = t('2017 Foreign Policy White Paper');
       break;
     case 'case_study':
-      $variables['result_type'] = t('Foreign Policy in Action');
+      $variables['result_type'] = t('Case study - Foreign Policy in Action');
+      break;
+    case 'media_release':
+      $variables['result_type'] = t('Latest news items');
       break;
     default:
       $variables['result_type'] = '';

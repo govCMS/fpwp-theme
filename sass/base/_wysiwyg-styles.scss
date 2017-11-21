@@ -149,6 +149,12 @@ blockquote {
       margin-bottom: 0;
     }
   }
+  &.media-infographic {
+    margin-top: 2rem;
+    img {
+      margin-bottom: 1.8rem;
+    }
+  }
 
   .field-name-field-image-caption {
     color: $purple-light-grey;

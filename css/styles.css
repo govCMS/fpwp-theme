@@ -1262,6 +1262,12 @@ blockquote:after {
 .media-element-container.media-portrait_left .field-name-field-image-caption {
   margin-bottom: 0;
 }
+.media-element-container.media-infographic {
+  margin-top: 2rem;
+}
+.media-element-container.media-infographic img {
+  margin-bottom: 1.8rem;
+}
 .media-element-container .field-name-field-image-caption {
   color: #77748b;
   font-family: "sofia-pro", Arial, sans-serif;
@@ -4945,7 +4951,8 @@ body.keynav .page-container[data-namespace="front"] .region.region-home-row-1 .c
 }
 
 .figure-title,
-.field-name-field-chart-source {
+.field-name-field-chart-source,
+.field-name-field-chart-notes {
   text-align: center;
 }
 
@@ -6476,6 +6483,9 @@ a.addthis_button_compact svg {
 @media (max-width: 555px) {
   .not-front:not(.page-foreign-policy-in-action):not(.page-node-46) #content-header h1 {
     font-size: 2.125rem;
+  }
+  .not-front:not(.page-foreign-policy-in-action):not(.page-node-46) .field-name-field-paragraph-content h2 {
+    font-size: 1.875rem;
   }
 }
 
