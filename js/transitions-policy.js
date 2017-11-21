@@ -21,7 +21,7 @@ Drupal.behaviors.fpwpIgnoreLinks = {
       // Ignore other links on homepage.
       '.front .region-home-row-2 a, .front .region-home-row-3 a, ' +
       // Ignore case landing page (in case you get here via dynamic links).
-      'page-foreign-policy-in-action a, ' +
+      '.page-foreign-policy-in-action a, ' +
       // Blanket rule to ignore header and footer.
       'header a, footer a, ' +
       // Ignore the home link in the breadcrumb.
@@ -163,7 +163,12 @@ var policyContentView = Barba.BaseView.extend({
   namespace: 'policy-content',
   // The new Container is ready and attached to the DOM.
   onEnter: function() {
+    $(window).scrollTop(0);
     prefetch($('a.page-previous, a.page-next'));
+    // Prevents animation jumping when clicking the link more than once
+    $('a.page-previous, a.page-next').bind('click.policy', function() {
+      if ($('.page-container.transition-out, .page-container.transition-load, .page-container.transition-in').length > 0) return false;
+    });
   },
   // The Transition has just finished.
   onEnterCompleted: function() {

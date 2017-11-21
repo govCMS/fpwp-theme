@@ -1,15 +1,13 @@
 // Inline link wysiwyg style.
 article p a:not(.button) {
-  color: rgba($purple,.5);
-  // border-bottom: 2px solid rgba($purple,.5);
-
-  &:active,
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: lighten($base-color, 30%);
-    border-bottom: 2px solid lighten($base-color, 30%);
-  }
+  text-decoration: none;
+  color: $grey;
+  border-bottom: 1px solid rgba($purple,.2);
+  padding-bottom: 1px;
+  &:hover {
+    color: $purple;
+    border-color: $purple;
+  }        
 }
 
 h3,
@@ -151,6 +149,9 @@ blockquote {
   }
   &.media-infographic {
     margin-top: 2rem;
+    img {
+      margin-bottom: 0;
+    }
   }
 
   .field-name-field-image-caption {
@@ -239,6 +240,9 @@ article {
       width: 8px;
       height: 8px;
       background: $pink-bright;
+    }
+    li {
+      margin-bottom: 5px;
     }
     > li.book_add_child:before,
     > li.book_printer:before {

@@ -3,6 +3,16 @@
   blockquote {
     margin: 1.5em 0;
   }
+  a {
+    text-decoration: none;
+    color: $grey;
+    border-bottom: 1px solid rgba($purple,.2);
+    padding-bottom: 1px;
+    &:hover {
+      color: $purple;
+      border-color: $purple;
+    }        
+  }  
   .highlight-box {
     margin: 3rem 12px;
     width: inherit;

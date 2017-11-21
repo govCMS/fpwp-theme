@@ -168,13 +168,9 @@
             background-size: cover;
             display: block;
             @include absolute(top -2rem left 2.5rem);
-            // top: -2rem;
-            // left: 2.5rem;
             transform: translateX(-75%);
-            // position: absolute;
             width: rem(25);
             height: rem(25);
-            // transition: .3s ease-out top;
           }
           &:hover {
             text-decoration: none;
@@ -186,9 +182,6 @@
         }
         .page-previous {
           top: rem(200);
-          // &:hover:after {
-          //   top: -2.1rem;
-          // }
         }
         .page-next {
           bottom: rem(64);
@@ -196,11 +189,7 @@
             top: auto;
             bottom: -2rem;
             transform: translateX(-75%) rotate(180deg);
-            // transition: .3s ease-out bottom;
           }
-          // &:hover:after {
-          //   bottom: -2.1rem;
-          // }
         }
         .page-menu {
           position: fixed;
@@ -289,6 +278,16 @@
       width: calc(100% - 4rem);
       max-width: 760px;
       margin-left: 0;
+      article a:not(.at-share-btn) {
+        text-decoration: none;
+        color: $grey;
+        border-bottom: 1px solid rgba($purple,.2);
+        padding-bottom: 1px;
+        &:hover {
+          color: $purple;
+          border-color: $purple;
+        }
+      }
       blockquote {
         margin: 1.5em 0;
       }
@@ -355,10 +354,10 @@
         }
       }
       #content-body {
-      padding: 0;
-      margin: 0 auto;
-      width: 100%;
-      @include content-body-shadows;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+        @include content-body-shadows;
         &:before,
         &:after {
           top: 17rem;
@@ -422,8 +421,8 @@
 }
 
 @include breakpoint(l) {
-// workaround to not style the sldie out menu at this breakpoint
-body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] #main #content-nav {
+  // workaround to not style the sldie out menu at this breakpoint
+  body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] #main #content-nav {
     display: block;
     margin: 50px auto 50px;
     clear: both;
@@ -540,8 +539,12 @@ body:not(.slideout-menu--show) .page-container[data-namespace="policy-content"] 
 }
 
 /*
- * Minister page styling
- */
+* Minister page styling
+*/
+.signature {
+  display: inline-block;
+  padding-right: 3rem; 
+}
 
 .profile-image {
   .media-element-container {

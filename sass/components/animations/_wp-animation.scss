@@ -52,8 +52,18 @@ html {
  */
 
 .page-container[data-namespace="policy-content"] {
+  &.transition-load,
+  &.transition-in {
+    #main #content-nav .book-navigation .page-menu {
+      transition: none !important;
+      span.toggle-text:before {
+        transition: none !important;
+      }
+    }
+  }  
   &.transition-load {
-    animation: loading 0.2s both;
+    // Fix for iOS or Safari not recognising animation had changed
+    animation: loading 0.01s both;
     // #content {
     //   animation: fade-out 0.5s both;
     // }
@@ -301,7 +311,7 @@ html {
   }
 
   to {
-    transform: translateY(-100%);
+    transform: translateY(-200vh);
     opacity: 0;
   }
 }
@@ -313,7 +323,7 @@ html {
   }
 
   to {
-    transform: translateY(100%);
+    transform: translateY(200vh);
     opacity: 0;
   }
 }
@@ -344,7 +354,7 @@ html {
 
 @keyframes slide-in-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(100vh);
     opacity: 0;
   }
 
@@ -369,7 +379,7 @@ html {
 
 @keyframes slide-in-down {
   from {
-    transform: translateY(-100%);
+    transform: translateY(-100vh);
     opacity: 0;
   }
 

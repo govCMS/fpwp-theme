@@ -3,7 +3,6 @@
 * foreign policy in practice layout.
 */
 .page-container[data-namespace="case-landing"] #main {
-  // background-color: #384291;
   background-color: darken(#384291, 5%); // Aceesibility Fix
   &:before {
     position: fixed;
@@ -18,9 +17,6 @@
     opacity: .25;
     transform: scale(1.2) translateZ(0);
     z-index: 5;
-    // @include breakpoint(l) {
-    //   opacity: .3;
-    // }
     @include breakpoint(xs) {
       background-position: top right 20%;
     }    
@@ -47,8 +43,6 @@
   }
 }
 
-// .section-foreign-policy-in-action.page-foreign-policy-in-action #main,
-// .page-taxonomy-term.section-foreign-policy-in-action #main {
 .page-container[data-namespace="case-landing"],
 .page-taxonomy-term.section-foreign-policy-in-action {
   #content-header {
@@ -77,7 +71,6 @@
       h1 {
         @include gradient-border;
         line-height: 1;
-        // max-width: 22rem;
         max-width: 500px;
         margin-bottom: 2rem;
         &::after {
@@ -274,51 +267,14 @@
 #footer {
   position: relative;
 }
-
-// @TODO Liam to clean up...
-
-// //.page-taxonomy-term.section-foreign-policy-in-action #main #content #content-header .field-name-field-image,
-// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image {
-// .page-taxonomy-term.section-foreign-policy-in-action #content-header .field-name-field-image,
-// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image {
-//   &:after {
-//     background: radial-gradient(ellipse farthest-corner at 100% -50%, rgb(59, 61, 140) 0%, #3b3d8c 55%, #3b3d8c 75%, #006c8c 100%);
-//   }
-// }
-// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image {
-// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image {
-//   background: radial-gradient(ellipse farthest-corner at 100% -50%, rgb(59, 61, 140) 0%, #3b3d8c 55%, #3b3d8c 75%, #006c8c 100%);
-// }
-// //.not-front:not(.page-foreign-policy-in-action) #main #content-header::before,
-// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image:after {
-// .not-front:not(.page-foreign-policy-in-action) #content-header::before,
-// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image:after {
-//   display: none;
-// }
-
-// //.section-foreign-policy-in-action:not(.page-foreign-policy-in-action) #main #content-header .field-name-field-image img,
-// //.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image img {
-// .section-foreign-policy-in-action:not(.page-foreign-policy-in-action) #content-header .field-name-field-image img,
-// .page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
-//   -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 60%);
-//   mask-image: radial-gradient(rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 60%);
-//   @include absolute (top -45vh right -30vw);
-//   left: initial;
-//   transform: none;
-//   z-index: 100000;
-//   height: auto;
-//   filter: saturate(2) contrast(1.2);
-//   opacity: .6;
-//   max-width: none;
-// }
-
+.page-container[data-namespace="case-landing"] #content-header #content-header-fields h1 {
+  max-width: 380px;
+}
 .page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
   display: none;
 }
 
-//.section-foreign-policy-in-action.page-foreign-policy-in-action #main #content-header .field-name-field-image img {
 .page-container[data-namespace="case-landing"] #content-header .field-name-field-image img {
-  //@include absolute (top -30% right -20%);
   @include breakpoint(xl) {
       @include absolute (top -50% right -50%);
   }

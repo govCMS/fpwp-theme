@@ -476,7 +476,10 @@ body.mobile-nav--show #navigation {
 .page-container[data-namespace="front"] header .header__name-and-slogan a,
 .page-container[data-namespace="policy-landing"] header .header__name-and-slogan a {
   background: url('../images/site-logo-front.png') no-repeat;
-  background-size: contain;
+  // background-size: contain;
+  background-size: 350px !important;
+  width: 115px;
+  height: 110px;  
 }
 
 .not-front.node-type-policy {
@@ -505,10 +508,10 @@ body.mobile-nav--show #navigation {
   @include breakpoint(m) {
     .header__name-and-slogan {
       padding: 2rem 0 0 2rem;
-      a {
-        background-size: 400px;
-        width: 150px;
-      }
+      // a {
+      //   background-size: 400px;
+      //   width: 150px;
+      // }
     }  
   }
 }
