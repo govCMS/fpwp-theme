@@ -196,6 +196,9 @@ Drupal.behaviors.fpwpSlideoutMenu = {
         // state, so force a mousemove event to trigger the change in hover
         // state on the link so CSS transitions fire.
         $('body').trigger('mousemove');
+        // Clean up social sharing icons to mitigate page length issues
+        $('.share-this-popover').remove();
+        $('#at-image-sharing-tool').css('top',0);
       }
     }
 
@@ -289,7 +292,9 @@ Drupal.behaviors.fpwpShareThis = {
           window.ShareThisViaEmail
         ]
       });
-      Drupal.selectionShare.init();
+      if (!window.matchMedia || !window.matchMedia("(pointer: coarse)").matches) {
+          Drupal.selectionShare.init();
+      }
     });
   }
 };

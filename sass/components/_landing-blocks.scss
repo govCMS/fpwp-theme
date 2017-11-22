@@ -43,13 +43,14 @@
 }
 
 #block-bean-read-the-white-paper {
-  transition: .6s ease all;
+  // transition: all .6s ease;
+  transition: transform .6s ease, left .6s ease, width .6s ease, height .6s ease;
   -webkit-transform: scaleX(1) translateX(0%) translate3d(0, 0, 0);
   transform: scaleX(1) translateX(0%) translate3d(0, 0, 0);
   left: 0;
   width: 50%;
   height: 850px;
-  background: white;
+  // background: white;
   z-index: 20; // make the paper container sit on top of the learn container
   a:nth-of-type(2) {
     @extend %inline-link;
@@ -70,8 +71,8 @@
       outline: 0;
       text-decoration: none;
     }
-    &:hover:before,      
-    &.active:before {        
+    &:hover:before,
+    &.active:before {
       visibility: visible;
       @include transform(scaleX(1));
     }
@@ -100,7 +101,7 @@
 
 #block-bean-read-the-white-paper,
 .page-container[data-namespace="policy-landing"] #content-body .view-fpwp-book-menu .view-header {
-  transition: all .6s ease;
+  // transition: all .6s ease;
   &::before {
     transition: transform .6s ease;
     -webkit-transform: scaleX(1) translateX(0%) skewX(0deg) translateZ(0) translate3d(0, 0, 0);
@@ -124,6 +125,14 @@
     display: block;
     @include absolute(top left);
     max-height: 800px;
+    @include breakpoint(xxl) {
+      // prevents map from overlapping action box on hover
+      background-position: left -850px top -105px;
+    }
+    @include breakpoint(xl) {
+      // prevents map from overlapping action box on hover
+      background-position: left -900px top -105px;
+    }
   }
   .bean-basic {
     transition: transform .6s ease;
@@ -134,12 +143,12 @@
 }
 
 #block-bean-foreign-policy-in-practice {
-  transition: .6s ease all;
+  transition: all .6s ease;
   right: 0%;
   width: 100%;
   height: 850px;
   // background-color: #384291;
-  background-color: darken(#384291, 5%); // Aceesibility Fix
+  background-color: darken(#384291, 5%); // Accesibility Fix
   color: $white;
   overflow: hidden;
   .bean-basic {
@@ -166,11 +175,12 @@
     content: " ";
     background: url(../images/banner-learn.jpg) top right no-repeat;
     background-size: cover;
-    opacity: .35; //.7; // Accessibility Fix
+    opacity: 0.35; //.7; // Accessibility Fix
     -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
     transform: scale(1) translateZ(0) translate3d(0, 0, 0);
     z-index: 5;
-    transition: transform .6s ease;
+    // transition: transform .6s ease;
+    transition: all .6s ease;
   }
   &:after {
     @include absolute(top right);
@@ -191,37 +201,36 @@
 ! ----------------- */
 @media (min-width: 888px) {
   .hover-left #block-bean-read-the-white-paper {
+    // Container
     &:before {
-      transform: scaleX(1.2) translateX(-5%) skewX(-2.5deg);
       transition: transform .6s ease;
+      transform: scaleX(1.2) skewX(-2.5deg);
     }
+    // Map
     &:after {
-      transform: scale(1.1) translateX(0);
       transition: transform .6s ease;
+      transform: scale(1.1);
     }
   }
 
   .hover-right {
     #block-bean-read-the-white-paper {
-      transform: translateX(-10%);
-      transition: transform .6s ease;
-      .bean-basic {
-        transition: transform .6s ease;
-        transform: translateX(10%);
-      }
-      &:after {
-        transition: transform .6s ease;
-        transform: translateX(10%);
-      }
+      // Container
       &:before {
         transition: transform .6s ease;
-        transform: scaleX(1.2) translateX(-5%) skewX(2.5deg);
+        transform: scaleX(1.2) translateX(-15%) skewX(2.5deg);
+      }
+      // Map
+      &:after {
+        transition: transform .6s ease;
+        transform: scale(1);
       }
     }
     #block-bean-foreign-policy-in-practice {
       &:before {
-        transition: transform .6s ease;
+        // transition: all .6s ease;
         transform: scale(1.2);
+        opacity: 0.25; // Match with next page
       }
     }
   }
@@ -348,7 +357,7 @@
       overflow: hidden;
     }
     .contextual-links-region#block-bean-foreign-policy-in-practice:before {
-      opacity: .3;
+      // opacity: .3;
       background-size: 100%;
     }
   }

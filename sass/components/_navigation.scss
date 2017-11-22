@@ -118,7 +118,7 @@ header.header {
             background: url('../images/site-logo-rev.png') no-repeat;
             background-size: contain;
             @include breakpoint(xxs) {
-              width: 250px;
+              width: 230px;
               height: 65px;
             }
           }

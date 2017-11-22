@@ -28,20 +28,29 @@
       right: 0;
       width: 60%;
       .addthis_inline_share_toolbox_wmxb {
-        transition: .2s ease-out all;
         position: fixed;
-        padding-top: 10px;
         width: 50px;
-        left: 0;
-        top: rem(350);
+        left: 41vw;
+        top: 24rem;        
         z-index: 10;
-        background: white;
-        min-height: 235px;
         opacity: 0;
-        animation: fade-in 1s ease-out both;
-        animation-delay: 1s;
-        @include breakpoint(xxl) {
-          top: calc(50% - 50px);
+        animation: fade-in 1s ease both;
+        .at-icon-wrapper, 
+        .at-share-btn .at-icon {
+          background: transparent !important;
+          width: 25px !important;
+          height: 25px !important;
+          margin: 0;
+        }
+        @media (max-height: 850px) {
+          position: static;
+          height: auto;
+          min-height: inherit;
+          width: auto;
+          z-index: initial;
+          ul li {
+            display: inline-block;
+          }
         }
         @include breakpoint(l) {
           position: static;
@@ -49,6 +58,9 @@
           min-height: inherit;
           width: auto;
           z-index: initial;
+          ul li {
+            display: inline-block;
+          }
         }
         ul,
         li {
@@ -114,12 +126,9 @@
     }
     #content-nav {
       @include absolute(left 40% top 0);
-      width: 10%;
+      width: 11rem;
       height: 100%;
       z-index: 1;
-      @include breakpoint(xxl) {
-        width: 9vw;
-      }
       .book-navigation {
         height: 100%;
         position: relative;
@@ -135,6 +144,7 @@
           font-weight: $semibold;
           font-size: rem(14);
           text-align: left;
+          outline: 0;
         }
         .page-next,
         .page-previous,
@@ -193,7 +203,7 @@
         }
         .page-menu {
           position: fixed;
-          top: 350px;
+          top: 315px;
           left: calc(40% - 60px);
           background: url('../images/icon-contents.jpg') no-repeat left top;
           height: rem(46);
@@ -274,7 +284,7 @@
       }
     }
     #content-body {
-      margin: 10px auto 100px;
+      margin: 10px auto 150px;
       width: calc(100% - 4rem);
       max-width: 760px;
       margin-left: 0;
@@ -452,7 +462,7 @@
         height: 50px;
         overflow: hidden;
         box-sizing: border-box;
-        transition: 0s;
+        transition: none;
         span.toggle-text {
           padding: 12px 12px 12px 30px;
           display: block;
@@ -464,14 +474,14 @@
           background: white url('../images/icon-contents-white.jpg') no-repeat left top 6px;
           background-size: 45px;
           background-blend-mode: multiply;
-          transition: 0s;
+          transition: none;
           @include breakpoint(xs) {
             width: 170px;
           }
         }
         &:hover,
         &:focus {
-          transition: 0s; // transition is turned off so it doesn't show the transition back from the slideout menu
+          transition: none; // transition is turned off so it doesn't show the transition when slideout menu is closes
           text-decoration: none;
           background-color: #e5e5e5;
           span.toggle-text {
@@ -495,7 +505,7 @@
           height: 50px;
           box-sizing: border-box;
           @include hide-text;
-          transition: .2s ease-out background;
+          // transition: .2s ease-out background;
           &:hover,
           &:focus {
             background-color: #e5e5e5;

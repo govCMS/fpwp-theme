@@ -169,6 +169,8 @@ var policyContentView = Barba.BaseView.extend({
     $('a.page-previous, a.page-next').bind('click.policy', function() {
       if ($('.page-container.transition-out, .page-container.transition-load, .page-container.transition-in').length > 0) return false;
     });
+    // Clean up social sharing icons to mitigate page length issues
+    $('#at-image-sharing-tool').css('top',0);
   },
   // The Transition has just finished.
   onEnterCompleted: function() {
@@ -180,6 +182,10 @@ var policyContentView = Barba.BaseView.extend({
     $('body').addClass(bodyClasses[this['namespace']]);
     // Attach Drupal behaviours.
     Drupal.attachBehaviors();
+  },
+  // A new Transition toward a new page has just started.
+  onLeave: function() {
+    if (Drupal.selectionShare) Drupal.selectionShare.destroy();
   }
 });
 
@@ -200,6 +206,10 @@ var frontView = Barba.BaseView.extend({
     $('body').addClass(bodyClasses[this['namespace']]);
     // Attach Drupal behaviours.
     Drupal.attachBehaviors();
+  },
+  // A new Transition toward a new page has just started.
+  onLeave: function() {
+    if (Drupal.selectionShare) Drupal.selectionShare.destroy();
   }
 });
 
@@ -220,8 +230,23 @@ var caseLandingView = Barba.BaseView.extend({
     $('body').addClass(bodyClasses[this['namespace']]);
     // Attach Drupal behaviours.
     Drupal.attachBehaviors();
+  },
+  // A new Transition toward a new page has just started.
+  onLeave: function() {
+    if (Drupal.selectionShare) Drupal.selectionShare.destroy();
   }
 });
+
+// Extend the default Barba.Pjax.preventCheck to disable barba for all screens
+// up to 999px
+Barba.Pjax.originalPreventCheck = Barba.Pjax.preventCheck;
+Barba.Pjax.preventCheck = function(evt, element) {
+  if (window.matchMedia('(max-width: 999px)').matches) {
+    return false;
+  } else {
+    return Barba.Pjax.originalPreventCheck(evt, element)
+  }
+};
 
 // Using the page wrapper as not all content was within the main content area.
 Barba.Pjax.Dom.wrapperId = 'page';
@@ -231,8 +256,8 @@ Barba.Pjax.getTransition = function() {
   return contentTransition;
 };
 
-// Disable Barba for screen widths below 888px.
-if (window.matchMedia('(min-width: 888px)').matches) {
+// Disable Barba for screen widths below 999px.
+if (window.matchMedia('(min-width: 1000px)').matches) {
   // Initialise views.
   policyLandingView.init();
   policyContentView.init();

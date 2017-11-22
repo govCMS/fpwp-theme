@@ -1,6 +1,7 @@
 #footer {
   padding: rem(20) 0;
   text-align: center;
+  background: $black; // ie 9 fallback //
   background: linear-gradient(60deg, $black 20%, #141921);
   border-top: 1px solid rgba($grey-light, .3);
   // z-index: 3;

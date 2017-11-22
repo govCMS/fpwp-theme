@@ -11,6 +11,7 @@
     transition: transform 1s ease-out;
     animation: slide-in-left 1s both;
     animation-delay: .5s;
+    background: $purple; // ie 9 fallback //
     background: linear-gradient(45deg, $teal 10%, $purple-light, $pink);
     float: right;
     width: 60vw;
@@ -178,6 +179,14 @@
       @include absolute(top left);
       max-height: 800px;
       overflow: hidden;
+      @include breakpoint(xxl) {
+        // prevents map from overlapping action box on hover
+        background-position: left -850px top -105px;
+      }
+      @include breakpoint(xl) {
+        // prevents map from overlapping action box on hover
+        background-position: left -900px top -105px;
+      }      
     }
     // Intro text
     article {
