@@ -3313,7 +3313,7 @@ tr.selected td {
 }
 
 .page-container[data-namespace="front"] .region-home-row-2 {
-  background: #003e67;
+  background: #0f1950;
   background: linear-gradient(60deg, #072035 20%, #070747, #0f1850 80%);
   color: white;
 }
@@ -7654,6 +7654,7 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   width: 40vw;
   width: 40%;
   height: 100vh;
+  background: #18133c;
 }
 .page-container[data-namespace="policy-content"] #main #content-left .field-type-image {
   position: relative;
@@ -8006,6 +8007,11 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
   vertical-align: top;
 }
 
+@supports (-ms-ime-align: auto) {
+  .section-foreign-policy-white-paper #page {
+    padding-left: 1px;
+  }
+}
 /**
 * @file
 * Read the white paper section.

@@ -1,5 +1,6 @@
 //.not-front.node-type-policy {
 .page-container[data-namespace="policy-content"] {
+
   header.header {
     #block-search-api-page-default-search  {
       border-left: 1px solid $grey;
@@ -31,11 +32,11 @@
         position: fixed;
         width: 50px;
         left: 41vw;
-        top: 24rem;        
+        top: 24rem;
         z-index: 10;
         opacity: 0;
         animation: fade-in 1s ease both;
-        .at-icon-wrapper, 
+        .at-icon-wrapper,
         .at-share-btn .at-icon {
           background: transparent !important;
           width: 25px !important;
@@ -256,6 +257,7 @@
       width: 40vw;
       width: 40%;
       height: 100vh;
+      background: $purple; // Before the picture has loaded
       .field-type-image {
         position: relative;
         top: 0;
@@ -584,5 +586,12 @@
     border-bottom: none;
     padding-left: 0;
     vertical-align: top;
+  }
+}
+
+// Fix issue in MS Edge only, where TOC button being clipped on transition
+@supports (-ms-ime-align: auto) {
+  .section-foreign-policy-white-paper #page {
+    padding-left: 1px;
   }
 }
