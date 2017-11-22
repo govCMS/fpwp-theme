@@ -283,6 +283,7 @@ Drupal.behaviors.fpwpQuickFacts = {
 Drupal.behaviors.fpwpShareThis = {
   attach: function (context, settings) {
     $('#content-body').once('sharethis', function() {
+      if (Drupal.selectionShare) Drupal.selectionShare.destroy();
       var shareThis = window.ShareThis;
       Drupal.selectionShare = shareThis({
         selector: '#content-body',

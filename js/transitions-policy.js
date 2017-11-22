@@ -172,6 +172,7 @@ var policyContentView = Barba.BaseView.extend({
     // Clean up social sharing icons to mitigate page length issues
     $('#at-image-sharing-tool').css('top',0);
     $('#at-image-sharing-tool').css('left','-9999px');
+    $('.share-this-popover').remove();
   },
   // The Transition has just finished.
   onEnterCompleted: function() {
@@ -183,10 +184,6 @@ var policyContentView = Barba.BaseView.extend({
     $('body').addClass(bodyClasses[this['namespace']]);
     // Attach Drupal behaviours.
     Drupal.attachBehaviors();
-  },
-  // A new Transition toward a new page has just started.
-  onLeave: function() {
-    if (Drupal.selectionShare) Drupal.selectionShare.destroy();
   }
 });
 
@@ -207,10 +204,6 @@ var frontView = Barba.BaseView.extend({
     $('body').addClass(bodyClasses[this['namespace']]);
     // Attach Drupal behaviours.
     Drupal.attachBehaviors();
-  },
-  // A new Transition toward a new page has just started.
-  onLeave: function() {
-    if (Drupal.selectionShare) Drupal.selectionShare.destroy();
   }
 });
 
@@ -231,10 +224,6 @@ var caseLandingView = Barba.BaseView.extend({
     $('body').addClass(bodyClasses[this['namespace']]);
     // Attach Drupal behaviours.
     Drupal.attachBehaviors();
-  },
-  // A new Transition toward a new page has just started.
-  onLeave: function() {
-    if (Drupal.selectionShare) Drupal.selectionShare.destroy();
   }
 });
 
