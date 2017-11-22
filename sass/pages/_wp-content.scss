@@ -345,8 +345,9 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
+        -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
+        flex-wrap: wrap;        
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
@@ -359,6 +360,8 @@
       #content-header {
         margin: auto;
         text-align: center;
+        width: 100%;
+        margin: 0 auto;       
         #content-header-fields h1 {
           text-align: center;
           &:after {

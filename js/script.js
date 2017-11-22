@@ -199,6 +199,7 @@ Drupal.behaviors.fpwpSlideoutMenu = {
         // Clean up social sharing icons to mitigate page length issues
         $('.share-this-popover').remove();
         $('#at-image-sharing-tool').css('top',0);
+        $('#at-image-sharing-tool').css('left','-9999px');
       }
     }
 
@@ -293,7 +294,11 @@ Drupal.behaviors.fpwpShareThis = {
         ]
       });
       if (!window.matchMedia || !window.matchMedia("(pointer: coarse)").matches) {
+        if (Function('/*@cc_on return document.documentMode===10@*/')()){
+          // Disable in IE10
+        } else {
           Drupal.selectionShare.init();
+        }
       }
     });
   }

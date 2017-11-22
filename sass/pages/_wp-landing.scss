@@ -190,7 +190,7 @@
     }
     // Intro text
     article {
-      opacity: 0;
+      opacity: 1;
       z-index: 21;
       @include fixed(right 60% top 260px);
       padding: 0 4rem;

@@ -171,6 +171,7 @@ var policyContentView = Barba.BaseView.extend({
     });
     // Clean up social sharing icons to mitigate page length issues
     $('#at-image-sharing-tool').css('top',0);
+    $('#at-image-sharing-tool').css('left','-9999px');
   },
   // The Transition has just finished.
   onEnterCompleted: function() {
