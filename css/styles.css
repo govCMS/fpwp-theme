@@ -5785,13 +5785,17 @@ input.highcharts-range-selector {
 }
 .paragraphs-item-chart .field-name-field-chart-source .field-label,
 .paragraphs-item-chart .field-name-field-chart-source .field-items,
+.paragraphs-item-chart .field-name-field-chart-source .field-item,
 .paragraphs-item-chart .field-name-field-chart-notes .field-label,
 .paragraphs-item-chart .field-name-field-chart-notes .field-items,
+.paragraphs-item-chart .field-name-field-chart-notes .field-item,
 .paragraphs-item-chart .field-name-field-chart-source.field-label-inline .field-label,
 .paragraphs-item-chart .field-name-field-chart-source.field-label-inline .field-items,
+.paragraphs-item-chart .field-name-field-chart-source.field-label-inline .field-item,
 .paragraphs-item-chart .field-name-field-chart-notes.field-label-inline .field-label,
-.paragraphs-item-chart .field-name-field-chart-notes.field-label-inline .field-items {
-  display: inline-block;
+.paragraphs-item-chart .field-name-field-chart-notes.field-label-inline .field-items,
+.paragraphs-item-chart .field-name-field-chart-notes.field-label-inline .field-item {
+  display: inline;
   float: none;
 }
 .paragraphs-item-chart .field-name-field-chart-title .field-item {
@@ -7688,7 +7692,8 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 .page-container[data-namespace="policy-content"] #main #content-body blockquote {
   margin: 1.5em 0;
 }
-.page-container[data-namespace="policy-content"] #main #content-body .chart__table {
+.page-container[data-namespace="policy-content"] #main #content-body .chart__table,
+.page-container[data-namespace="policy-content"] #main #content-body .figure-description-screen-reader {
   position: absolute !important;
   height: 1px;
   width: 1px;

@@ -713,8 +713,9 @@ input.highcharts-range-selector {
     .field-name-field-chart-source.field-label-inline,
     .field-name-field-chart-notes.field-label-inline {
       .field-label,
-      .field-items {
-        display: inline-block;
+      .field-items,
+      .field-item {
+        display: inline;
         float: none;
       }
     }

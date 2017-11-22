@@ -291,7 +291,8 @@
       blockquote {
         margin: 1.5em 0;
       }
-      .chart__table {
+      .chart__table,
+      .figure-description-screen-reader {
         // hide all sr-only tables //
         @include element-invisible;
       }
@@ -543,7 +544,7 @@
 */
 .signature {
   display: inline-block;
-  padding-right: 3rem; 
+  padding-right: 3rem;
 }
 
 .profile-image {
