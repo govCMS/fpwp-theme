@@ -3958,12 +3958,6 @@ header.header .toggle-wrapper a:first-of-type:active {
   }
 }
 
-/*.front header.headroom--top .header__name-and-slogan a {
-  background: url('../images/site-logo-front.png') no-repeat;
-}
-.not-front header.headroom--top .header__name-and-slogan a {
-  background: url('../images/site-logo-rev.png') no-repeat;
-}*/
 #block-superfish-1 {
   width: calc(100% - 80px);
   overflow: hidden;
@@ -4020,28 +4014,6 @@ header.header .toggle-wrapper a:first-of-type:active {
   text-align: left;
 }
 
-/*
-.headroom {
-  will-change: transform;
-  transition: transform 200ms linear, all ease-out 200ms;
-}
-.headroom--pinned {
-  transition: transform 200ms linear, all ease-out 200ms;
-  transform: translateY(0%);
-  &.headroom--not-top {
-    background: linear-gradient(60deg, $black 20%, #141921);
-    border-bottom: 1px solid rgba(240, 240, 240, .3);
-    .header__name-and-slogan a {
-      background: url('../images/site-logo-wordmark.png') no-repeat;
-      margin-top: 0;
-    }
-  }
-}
-.headroom--unpinned {
-  transition: transform 200ms linear, all ease-out 200ms;
-  transform: translateY(-100%);
-}
-*/
 #block-search-api-page-default-search input[type="text"] {
   color: white;
   display: inline-block;
@@ -4111,6 +4083,14 @@ body.mobile-nav--show #navigation .region-mobile-nav .toggle-wrapper .toggle-mob
   background: url("../images/site-logo-rev.png") no-repeat;
   background-size: contain;
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .node-type-policy header .header__name-and-slogan a,
+  .not-front header .header__name-and-slogan a,
+  .section-foreign-policy-in-action header .header__name-and-slogan a {
+    background: url("../images/site-logo-rev@2x.png") no-repeat;
+    background-size: contain;
+  }
+}
 
 /* Full colour logo in headers */
 .page-container[data-namespace="front"] header .header__name-and-slogan a,
@@ -4119,6 +4099,13 @@ body.mobile-nav--show #navigation .region-mobile-nav .toggle-wrapper .toggle-mob
   background-size: 350px !important;
   width: 115px;
   height: 110px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .page-container[data-namespace="front"] header .header__name-and-slogan a,
+  .page-container[data-namespace="policy-landing"] header .header__name-and-slogan a {
+    background: url("../images/site-logo-front@2x.png") no-repeat;
+    background-size: 350px !important;
+  }
 }
 
 .not-front.node-type-policy header #navigation .region-navigation a {
@@ -7686,7 +7673,7 @@ body.keynav .page-container[data-namespace="policy-content"] #main #content .add
 }
 .page-container[data-namespace="policy-content"] #main #content-body {
   margin: 10px auto 150px;
-  width: calc(100% - 4rem);
+  width: 100%;
   max-width: 760px;
   margin-left: 0;
 }

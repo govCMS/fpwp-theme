@@ -170,8 +170,8 @@ var policyContentView = Barba.BaseView.extend({
       if ($('.page-container.transition-out, .page-container.transition-load, .page-container.transition-in').length > 0) return false;
     });
     // Clean up social sharing icons to mitigate page length issues
-    $('#at-image-sharing-tool').css('top',0);
-    $('#at-image-sharing-tool').css('left','-9999px');
+    $('.at-image-sharing-tool').css('top',0);
+    $('.at-image-sharing-tool').css('left','-9999px');
     $('.share-this-popover').remove();
   },
   // The Transition has just finished.

@@ -198,8 +198,8 @@ Drupal.behaviors.fpwpSlideoutMenu = {
         $('body').trigger('mousemove');
         // Clean up social sharing icons to mitigate page length issues
         $('.share-this-popover').remove();
-        $('#at-image-sharing-tool').css('top',0);
-        $('#at-image-sharing-tool').css('left','-9999px');
+        $('.at-image-sharing-tool').css('top',0);
+        $('.at-image-sharing-tool').css('left','-9999px');
       }
     }
 

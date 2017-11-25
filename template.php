@@ -558,6 +558,30 @@ function fpwp_generate_video_filter_youtube_url($video, $type) {
  * row of values from a view.
  */
 function fpwp_metatag_metatags_view_alter(&$output, $instance, $options) {
+  // For any pages that don't contain an image, add a default one
+  if (!isset($output['twitter:image'])) {
+    $output['twitter:image']['#attached']['drupal_add_html_head'][0][0] = array(
+      '#theme' => 'metatag_twitter_cards',
+      '#tag' => 'meta',
+      '#id' => 'metatag_twitter:image_0',
+      '#name' => 'twitter:image',
+      '#value' => file_create_url('public://default-twitter.jpg'),
+      '#weight' => 50
+    );
+    $output['twitter:image']['#attached']['drupal_add_html_head'][0][1] = 'metatag_twitter:image_0';
+  }
+  if (!isset($output['og:image'])) {
+    $output['og:image']['#attached']['drupal_add_html_head'][0][0] = array(
+      '#theme' => 'metatag_property',
+      '#tag' => 'meta',
+      '#id' => 'metatag_og:image_0',
+      '#name' => 'og:image',
+      '#value' => file_create_url('public://default-facebook.jpg'),
+      '#weight' => 50
+    );
+    $output['og:image']['#attached']['drupal_add_html_head'][0][1] = 'metatag_og:image_0';
+  }
+
   if (($instance == 'view:share_chart:page' || $instance == 'view:share_fact:page') && !empty($options['token data']['view']->result)) {
     $view = $options['token data']['view'];
     if (empty($view)) {
