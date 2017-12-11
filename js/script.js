@@ -385,7 +385,7 @@ Drupal.behaviors.fpwpYoutubeEmbed = {
         // Load full video on click.
         .one('click', function(e) {
           e.preventDefault();
-          $(this).html('<iframe src="//www.youtube.com/embed/' + id + '?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+          $(this).html('<iframe src="//www.youtube.com/embed/' + id + '?autoplay=1&modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe>');
         });
     });
   }
